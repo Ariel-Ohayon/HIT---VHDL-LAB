@@ -1,0 +1,184 @@
+|RAM
+Rst => RegisterNbits:RegGen:0:REG.Rst
+Rst => RegisterNbits:RegGen:1:REG.Rst
+Rst => RegisterNbits:RegGen:2:REG.Rst
+Rst => RegisterNbits:RegGen:3:REG.Rst
+clk => RegisterNbits:RegGen:0:REG.clk
+clk => RegisterNbits:RegGen:1:REG.clk
+clk => RegisterNbits:RegGen:2:REG.clk
+clk => RegisterNbits:RegGen:3:REG.clk
+addr[0] => Decoder:Dec.inpt[0]
+addr[1] => Decoder:Dec.inpt[1]
+addr[2] => Decoder:Dec.inpt[2]
+inpt[0] => RegisterNbits:RegGen:0:REG.inpt[0]
+inpt[0] => RegisterNbits:RegGen:1:REG.inpt[0]
+inpt[0] => RegisterNbits:RegGen:2:REG.inpt[0]
+inpt[0] => RegisterNbits:RegGen:3:REG.inpt[0]
+inpt[1] => RegisterNbits:RegGen:0:REG.inpt[1]
+inpt[1] => RegisterNbits:RegGen:1:REG.inpt[1]
+inpt[1] => RegisterNbits:RegGen:2:REG.inpt[1]
+inpt[1] => RegisterNbits:RegGen:3:REG.inpt[1]
+inpt[2] => RegisterNbits:RegGen:0:REG.inpt[2]
+inpt[2] => RegisterNbits:RegGen:1:REG.inpt[2]
+inpt[2] => RegisterNbits:RegGen:2:REG.inpt[2]
+inpt[2] => RegisterNbits:RegGen:3:REG.inpt[2]
+inpt[3] => RegisterNbits:RegGen:0:REG.inpt[3]
+inpt[3] => RegisterNbits:RegGen:1:REG.inpt[3]
+inpt[3] => RegisterNbits:RegGen:2:REG.inpt[3]
+inpt[3] => RegisterNbits:RegGen:3:REG.inpt[3]
+outpt[0] <= GenOR:ORGen:0:ORGate4.outpt
+outpt[1] <= GenOR:ORGen:1:ORGate4.outpt
+outpt[2] <= GenOR:ORGen:2:ORGate4.outpt
+outpt[3] <= GenOR:ORGen:3:ORGate4.outpt
+
+
+|RAM|Decoder:Dec
+inpt[0] => Decoder0.IN1
+inpt[1] => Decoder0.IN0
+inpt[2] => ~NO_FANOUT~
+outpt[0] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+outpt[1] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+outpt[2] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+outpt[3] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RAM|RegisterNbits:\RegGen:0:REG
+Rst => sQ[0].ACLR
+Rst => sQ[1].ACLR
+Rst => sQ[2].ACLR
+Rst => sQ[3].ACLR
+En => outpt.IN1
+En => outpt.IN1
+En => outpt.IN1
+En => outpt.IN1
+En => sQ[3].ENA
+En => sQ[2].ENA
+En => sQ[1].ENA
+En => sQ[0].ENA
+clk => sQ[0].CLK
+clk => sQ[1].CLK
+clk => sQ[2].CLK
+clk => sQ[3].CLK
+inpt[0] => sQ[0].DATAIN
+inpt[1] => sQ[1].DATAIN
+inpt[2] => sQ[2].DATAIN
+inpt[3] => sQ[3].DATAIN
+outpt[0] <= outpt.DB_MAX_OUTPUT_PORT_TYPE
+outpt[1] <= outpt.DB_MAX_OUTPUT_PORT_TYPE
+outpt[2] <= outpt.DB_MAX_OUTPUT_PORT_TYPE
+outpt[3] <= outpt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RAM|RegisterNbits:\RegGen:1:REG
+Rst => sQ[0].ACLR
+Rst => sQ[1].ACLR
+Rst => sQ[2].ACLR
+Rst => sQ[3].ACLR
+En => outpt.IN1
+En => outpt.IN1
+En => outpt.IN1
+En => outpt.IN1
+En => sQ[3].ENA
+En => sQ[2].ENA
+En => sQ[1].ENA
+En => sQ[0].ENA
+clk => sQ[0].CLK
+clk => sQ[1].CLK
+clk => sQ[2].CLK
+clk => sQ[3].CLK
+inpt[0] => sQ[0].DATAIN
+inpt[1] => sQ[1].DATAIN
+inpt[2] => sQ[2].DATAIN
+inpt[3] => sQ[3].DATAIN
+outpt[0] <= outpt.DB_MAX_OUTPUT_PORT_TYPE
+outpt[1] <= outpt.DB_MAX_OUTPUT_PORT_TYPE
+outpt[2] <= outpt.DB_MAX_OUTPUT_PORT_TYPE
+outpt[3] <= outpt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RAM|RegisterNbits:\RegGen:2:REG
+Rst => sQ[0].ACLR
+Rst => sQ[1].ACLR
+Rst => sQ[2].ACLR
+Rst => sQ[3].ACLR
+En => outpt.IN1
+En => outpt.IN1
+En => outpt.IN1
+En => outpt.IN1
+En => sQ[3].ENA
+En => sQ[2].ENA
+En => sQ[1].ENA
+En => sQ[0].ENA
+clk => sQ[0].CLK
+clk => sQ[1].CLK
+clk => sQ[2].CLK
+clk => sQ[3].CLK
+inpt[0] => sQ[0].DATAIN
+inpt[1] => sQ[1].DATAIN
+inpt[2] => sQ[2].DATAIN
+inpt[3] => sQ[3].DATAIN
+outpt[0] <= outpt.DB_MAX_OUTPUT_PORT_TYPE
+outpt[1] <= outpt.DB_MAX_OUTPUT_PORT_TYPE
+outpt[2] <= outpt.DB_MAX_OUTPUT_PORT_TYPE
+outpt[3] <= outpt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RAM|RegisterNbits:\RegGen:3:REG
+Rst => sQ[0].ACLR
+Rst => sQ[1].ACLR
+Rst => sQ[2].ACLR
+Rst => sQ[3].ACLR
+En => outpt.IN1
+En => outpt.IN1
+En => outpt.IN1
+En => outpt.IN1
+En => sQ[3].ENA
+En => sQ[2].ENA
+En => sQ[1].ENA
+En => sQ[0].ENA
+clk => sQ[0].CLK
+clk => sQ[1].CLK
+clk => sQ[2].CLK
+clk => sQ[3].CLK
+inpt[0] => sQ[0].DATAIN
+inpt[1] => sQ[1].DATAIN
+inpt[2] => sQ[2].DATAIN
+inpt[3] => sQ[3].DATAIN
+outpt[0] <= outpt.DB_MAX_OUTPUT_PORT_TYPE
+outpt[1] <= outpt.DB_MAX_OUTPUT_PORT_TYPE
+outpt[2] <= outpt.DB_MAX_OUTPUT_PORT_TYPE
+outpt[3] <= outpt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RAM|GenOR:\ORGen:0:ORGate4
+inpt[0] => x.IN1
+inpt[1] => x.IN1
+inpt[2] => x.IN0
+inpt[3] => x.IN1
+outpt <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RAM|GenOR:\ORGen:1:ORGate4
+inpt[0] => x.IN1
+inpt[1] => x.IN1
+inpt[2] => x.IN0
+inpt[3] => x.IN1
+outpt <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RAM|GenOR:\ORGen:2:ORGate4
+inpt[0] => x.IN1
+inpt[1] => x.IN1
+inpt[2] => x.IN0
+inpt[3] => x.IN1
+outpt <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RAM|GenOR:\ORGen:3:ORGate4
+inpt[0] => x.IN1
+inpt[1] => x.IN1
+inpt[2] => x.IN0
+inpt[3] => x.IN1
+outpt <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+

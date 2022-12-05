@@ -1,0 +1,212 @@
+|UART
+rx => Reciever:U2.rxd
+tx << Transmitter:U1.txd
+parallelin[0] => Transmitter:U1.data[0]
+parallelin[1] => Transmitter:U1.data[1]
+parallelin[2] => Transmitter:U1.data[2]
+parallelin[3] => Transmitter:U1.data[3]
+parallelin[4] => Transmitter:U1.data[4]
+parallelin[5] => Transmitter:U1.data[5]
+parallelin[6] => Transmitter:U1.data[6]
+parallelin[7] => Transmitter:U1.data[7]
+parallelout[0] << Reciever:U2.data[0]
+parallelout[1] << Reciever:U2.data[1]
+parallelout[2] << Reciever:U2.data[2]
+parallelout[3] << Reciever:U2.data[3]
+parallelout[4] << Reciever:U2.data[4]
+parallelout[5] << Reciever:U2.data[5]
+parallelout[6] << Reciever:U2.data[6]
+parallelout[7] << Reciever:U2.data[7]
+clk => Transmitter:U1.clk
+clk => Reciever:U2.clk
+go => Transmitter:U1.go
+
+
+|UART|Transmitter:U1
+data[0] => Selector0.IN10
+data[0] => Parity_Gen:U2.inpt[0]
+data[1] => Selector0.IN9
+data[1] => Parity_Gen:U2.inpt[1]
+data[2] => Selector0.IN8
+data[2] => Parity_Gen:U2.inpt[2]
+data[3] => Selector0.IN7
+data[3] => Parity_Gen:U2.inpt[3]
+data[4] => Selector0.IN6
+data[4] => Parity_Gen:U2.inpt[4]
+data[5] => Selector0.IN5
+data[5] => Parity_Gen:U2.inpt[5]
+data[6] => Selector0.IN4
+data[6] => Parity_Gen:U2.inpt[6]
+data[7] => Selector0.IN3
+data[7] => Parity_Gen:U2.inpt[7]
+clk => Generator:U1.clkin
+PT => Parity.IN1
+go => Selector1.IN3
+go => ns.START.DATAB
+txd <= Selector0.DB_MAX_OUTPUT_PORT_TYPE
+txrdy <= txrdy.DB_MAX_OUTPUT_PORT_TYPE
+txe <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|UART|Transmitter:U1|Generator:U1
+clkin => clkout~reg0.CLK
+clkin => count[0].CLK
+clkin => count[1].CLK
+clkin => count[2].CLK
+clkin => count[3].CLK
+clkin => count[4].CLK
+clkin => count[5].CLK
+clkin => count[6].CLK
+clkin => count[7].CLK
+clkin => count[8].CLK
+clkin => count[9].CLK
+clkin => count[10].CLK
+clkin => count[11].CLK
+clkin => count[12].CLK
+clkout <= clkout~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|UART|Transmitter:U1|Parity_Gen:U2
+inpt[0] => x.IN0
+inpt[1] => x.IN1
+inpt[2] => x.IN1
+inpt[3] => x.IN1
+inpt[4] => x.IN1
+inpt[5] => x.IN1
+inpt[6] => x.IN1
+inpt[7] => x.IN1
+outpt <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|UART|Reciever:U2
+rxd => sync_Reciever:U1.Lrx
+rxd => Shift_Register:U2.d
+rxd => Parity_Checker:U3.inpt
+clk => sync_Reciever:U1.clkin
+data[0] <= Shift_Register:U2.Q[1]
+data[1] <= Shift_Register:U2.Q[2]
+data[2] <= Shift_Register:U2.Q[3]
+data[3] <= Shift_Register:U2.Q[4]
+data[4] <= Shift_Register:U2.Q[5]
+data[5] <= Shift_Register:U2.Q[6]
+data[6] <= Shift_Register:U2.Q[7]
+data[7] <= Shift_Register:U2.Q[8]
+rxrdy <= sync_Reciever:U1.En
+P <= Parity_Checker:U3.Pstate
+fe <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|UART|Reciever:U2|sync_Reciever:U1
+clkin => syncRecieveClk:U1.clkin
+Lrx => Recieve_Enable:U2.Lrx
+En <= Recieve_Enable:U2.flag
+clkout <= syncRecieveClk:U1.clkout
+
+
+|UART|Reciever:U2|sync_Reciever:U1|SyncRecieveClk:U1
+clkin => clkout~reg0.CLK
+clkin => clkdiv[0].CLK
+clkin => clkdiv[1].CLK
+clkin => clkdiv[2].CLK
+clkin => clkdiv[3].CLK
+clkin => clkdiv[4].CLK
+clkin => clkdiv[5].CLK
+clkin => clkdiv[6].CLK
+clkin => clkdiv[7].CLK
+clkin => clkdiv[8].CLK
+clkin => clkdiv[9].CLK
+clkin => clkdiv[10].CLK
+clkin => clkdiv[11].CLK
+clkin => clkdiv[12].CLK
+En => clkout~reg0.ACLR
+En => clkdiv[12].ENA
+En => clkdiv[11].ENA
+En => clkdiv[10].ENA
+En => clkdiv[9].ENA
+En => clkdiv[8].ENA
+En => clkdiv[7].ENA
+En => clkdiv[6].ENA
+En => clkdiv[5].ENA
+En => clkdiv[4].ENA
+En => clkdiv[3].ENA
+En => clkdiv[2].ENA
+En => clkdiv[1].ENA
+En => clkdiv[0].ENA
+clkout <= clkout~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|UART|Reciever:U2|sync_Reciever:U1|Recieve_Enable:U2
+Lrx => sflag.CLK
+clkin => count[0].CLK
+clkin => count[1].CLK
+clkin => count[2].CLK
+clkin => count[3].CLK
+flag <= sflag.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|UART|Reciever:U2|Shift_Register:U2
+EnOut => Q.IN1
+EnOut => Q.IN1
+EnOut => Q.IN1
+EnOut => Q.IN1
+EnOut => Q.IN1
+EnOut => Q.IN1
+EnOut => Q.IN1
+EnOut => Q.IN1
+EnOut => Q.IN1
+EnOut => Q.IN1
+EnOut => Q.IN1
+EnShift => sQ[10].ENA
+EnShift => sQ[9].ENA
+EnShift => sQ[8].ENA
+EnShift => sQ[7].ENA
+EnShift => sQ[6].ENA
+EnShift => sQ[5].ENA
+EnShift => sQ[4].ENA
+EnShift => sQ[3].ENA
+EnShift => sQ[2].ENA
+EnShift => sQ[1].ENA
+EnShift => sQ[0].ENA
+rst => sQ[0].ACLR
+rst => sQ[1].ACLR
+rst => sQ[2].ACLR
+rst => sQ[3].ACLR
+rst => sQ[4].ACLR
+rst => sQ[5].ACLR
+rst => sQ[6].ACLR
+rst => sQ[7].ACLR
+rst => sQ[8].ACLR
+rst => sQ[9].ACLR
+rst => sQ[10].ACLR
+clk => sQ[0].CLK
+clk => sQ[1].CLK
+clk => sQ[2].CLK
+clk => sQ[3].CLK
+clk => sQ[4].CLK
+clk => sQ[5].CLK
+clk => sQ[6].CLK
+clk => sQ[7].CLK
+clk => sQ[8].CLK
+clk => sQ[9].CLK
+clk => sQ[10].CLK
+d => sQ[10].DATAIN
+Q[0] <= Q.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q.DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= Q.DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= Q.DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= Q.DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= Q.DB_MAX_OUTPUT_PORT_TYPE
+Q[8] <= Q.DB_MAX_OUTPUT_PORT_TYPE
+Q[9] <= Q.DB_MAX_OUTPUT_PORT_TYPE
+Q[10] <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|UART|Reciever:U2|Parity_Checker:U3
+inpt => Q.ENA
+clk => Q.CLK
+rst => Q.ACLR
+Pstate <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+

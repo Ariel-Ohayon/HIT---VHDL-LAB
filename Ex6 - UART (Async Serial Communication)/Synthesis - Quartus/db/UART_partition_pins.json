@@ -1,0 +1,89 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "tx",
+					"strict" : false
+				},
+				{
+					"name" : "parallelout[0]",
+					"strict" : false
+				},
+				{
+					"name" : "parallelout[1]",
+					"strict" : false
+				},
+				{
+					"name" : "parallelout[2]",
+					"strict" : false
+				},
+				{
+					"name" : "parallelout[3]",
+					"strict" : false
+				},
+				{
+					"name" : "parallelout[4]",
+					"strict" : false
+				},
+				{
+					"name" : "parallelout[5]",
+					"strict" : false
+				},
+				{
+					"name" : "parallelout[6]",
+					"strict" : false
+				},
+				{
+					"name" : "parallelout[7]",
+					"strict" : false
+				},
+				{
+					"name" : "parallelin[7]",
+					"strict" : false
+				},
+				{
+					"name" : "parallelin[6]",
+					"strict" : false
+				},
+				{
+					"name" : "parallelin[5]",
+					"strict" : false
+				},
+				{
+					"name" : "parallelin[4]",
+					"strict" : false
+				},
+				{
+					"name" : "parallelin[3]",
+					"strict" : false
+				},
+				{
+					"name" : "parallelin[2]",
+					"strict" : false
+				},
+				{
+					"name" : "parallelin[1]",
+					"strict" : false
+				},
+				{
+					"name" : "parallelin[0]",
+					"strict" : false
+				},
+				{
+					"name" : "go",
+					"strict" : false
+				},
+				{
+					"name" : "rx",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

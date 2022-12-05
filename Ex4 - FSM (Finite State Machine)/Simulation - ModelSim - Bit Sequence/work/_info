@@ -1,0 +1,84 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex4 - FSM (Finite State Machine)/Simulation - ModelSim - Bit Sequence
+Ebit_sequence_detection
+Z1 w1659081556
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8Bit_Sequence_Detection.vhd
+Z5 FBit_Sequence_Detection.vhd
+l0
+L4
+VLVG[b@M>K0zo@T2UFKnk>0
+!s100 de4P=oNQT?FQXAj92BF=E1
+Z6 OV;C;10.5b;63
+32
+Z7 !s110 1659081568
+!i10b 1
+Z8 !s108 1659081568.000000
+Z9 !s90 -reportprogress|300|Bit_Sequence_Detection.vhd|
+Z10 !s107 Bit_Sequence_Detection.vhd|
+!i113 1
+Z11 tExplicit 1 CvgOpt 0
+Afsm_mealy
+R2
+R3
+Z12 DEx4 work 22 bit_sequence_detection 0 22 LVG[b@M>K0zo@T2UFKnk>0
+l13
+L10
+V>_P8]:2Eh?7nd?D_7d3Wc0
+!s100 QDhiaOe>YGOFCgfa0;]lc1
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+Etb
+R1
+R2
+R3
+R0
+R4
+R5
+l0
+L36
+VRe;NJ[Iko6MdJTmkAQ66z3
+!s100 >>;YloLGVhEH3JS34A17`3
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+Aone
+R2
+R3
+Z13 DEx4 work 2 tb 0 22 Re;NJ[Iko6MdJTmkAQ66z3
+l47
+L38
+Z14 V@A5iUz45MH6Ug<^FgcTYl2
+Z15 !s100 3JM1VVF6LeZ>35gWmP[I^0
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11

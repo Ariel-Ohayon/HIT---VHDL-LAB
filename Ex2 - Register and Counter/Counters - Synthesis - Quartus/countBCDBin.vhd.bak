@@ -1,0 +1,32 @@
+library ieee;
+use ieee.std_logic_1164.all;
+entity countBCDBin is
+port(
+clr,ud,clk,en: in std_logic;
+disp: out std_logic(6 downto 0));
+end;
+
+architecture one of countBCDBin is
+
+-- / Components \ --
+component BinaryCounter
+port();
+end component;
+
+component BCDCounter
+port();
+end component;
+
+component mux
+port();
+end component;
+
+component Decoder7Segment
+port();
+end component;
+-- / Components \ --
+
+begin
+
+
+end;

@@ -1,0 +1,8 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity myDemux is
+port(
+inpt: in std_logic_vector();
+sel:  in std_logic_vector();
+y1,y2,y3,y4,y5: out std_logic_vector());

@@ -1,0 +1,227 @@
+|Full_Traffic_Light
+day => Traffic_Light:U1.day
+rst => Traffic_Light:U1.rst
+emergency => Q.CLK
+swclk => TLswclk.DATAIN
+swclk => Eswclk.DATAIN
+selclk => Traffic_Light:U1.selclk
+selclk => EmergencySystem:U2.selclk
+clk50 => TLclk.DATAIN
+clk50 => Eclk.DATAIN
+HEX0[0] << Traffic_Light:U1.Hex[0]
+HEX0[1] << Traffic_Light:U1.Hex[1]
+HEX0[2] << Traffic_Light:U1.Hex[2]
+HEX0[3] << Traffic_Light:U1.Hex[3]
+HEX0[4] << Traffic_Light:U1.Hex[4]
+HEX0[5] << Traffic_Light:U1.Hex[5]
+HEX0[6] << Traffic_Light:U1.Hex[6]
+HEX1[0] << HEX1.DB_MAX_OUTPUT_PORT_TYPE
+HEX1[1] << HEX1.DB_MAX_OUTPUT_PORT_TYPE
+HEX1[2] << HEX1.DB_MAX_OUTPUT_PORT_TYPE
+HEX1[3] << HEX1.DB_MAX_OUTPUT_PORT_TYPE
+HEX1[4] << HEX1.DB_MAX_OUTPUT_PORT_TYPE
+HEX1[5] << HEX1.DB_MAX_OUTPUT_PORT_TYPE
+HEX1[6] << HEX1.DB_MAX_OUTPUT_PORT_TYPE
+y1 << y1.DB_MAX_OUTPUT_PORT_TYPE
+y2 << y2.DB_MAX_OUTPUT_PORT_TYPE
+r1 << r1.DB_MAX_OUTPUT_PORT_TYPE
+r2 << Traffic_Light:U1.r2
+g1 << Traffic_Light:U1.g1
+g2 << g2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Full_Traffic_Light|Traffic_Light:U1
+swclk => sclk.DATAB
+selclk => sclk.OUTPUTSELECT
+day => ns.YY1.DATAB
+day => ns.YR.DATAB
+day => ns.GR.DATAB
+day => Selector0.IN3
+day => ns.RY.DATAB
+day => ns.RG.DATAB
+day => count.OUTPUTSELECT
+day => count.OUTPUTSELECT
+day => Selector1.IN1
+clk => Generator:Gen1.clkin
+rst => count[0].ACLR
+rst => count[1].ACLR
+rst => count[2].ACLR
+rst => count[3].ACLR
+rst => ps~3.DATAIN
+rst => iclk.ENA
+y1 <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+y2 <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+r1 <= r1.DB_MAX_OUTPUT_PORT_TYPE
+r2 <= r2.DB_MAX_OUTPUT_PORT_TYPE
+g1 <= g1.DB_MAX_OUTPUT_PORT_TYPE
+g2 <= g2.DB_MAX_OUTPUT_PORT_TYPE
+Hex[0] <= Decoder7Segment:Disp1.outpt[0]
+Hex[1] <= Decoder7Segment:Disp1.outpt[1]
+Hex[2] <= Decoder7Segment:Disp1.outpt[2]
+Hex[3] <= Decoder7Segment:Disp1.outpt[3]
+Hex[4] <= Decoder7Segment:Disp1.outpt[4]
+Hex[5] <= Decoder7Segment:Disp1.outpt[5]
+Hex[6] <= Decoder7Segment:Disp1.outpt[6]
+
+
+|Full_Traffic_Light|Traffic_Light:U1|Generator:Gen1
+clkin => clkout~reg0.CLK
+clkin => count[0].CLK
+clkin => count[1].CLK
+clkin => count[2].CLK
+clkin => count[3].CLK
+clkin => count[4].CLK
+clkin => count[5].CLK
+clkin => count[6].CLK
+clkin => count[7].CLK
+clkin => count[8].CLK
+clkin => count[9].CLK
+clkin => count[10].CLK
+clkin => count[11].CLK
+clkin => count[12].CLK
+clkin => count[13].CLK
+clkin => count[14].CLK
+clkin => count[15].CLK
+clkin => count[16].CLK
+clkin => count[17].CLK
+clkin => count[18].CLK
+clkin => count[19].CLK
+clkin => count[20].CLK
+clkin => count[21].CLK
+clkin => count[22].CLK
+clkin => count[23].CLK
+clkin => count[24].CLK
+clkin => count[25].CLK
+clkout <= clkout~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Full_Traffic_Light|Traffic_Light:U1|Decoder7Segment:Disp1
+inpt[0] => Mux0.IN19
+inpt[0] => Mux1.IN19
+inpt[0] => Mux2.IN19
+inpt[0] => Mux3.IN19
+inpt[0] => Mux4.IN19
+inpt[0] => Mux5.IN19
+inpt[0] => Mux6.IN19
+inpt[1] => Mux0.IN18
+inpt[1] => Mux1.IN18
+inpt[1] => Mux2.IN18
+inpt[1] => Mux3.IN18
+inpt[1] => Mux4.IN18
+inpt[1] => Mux5.IN18
+inpt[1] => Mux6.IN18
+inpt[2] => Mux0.IN17
+inpt[2] => Mux1.IN17
+inpt[2] => Mux2.IN17
+inpt[2] => Mux3.IN17
+inpt[2] => Mux4.IN17
+inpt[2] => Mux5.IN17
+inpt[2] => Mux6.IN17
+inpt[3] => Mux0.IN16
+inpt[3] => Mux1.IN16
+inpt[3] => Mux2.IN16
+inpt[3] => Mux3.IN16
+inpt[3] => Mux4.IN16
+inpt[3] => Mux5.IN16
+inpt[3] => Mux6.IN16
+outpt[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+outpt[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+outpt[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+outpt[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+outpt[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+outpt[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+outpt[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Full_Traffic_Light|EmergencySystem:U2
+Emerg => count[0].PRESET
+Emerg => count[1].ACLR
+Emerg => count[2].PRESET
+Emerg => count[3].ACLR
+Emerg => ps.ACLR
+Emerg => iclk.ENA
+clk => Generator:U.clkin
+swclk => sclk.DATAB
+selclk => sclk.OUTPUTSELECT
+y1 <= ps.DB_MAX_OUTPUT_PORT_TYPE
+y2 <= ps.DB_MAX_OUTPUT_PORT_TYPE
+r1 <= ps.DB_MAX_OUTPUT_PORT_TYPE
+g2 <= ps.DB_MAX_OUTPUT_PORT_TYPE
+HEX[0] <= Decoder7Segment:SEG.outpt[0]
+HEX[1] <= Decoder7Segment:SEG.outpt[1]
+HEX[2] <= Decoder7Segment:SEG.outpt[2]
+HEX[3] <= Decoder7Segment:SEG.outpt[3]
+HEX[4] <= Decoder7Segment:SEG.outpt[4]
+HEX[5] <= Decoder7Segment:SEG.outpt[5]
+HEX[6] <= Decoder7Segment:SEG.outpt[6]
+
+
+|Full_Traffic_Light|EmergencySystem:U2|Generator:U
+clkin => clkout~reg0.CLK
+clkin => count[0].CLK
+clkin => count[1].CLK
+clkin => count[2].CLK
+clkin => count[3].CLK
+clkin => count[4].CLK
+clkin => count[5].CLK
+clkin => count[6].CLK
+clkin => count[7].CLK
+clkin => count[8].CLK
+clkin => count[9].CLK
+clkin => count[10].CLK
+clkin => count[11].CLK
+clkin => count[12].CLK
+clkin => count[13].CLK
+clkin => count[14].CLK
+clkin => count[15].CLK
+clkin => count[16].CLK
+clkin => count[17].CLK
+clkin => count[18].CLK
+clkin => count[19].CLK
+clkin => count[20].CLK
+clkin => count[21].CLK
+clkin => count[22].CLK
+clkin => count[23].CLK
+clkin => count[24].CLK
+clkin => count[25].CLK
+clkout <= clkout~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Full_Traffic_Light|EmergencySystem:U2|Decoder7Segment:SEG
+inpt[0] => Mux0.IN19
+inpt[0] => Mux1.IN19
+inpt[0] => Mux2.IN19
+inpt[0] => Mux3.IN19
+inpt[0] => Mux4.IN19
+inpt[0] => Mux5.IN19
+inpt[0] => Mux6.IN19
+inpt[1] => Mux0.IN18
+inpt[1] => Mux1.IN18
+inpt[1] => Mux2.IN18
+inpt[1] => Mux3.IN18
+inpt[1] => Mux4.IN18
+inpt[1] => Mux5.IN18
+inpt[1] => Mux6.IN18
+inpt[2] => Mux0.IN17
+inpt[2] => Mux1.IN17
+inpt[2] => Mux2.IN17
+inpt[2] => Mux3.IN17
+inpt[2] => Mux4.IN17
+inpt[2] => Mux5.IN17
+inpt[2] => Mux6.IN17
+inpt[3] => Mux0.IN16
+inpt[3] => Mux1.IN16
+inpt[3] => Mux2.IN16
+inpt[3] => Mux3.IN16
+inpt[3] => Mux4.IN16
+inpt[3] => Mux5.IN16
+inpt[3] => Mux6.IN16
+outpt[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+outpt[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+outpt[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+outpt[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+outpt[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+outpt[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+outpt[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+

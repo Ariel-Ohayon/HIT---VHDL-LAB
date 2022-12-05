@@ -1,0 +1,26 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+
+entity ALU is
+port(
+A,B: in std_logic_vector (7 downto 0);
+sel: in std_logic_vector (2 downto 0);
+Ci:  in std_logic;
+outpt: out std_logic_vector(7 downto 0);
+);
+end;
+
+architecture one of ALU is
+begin
+with sel select
+outpt <= A and B 	  when "000",
+		 A xor B 	  when "001",
+		 A or  B 	  when "010",
+		 not A 	 	  when "011",
+		 A+Ci	 	  when "100",
+		 A+B+Ci  	  when "101",
+		 A+(not B)+Ci when "110";
+outpt <= A-1 when (sel = "111" and Ci = '0') else
+		 B   when (sel = "111" and Ci = '1');
+end;

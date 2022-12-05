@@ -1,0 +1,17 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+
+entity BCDCounter is
+port();
+end;
+
+architecture one of BCDCounter is
+begin
+
+process()
+begin
+
+end process;
+
+end;

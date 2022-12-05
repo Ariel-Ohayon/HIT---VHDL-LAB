@@ -1,0 +1,31 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity Recieve_Enable is
+port(
+rx,clk: in std_logic;
+En: out std_logic);
+end;
+
+architecture one of Recieve_Enable is
+signal count: integer range 0 to 52083:=0;
+begin
+process(clk)
+variable state: std_logic:='0';
+begin
+if (rx 'event and rx = '0') then
+	state := '1';
+end if;
+if (state = '1') then
+	if (clk 'event and clk = '1') then
+		if (count = 52083) then
+			count <= 0;
+			state := '0';
+		else
+			count <= count + 1;
+		end if;
+	end if;
+end if;
+En <= state;
+end process;
+end;

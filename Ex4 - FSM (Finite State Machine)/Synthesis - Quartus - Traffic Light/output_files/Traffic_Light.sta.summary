@@ -1,0 +1,281 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'Eclk'
+Slack : -3.261
+TNS   : -55.495
+
+Type  : Slow 1200mV 85C Model Setup 'TLclk'
+Slack : -2.680
+TNS   : -50.916
+
+Type  : Slow 1200mV 85C Model Setup 'selclk'
+Slack : -2.401
+TNS   : -6.988
+
+Type  : Slow 1200mV 85C Model Setup 'emergency'
+Slack : -0.623
+TNS   : -0.623
+
+Type  : Slow 1200mV 85C Model Setup 'Traffic_Light:U1|iclk'
+Slack : -0.069
+TNS   : -0.069
+
+Type  : Slow 1200mV 85C Model Setup 'EmergencySystem:U2|iclk'
+Slack : 0.210
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'selclk'
+Slack : 0.403
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Traffic_Light:U1|iclk'
+Slack : 0.408
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Eclk'
+Slack : 0.440
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'TLclk'
+Slack : 0.440
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'EmergencySystem:U2|iclk'
+Slack : 0.445
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'emergency'
+Slack : 0.687
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'EmergencySystem:U2|iclk'
+Slack : -1.577
+TNS   : -1.577
+
+Type  : Slow 1200mV 85C Model Recovery 'selclk'
+Slack : 2.734
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'selclk'
+Slack : -2.893
+TNS   : -11.572
+
+Type  : Slow 1200mV 85C Model Removal 'EmergencySystem:U2|iclk'
+Slack : 1.634
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'selclk'
+Slack : -3.000
+TNS   : -15.850
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'emergency'
+Slack : -3.000
+TNS   : -4.285
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Eclk'
+Slack : -1.285
+TNS   : -34.695
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'TLclk'
+Slack : -1.285
+TNS   : -34.695
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Traffic_Light:U1|iclk'
+Slack : -1.285
+TNS   : -8.995
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'EmergencySystem:U2|iclk'
+Slack : -1.285
+TNS   : -1.285
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Q'
+Slack : 0.415
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'Eclk'
+Slack : -2.933
+TNS   : -47.530
+
+Type  : Slow 1200mV 0C Model Setup 'TLclk'
+Slack : -2.321
+TNS   : -43.168
+
+Type  : Slow 1200mV 0C Model Setup 'selclk'
+Slack : -2.136
+TNS   : -5.505
+
+Type  : Slow 1200mV 0C Model Setup 'emergency'
+Slack : -0.454
+TNS   : -0.454
+
+Type  : Slow 1200mV 0C Model Setup 'Traffic_Light:U1|iclk'
+Slack : 0.037
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'EmergencySystem:U2|iclk'
+Slack : 0.297
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'selclk'
+Slack : 0.352
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Traffic_Light:U1|iclk'
+Slack : 0.365
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Eclk'
+Slack : 0.387
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'TLclk'
+Slack : 0.387
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'EmergencySystem:U2|iclk'
+Slack : 0.398
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'emergency'
+Slack : 0.559
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'EmergencySystem:U2|iclk'
+Slack : -1.296
+TNS   : -1.296
+
+Type  : Slow 1200mV 0C Model Recovery 'selclk'
+Slack : 2.660
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'selclk'
+Slack : -2.747
+TNS   : -10.988
+
+Type  : Slow 1200mV 0C Model Removal 'EmergencySystem:U2|iclk'
+Slack : 1.413
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'selclk'
+Slack : -3.000
+TNS   : -15.850
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'emergency'
+Slack : -3.000
+TNS   : -4.285
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Eclk'
+Slack : -1.285
+TNS   : -34.695
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'TLclk'
+Slack : -1.285
+TNS   : -34.695
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Traffic_Light:U1|iclk'
+Slack : -1.285
+TNS   : -8.995
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'EmergencySystem:U2|iclk'
+Slack : -1.285
+TNS   : -1.285
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Q'
+Slack : 0.426
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'Eclk'
+Slack : -1.117
+TNS   : -14.498
+
+Type  : Fast 1200mV 0C Model Setup 'selclk'
+Slack : -0.924
+TNS   : -1.711
+
+Type  : Fast 1200mV 0C Model Setup 'TLclk'
+Slack : -0.886
+TNS   : -12.121
+
+Type  : Fast 1200mV 0C Model Setup 'emergency'
+Slack : -0.165
+TNS   : -0.165
+
+Type  : Fast 1200mV 0C Model Setup 'Traffic_Light:U1|iclk'
+Slack : 0.482
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'EmergencySystem:U2|iclk'
+Slack : 0.626
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'selclk'
+Slack : 0.181
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Traffic_Light:U1|iclk'
+Slack : 0.189
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Eclk'
+Slack : 0.201
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'TLclk'
+Slack : 0.201
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'EmergencySystem:U2|iclk'
+Slack : 0.208
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'emergency'
+Slack : 0.415
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'EmergencySystem:U2|iclk'
+Slack : -0.680
+TNS   : -0.680
+
+Type  : Fast 1200mV 0C Model Recovery 'selclk'
+Slack : 1.490
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'selclk'
+Slack : -1.389
+TNS   : -5.556
+
+Type  : Fast 1200mV 0C Model Removal 'EmergencySystem:U2|iclk'
+Slack : 0.910
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'selclk'
+Slack : -3.000
+TNS   : -15.600
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'emergency'
+Slack : -3.000
+TNS   : -4.139
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Eclk'
+Slack : -1.000
+TNS   : -27.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'TLclk'
+Slack : -1.000
+TNS   : -27.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Traffic_Light:U1|iclk'
+Slack : -1.000
+TNS   : -7.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'EmergencySystem:U2|iclk'
+Slack : -1.000
+TNS   : -1.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Q'
+Slack : 0.434
+TNS   : 0.000
+
+------------------------------------------------------------

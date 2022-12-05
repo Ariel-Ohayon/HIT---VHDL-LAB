@@ -1,0 +1,17 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity Decoder_7Segment is
+port(
+
+);
+end;
+
+
+architecture one of Decoder_7Segment is
+begin
+process()
+begin
+
+end process;
+end;

@@ -1,0 +1,75 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\ariel\Desktop\works\HIT\VHDL Lab\Ex1\Simulation - ModelSim
+Edecoder_7segment
+Z1 w1657178695
+Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z4 dC:\Users\ariel\Desktop\works\HIT\VHDL Lab\Ex1\Simulation - ModelSim
+Z5 8Mux_5_To_1.vhd
+Z6 FMux_5_To_1.vhd
+l0
+L31
+V[g0=80U8c6@7CBA45cA8B0
+!s100 [3ccKVm>1TYg9>ziQ21iI2
+Z7 OV;C;10.1d;51
+32
+!i10b 1
+Z8 !s108 1657178709.809000
+Z9 !s90 -reportprogress|300|Mux_5_To_1.vhd|
+Z10 !s107 Mux_5_To_1.vhd|
+o-O0
+Z11 tExplicit 1
+Aone
+R2
+R3
+DEx4 work 16 decoder_7segment 0 22 [g0=80U8c6@7CBA45cA8B0
+l38
+L37
+V;oo9VJnfkCXMII^TY;09=3
+!s100 d85?W=Mkm[H61I23kL]mB0
+R7
+32
+!i10b 1
+R8
+R9
+R10
+o-O0
+R11
+Emux_5_to_1
+R1
+R2
+R3
+R4
+R5
+R6
+l0
+L4
+VDheVU6S=F6Um6TIWF>nNe0
+!s100 Q6bk1<n@agEG;HELkG6Nm0
+R7
+32
+!i10b 1
+R8
+R9
+R10
+o-O0
+R11
+Aone
+R2
+R3
+Z12 DEx4 work 10 mux_5_to_1 0 22 DheVU6S=F6Um6TIWF>nNe0
+l17
+L16
+Z13 V34^`?`D7g>c]@7Z>JQG=m3
+Z14 !s100 F9LBKfQ<:IzM>j5McSjFF2
+R7
+32
+!i10b 1
+R8
+R9
+R10
+o-O0
+R11

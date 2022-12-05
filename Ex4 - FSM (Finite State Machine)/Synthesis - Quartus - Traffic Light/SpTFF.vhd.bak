@@ -1,0 +1,13 @@
+library ieee;
+use ieee.std_Logic_1164.all;
+
+entity SpTFF is
+port(
+
+);
+end;
+
+architecture one of spTFF is
+begin
+
+end;

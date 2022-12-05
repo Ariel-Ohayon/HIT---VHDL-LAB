@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Wed Jul 20 15:15:34 2022
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : Counters
+Top-level Entity Name : DecCounter
+Family : Cyclone IV E
+Total logic elements : 50
+    Total combinational functions : 50
+    Dedicated logic registers : 16
+Total registers : 16
+Total pins : 36
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

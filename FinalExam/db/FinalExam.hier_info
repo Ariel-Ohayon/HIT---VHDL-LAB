@@ -1,0 +1,101 @@
+|Q2
+clk => shiftreg:U1.clk
+clk => en.CLK
+clk => counter:U2.clk
+rst => shiftreg:U1.rst
+datain => en.OUTPUTSELECT
+datain => shiftreg:U1.datain
+datain => en.OUTPUTSELECT
+dat[0] << shiftreg:U1.dataout[1]
+dat[1] << shiftreg:U1.dataout[2]
+dat[2] << shiftreg:U1.dataout[3]
+dat[3] << shiftreg:U1.dataout[4]
+dat[4] << shiftreg:U1.dataout[5]
+dat[5] << shiftreg:U1.dataout[6]
+dat[6] << shiftreg:U1.dataout[7]
+dat[7] << shiftreg:U1.dataout[8]
+rdy << rdy.DB_MAX_OUTPUT_PORT_TYPE
+fe << comb.DB_MAX_OUTPUT_PORT_TYPE
+pe << Paritychecker:U3.res
+
+
+|Q2|shiftreg:U1
+datain => dataout[10]~reg0.DATAIN
+en => dataout[10]~reg0.ENA
+en => dataout[9]~reg0.ENA
+en => dataout[8]~reg0.ENA
+en => dataout[7]~reg0.ENA
+en => dataout[6]~reg0.ENA
+en => dataout[5]~reg0.ENA
+en => dataout[4]~reg0.ENA
+en => dataout[3]~reg0.ENA
+en => dataout[2]~reg0.ENA
+en => dataout[1]~reg0.ENA
+en => dataout[0]~reg0.ENA
+rst => dataout[0]~reg0.ACLR
+rst => dataout[1]~reg0.ACLR
+rst => dataout[2]~reg0.ACLR
+rst => dataout[3]~reg0.ACLR
+rst => dataout[4]~reg0.ACLR
+rst => dataout[5]~reg0.ACLR
+rst => dataout[6]~reg0.ACLR
+rst => dataout[7]~reg0.ACLR
+rst => dataout[8]~reg0.ACLR
+rst => dataout[9]~reg0.ACLR
+rst => dataout[10]~reg0.ACLR
+clk => dataout[0]~reg0.CLK
+clk => dataout[1]~reg0.CLK
+clk => dataout[2]~reg0.CLK
+clk => dataout[3]~reg0.CLK
+clk => dataout[4]~reg0.CLK
+clk => dataout[5]~reg0.CLK
+clk => dataout[6]~reg0.CLK
+clk => dataout[7]~reg0.CLK
+clk => dataout[8]~reg0.CLK
+clk => dataout[9]~reg0.CLK
+clk => dataout[10]~reg0.CLK
+dataout[0] <= dataout[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dataout[1] <= dataout[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dataout[2] <= dataout[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dataout[3] <= dataout[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dataout[4] <= dataout[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dataout[5] <= dataout[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dataout[6] <= dataout[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dataout[7] <= dataout[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dataout[8] <= dataout[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dataout[9] <= dataout[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dataout[10] <= dataout[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Q2|counter:U2
+clk => Q[0]~reg0.CLK
+clk => Q[1]~reg0.CLK
+clk => Q[2]~reg0.CLK
+clk => Q[3]~reg0.CLK
+en => Q[0]~reg0.ENA
+en => Q[1]~reg0.ENA
+en => Q[2]~reg0.ENA
+en => Q[3]~reg0.ENA
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ud => Q.OUTPUTSELECT
+ud => Q.OUTPUTSELECT
+ud => Q.OUTPUTSELECT
+ud => Q.OUTPUTSELECT
+
+
+|Q2|Paritychecker:U3
+data[0] => par.IN1
+data[1] => par.IN1
+data[2] => par.IN1
+data[3] => par.IN1
+data[4] => par.IN1
+data[5] => par.IN1
+data[6] => par.IN1
+data[7] => par.IN0
+data[8] => par.IN1
+res <= par.DB_MAX_OUTPUT_PORT_TYPE
+
+

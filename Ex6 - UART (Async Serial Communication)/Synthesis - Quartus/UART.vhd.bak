@@ -1,0 +1,13 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity UART is
+port(
+
+);
+end;
+
+architecture one of UART is
+begin
+
+end;

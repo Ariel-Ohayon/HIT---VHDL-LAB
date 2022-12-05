@@ -1,0 +1,15 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+
+entity BinaryCounter is
+port(
+inpt: in std_logic_vector(3 downto 0);
+En,clk,UD: in std_logic;
+outpt: out std_logic(3 downto 0));
+end;
+
+architecture one of BinaryCounter is
+begin
+
+end;

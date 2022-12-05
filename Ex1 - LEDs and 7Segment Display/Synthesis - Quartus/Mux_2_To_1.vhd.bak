@@ -1,0 +1,8 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity Mux_2_To_1 is
+generic(N := 3);
+port(
+input: in std_logic_vector(n-1 downto 0);
+);

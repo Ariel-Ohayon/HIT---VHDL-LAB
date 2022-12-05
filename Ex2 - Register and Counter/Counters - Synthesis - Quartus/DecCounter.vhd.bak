@@ -1,0 +1,15 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity DecCounter is
+port(
+inpt: in std_logic_vector(3 downto 0);
+clk,En: in std_logic;
+outpt: out std_logic_vector(7 downto 0);
+disp1,disp2: out std_logic_vector(6 downto 0));
+end;
+
+architecture one of DecCounter is
+begin
+
+end;

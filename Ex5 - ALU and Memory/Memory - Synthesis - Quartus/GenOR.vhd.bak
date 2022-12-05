@@ -1,0 +1,9 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity GenOR is
+Generic(N:integer := 2);
+port(
+inpt: in std_Logic_vector();
+outpt: out std_logic);
+end;

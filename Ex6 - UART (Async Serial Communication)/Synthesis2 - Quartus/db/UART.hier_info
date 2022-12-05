@@ -1,0 +1,106 @@
+|Transmitter
+data[0] => PISO:U1.data[1]
+data[0] => parity_gen:U3.inpt[0]
+data[1] => PISO:U1.data[2]
+data[1] => parity_gen:U3.inpt[1]
+data[2] => PISO:U1.data[3]
+data[2] => parity_gen:U3.inpt[2]
+data[3] => PISO:U1.data[4]
+data[3] => parity_gen:U3.inpt[3]
+data[4] => PISO:U1.data[5]
+data[4] => parity_gen:U3.inpt[4]
+data[5] => PISO:U1.data[6]
+data[5] => parity_gen:U3.inpt[5]
+data[6] => PISO:U1.data[7]
+data[6] => parity_gen:U3.inpt[6]
+data[7] => PISO:U1.data[8]
+data[7] => parity_gen:U3.inpt[7]
+clk => generator:U2.clkin
+parity_type => Parity.IN1
+go => PISO:U1.sel
+txd <= PISO:U1.Q
+txrdy <= PISO:U1.txrdy
+txe <= PISO:U1.txe
+
+
+|Transmitter|PISO:U1
+data[0] => sq.DATAB
+data[0] => Equal0.IN10
+data[1] => sq.DATAB
+data[1] => Equal0.IN9
+data[2] => sq.DATAB
+data[2] => Equal0.IN8
+data[3] => sq.DATAB
+data[3] => Equal0.IN7
+data[4] => sq.DATAB
+data[4] => Equal0.IN6
+data[5] => sq.DATAB
+data[5] => Equal0.IN5
+data[6] => sq.DATAB
+data[6] => Equal0.IN4
+data[7] => sq.DATAB
+data[7] => Equal0.IN3
+data[8] => sq.DATAB
+data[8] => Equal0.IN2
+data[9] => sq.DATAB
+data[9] => Equal0.IN1
+data[10] => sq.DATAB
+data[10] => Equal0.IN0
+clk => stxrdy.CLK
+clk => sq[0].CLK
+clk => sq[1].CLK
+clk => sq[2].CLK
+clk => sq[3].CLK
+clk => sq[4].CLK
+clk => sq[5].CLK
+clk => sq[6].CLK
+clk => sq[7].CLK
+clk => sq[8].CLK
+clk => sq[9].CLK
+clk => sq[10].CLK
+sel => sq.OUTPUTSELECT
+sel => sq.OUTPUTSELECT
+sel => sq.OUTPUTSELECT
+sel => sq.OUTPUTSELECT
+sel => sq.OUTPUTSELECT
+sel => sq.OUTPUTSELECT
+sel => sq.OUTPUTSELECT
+sel => sq.OUTPUTSELECT
+sel => sq.OUTPUTSELECT
+sel => sq.OUTPUTSELECT
+sel => sq.OUTPUTSELECT
+Q <= sq[0].DB_MAX_OUTPUT_PORT_TYPE
+txe <= x.DB_MAX_OUTPUT_PORT_TYPE
+txrdy <= stxrdy.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Transmitter|Generator:U2
+clkin => clkout~reg0.CLK
+clkin => count[0].CLK
+clkin => count[1].CLK
+clkin => count[2].CLK
+clkin => count[3].CLK
+clkin => count[4].CLK
+clkin => count[5].CLK
+clkin => count[6].CLK
+clkin => count[7].CLK
+clkin => count[8].CLK
+clkin => count[9].CLK
+clkin => count[10].CLK
+clkin => count[11].CLK
+clkin => count[12].CLK
+clkout <= clkout~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Transmitter|Parity_Gen:U3
+inpt[0] => x.IN0
+inpt[1] => x.IN1
+inpt[2] => x.IN1
+inpt[3] => x.IN1
+inpt[4] => x.IN1
+inpt[5] => x.IN1
+inpt[6] => x.IN1
+inpt[7] => x.IN1
+outpt <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+

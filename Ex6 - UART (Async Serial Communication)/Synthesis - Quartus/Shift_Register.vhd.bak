@@ -1,0 +1,16 @@
+library ieee;
+use ieee.std_Logic_1164.all;
+
+entity Shift_Register is
+generic(Bits: integer := 8)
+port(
+rst,clk,d:in std_logic;
+Q:out std_logic_vector();
+);
+end;
+
+architecture one of Shift_Register is
+
+begin
+
+end;

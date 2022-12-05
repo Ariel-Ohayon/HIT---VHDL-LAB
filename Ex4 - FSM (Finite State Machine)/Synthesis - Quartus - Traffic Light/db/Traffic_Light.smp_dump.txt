@@ -1,0 +1,10 @@
+
+State Machine - |Full_Traffic_Light|Traffic_Light:U1|ps
+Name ps.NN ps.RG ps.RY ps.YY2 ps.GR ps.YR ps.YY1 
+ps.YY1 0 0 0 0 0 0 0 
+ps.YR 0 0 0 0 0 1 1 
+ps.GR 0 0 0 0 1 0 1 
+ps.YY2 0 0 0 1 0 0 1 
+ps.RY 0 0 1 0 0 0 1 
+ps.RG 0 1 0 0 0 0 1 
+ps.NN 1 0 0 0 0 0 1 

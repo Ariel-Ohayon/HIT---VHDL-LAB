@@ -1,0 +1,34 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity RAM is
+generic(
+Bits: integer := 8;
+Regs: integer := 2; -- Number of registers = Regs^2 (Regs^2 - 1 downto 0)
+);
+port(
+Rst,clk: in std_logic;
+En: in std_logic_vector(Regs-1 downto 0);
+inpt: in std_logic_vector(Bits-1 downto 0);
+outpt: out std_logic_vector(Bits-1 downto 0));
+end;
+
+architecture one of RAM is
+
+component RegisterNbits
+generic(N: integer := 8);
+port(
+Rst,En,clk: in  std_logic;
+inpt:       in  std_logic_vector(N-1 downto 0);
+outpt:      out std_logic_vector(N-1 downto 0));
+end component;
+
+signal sEn:  std_logic_vector ( ( (Regs**2) - 1) downto 0 );
+signal sout: std_logic_vector(Regs**2 - 1 downto 0);
+
+begin
+Gen: for i in 0 to ((Regs**2) - 1) generate
+Reg: RegisterNbits generic map (Bits) port map (Rst,sEn(i),clk,inpt,outpt);
+end Generate;
+sEn <= 
+end;

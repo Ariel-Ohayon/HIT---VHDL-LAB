@@ -1,0 +1,21 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+
+entity FA_4Bits is
+port();
+end;
+
+architecture one of FA_4Bits is
+begin
+
+end;
+
+-- / Full Adder \ --
+entity FA is
+port();
+end;
+architecture one of FA is
+begin
+
+end;

@@ -1,0 +1,221 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'Pclk'
+Slack : -8.972
+TNS   : -1188.602
+
+Type  : Slow 1200mV 85C Model Setup 'MPU:U3|ControlUnit:U0|Enrun'
+Slack : -4.131
+TNS   : -51.438
+
+Type  : Slow 1200mV 85C Model Setup 'rst'
+Slack : -2.862
+TNS   : -30.703
+
+Type  : Slow 1200mV 85C Model Setup 'Mclk'
+Slack : -1.103
+TNS   : -6.098
+
+Type  : Slow 1200mV 85C Model Hold 'Pclk'
+Slack : -0.213
+TNS   : -0.257
+
+Type  : Slow 1200mV 85C Model Hold 'Mclk'
+Slack : 0.408
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'rst'
+Slack : 0.750
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'MPU:U3|ControlUnit:U0|Enrun'
+Slack : 1.899
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'MPU:U3|ControlUnit:U0|Enrun'
+Slack : -1.670
+TNS   : -1.670
+
+Type  : Slow 1200mV 85C Model Recovery 'Pclk'
+Slack : 0.083
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'Mclk'
+Slack : 0.240
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'Pclk'
+Slack : -1.123
+TNS   : -32.450
+
+Type  : Slow 1200mV 85C Model Removal 'Mclk'
+Slack : -0.185
+TNS   : -1.480
+
+Type  : Slow 1200mV 85C Model Removal 'MPU:U3|ControlUnit:U0|Enrun'
+Slack : 0.910
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Pclk'
+Slack : -3.000
+TNS   : -222.735
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Mclk'
+Slack : -3.000
+TNS   : -18.666
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'rst'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'MPU:U3|ControlUnit:U0|Enrun'
+Slack : 0.441
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'Pclk'
+Slack : -8.085
+TNS   : -1078.323
+
+Type  : Slow 1200mV 0C Model Setup 'MPU:U3|ControlUnit:U0|Enrun'
+Slack : -3.801
+TNS   : -47.637
+
+Type  : Slow 1200mV 0C Model Setup 'rst'
+Slack : -2.609
+TNS   : -28.043
+
+Type  : Slow 1200mV 0C Model Setup 'Mclk'
+Slack : -0.881
+TNS   : -4.728
+
+Type  : Slow 1200mV 0C Model Hold 'Pclk'
+Slack : -0.213
+TNS   : -0.276
+
+Type  : Slow 1200mV 0C Model Hold 'Mclk'
+Slack : 0.365
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'rst'
+Slack : 0.718
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'MPU:U3|ControlUnit:U0|Enrun'
+Slack : 1.813
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'MPU:U3|ControlUnit:U0|Enrun'
+Slack : -1.526
+TNS   : -1.526
+
+Type  : Slow 1200mV 0C Model Recovery 'Pclk'
+Slack : 0.152
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'Mclk'
+Slack : 0.255
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'Pclk'
+Slack : -1.041
+TNS   : -31.296
+
+Type  : Slow 1200mV 0C Model Removal 'Mclk'
+Slack : -0.182
+TNS   : -1.456
+
+Type  : Slow 1200mV 0C Model Removal 'MPU:U3|ControlUnit:U0|Enrun'
+Slack : 0.939
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Pclk'
+Slack : -3.000
+TNS   : -222.735
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Mclk'
+Slack : -3.000
+TNS   : -18.578
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'rst'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'MPU:U3|ControlUnit:U0|Enrun'
+Slack : 0.335
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'Pclk'
+Slack : -4.522
+TNS   : -595.210
+
+Type  : Fast 1200mV 0C Model Setup 'MPU:U3|ControlUnit:U0|Enrun'
+Slack : -1.873
+TNS   : -22.329
+
+Type  : Fast 1200mV 0C Model Setup 'rst'
+Slack : -0.932
+TNS   : -8.216
+
+Type  : Fast 1200mV 0C Model Setup 'Mclk'
+Slack : -0.335
+TNS   : -0.365
+
+Type  : Fast 1200mV 0C Model Hold 'Pclk'
+Slack : 0.057
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Mclk'
+Slack : 0.185
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'rst'
+Slack : 0.187
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'MPU:U3|ControlUnit:U0|Enrun'
+Slack : 1.094
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'MPU:U3|ControlUnit:U0|Enrun'
+Slack : -0.566
+TNS   : -0.566
+
+Type  : Fast 1200mV 0C Model Recovery 'Pclk'
+Slack : -0.066
+TNS   : -10.801
+
+Type  : Fast 1200mV 0C Model Recovery 'Mclk'
+Slack : 0.716
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'Pclk'
+Slack : -0.660
+TNS   : -23.518
+
+Type  : Fast 1200mV 0C Model Removal 'Mclk'
+Slack : -0.135
+TNS   : -1.080
+
+Type  : Fast 1200mV 0C Model Removal 'MPU:U3|ControlUnit:U0|Enrun'
+Slack : 0.571
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Pclk'
+Slack : -3.000
+TNS   : -183.400
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Mclk'
+Slack : -3.000
+TNS   : -14.034
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'rst'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'MPU:U3|ControlUnit:U0|Enrun'
+Slack : 0.333
+TNS   : 0.000
+
+------------------------------------------------------------

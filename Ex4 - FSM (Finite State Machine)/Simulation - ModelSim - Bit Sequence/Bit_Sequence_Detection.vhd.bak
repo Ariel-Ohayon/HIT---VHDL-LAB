@@ -1,0 +1,92 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity Bit_Sequence_Detection is
+port(
+clk,din,reset: in std_logic;
+Q: out std_logic);
+end;
+
+architecture FSM_Mealy of Bit_Sequence_Detection is
+type state is (s0,s1,s2,s3);
+signal ns,ps: state;
+begin
+process(clk,reset)
+begin
+if (reset = '0') then ps<=s0;
+elsif (clk 'event and clk = '1') then ps<=ns; end if;
+end process;
+process(ps,din)
+begin
+case ps is
+when s0 => Q<='0'; if (din = '1') then ns <= s1; 	   else ns <= s0;           end if;
+when s1 => Q<='0'; if (din = '0') then ns <= s2; 	   else ns <= s1;           end if;
+when s2 => Q<='0'; if (din = '1') then ns <= s3;           else ns <= s0;           end if;
+when s3 => if (din = '1') then ns <= s1; Q <= '1'; else ns <= s2; Q <= '0'; end if;
+end case;
+
+end process;
+end;
+
+
+-- / Test Bench \ --
+library ieee;
+use ieee.std_Logic_1164.all;
+
+entity TB is end;
+
+architecture one of TB is
+
+component Bit_Sequence_Detection 
+port(clk,din,reset: in std_logic;
+Q: out std_logic);
+end component;
+
+signal sclk,sdin,sreset,sQ: std_logic;
+
+begin
+
+U: Bit_Sequence_Detection port map (sclk,sdin,sreset,sQ);
+
+process
+begin
+sclk <= '1'; wait for 50ps;
+sclk <= '0'; wait for 50ps;
+end process;
+
+process
+begin
+sdin <= '0';
+-- Reset detection --
+sreset <= '0';
+wait for 110ps;
+sreset <= '1';
+-- Reset detection --
+
+-- sequence --
+wait for 70ps;
+sdin <= '1';
+wait for 100ps; -- 270ps
+assert not (sQ = '1') report "state s0 failed" severity error;
+sdin <= '0';
+wait for 100ps; -- 370ps
+assert not (sQ = '1') report "state s1 failed" severity error;
+sdin <= '1';
+wait for 200ps; -- 570ps
+assert not (sQ = '1') report "state s2 failed" severity error;
+sdin <= '0';
+wait for 100ps; -- 670ps
+assert not (sQ = '1') report "state s3 failed" severity error;
+sdin <= '1';
+wait for 300ps; -- 970ps
+assert not (sQ = '1') report "state s2 failed" severity error;
+sdin <= '0';
+wait for 100ps;-- 1070ps
+assert not (sQ = '1') report "state s3 failed" severity error;
+sdin <= '1';
+wait for 130ps; -- 1200ps
+assert not (sQ = '0') report "The test had been succesfull" severity note;
+-- sequence --
+
+end process;
+end;

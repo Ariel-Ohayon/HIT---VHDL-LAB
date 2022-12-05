@@ -1,0 +1,1351 @@
+Timing Analyzer report for UART
+Mon Aug 15 23:36:28 2022
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow 1200mV 85C Model Fmax Summary
+  6. Timing Closure Recommendations
+  7. Slow 1200mV 85C Model Setup Summary
+  8. Slow 1200mV 85C Model Hold Summary
+  9. Slow 1200mV 85C Model Recovery Summary
+ 10. Slow 1200mV 85C Model Removal Summary
+ 11. Slow 1200mV 85C Model Minimum Pulse Width Summary
+ 12. Slow 1200mV 85C Model Setup: 'clk'
+ 13. Slow 1200mV 85C Model Setup: 'Generator:U2|clkout'
+ 14. Slow 1200mV 85C Model Hold: 'Generator:U2|clkout'
+ 15. Slow 1200mV 85C Model Hold: 'clk'
+ 16. Slow 1200mV 85C Model Metastability Summary
+ 17. Slow 1200mV 0C Model Fmax Summary
+ 18. Slow 1200mV 0C Model Setup Summary
+ 19. Slow 1200mV 0C Model Hold Summary
+ 20. Slow 1200mV 0C Model Recovery Summary
+ 21. Slow 1200mV 0C Model Removal Summary
+ 22. Slow 1200mV 0C Model Minimum Pulse Width Summary
+ 23. Slow 1200mV 0C Model Setup: 'clk'
+ 24. Slow 1200mV 0C Model Setup: 'Generator:U2|clkout'
+ 25. Slow 1200mV 0C Model Hold: 'Generator:U2|clkout'
+ 26. Slow 1200mV 0C Model Hold: 'clk'
+ 27. Slow 1200mV 0C Model Metastability Summary
+ 28. Fast 1200mV 0C Model Setup Summary
+ 29. Fast 1200mV 0C Model Hold Summary
+ 30. Fast 1200mV 0C Model Recovery Summary
+ 31. Fast 1200mV 0C Model Removal Summary
+ 32. Fast 1200mV 0C Model Minimum Pulse Width Summary
+ 33. Fast 1200mV 0C Model Setup: 'clk'
+ 34. Fast 1200mV 0C Model Setup: 'Generator:U2|clkout'
+ 35. Fast 1200mV 0C Model Hold: 'Generator:U2|clkout'
+ 36. Fast 1200mV 0C Model Hold: 'clk'
+ 37. Fast 1200mV 0C Model Metastability Summary
+ 38. Multicorner Timing Analysis Summary
+ 39. Board Trace Model Assignments
+ 40. Input Transition Times
+ 41. Signal Integrity Metrics (Slow 1200mv 0c Model)
+ 42. Signal Integrity Metrics (Slow 1200mv 85c Model)
+ 43. Signal Integrity Metrics (Fast 1200mv 0c Model)
+ 44. Setup Transfers
+ 45. Hold Transfers
+ 46. Report TCCS
+ 47. Report RSKM
+ 48. Unconstrained Paths Summary
+ 49. Clock Status Summary
+ 50. Unconstrained Input Ports
+ 51. Unconstrained Output Ports
+ 52. Unconstrained Input Ports
+ 53. Unconstrained Output Ports
+ 54. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                     ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                              ;
+; Revision Name         ; UART                                                ;
+; Device Family         ; Cyclone IV E                                        ;
+; Device Name           ; EP4CE115F29C7                                       ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Combined                                            ;
+; Rise/Fall Delays      ; Enabled                                             ;
++-----------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.01        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.2%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                   ;
++---------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------+
+; Clock Name          ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                 ;
++---------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------+
+; clk                 ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk }                 ;
+; Generator:U2|clkout ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { Generator:U2|clkout } ;
++---------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary                                                                  ;
++------------+-----------------+---------------------+------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name          ; Note                                           ;
++------------+-----------------+---------------------+------------------------------------------------+
+; 234.8 MHz  ; 234.8 MHz       ; clk                 ;                                                ;
+; 955.11 MHz ; 437.64 MHz      ; Generator:U2|clkout ; limit due to minimum period restriction (tmin) ;
++------------+-----------------+---------------------+------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
+----------------------------------
+; Timing Closure Recommendations ;
+----------------------------------
+HTML report is unavailable in plain text report export.
+
+
++----------------------------------------------+
+; Slow 1200mV 85C Model Setup Summary          ;
++---------------------+--------+---------------+
+; Clock               ; Slack  ; End Point TNS ;
++---------------------+--------+---------------+
+; clk                 ; -3.259 ; -22.142       ;
+; Generator:U2|clkout ; -0.047 ; -0.047        ;
++---------------------+--------+---------------+
+
+
++---------------------------------------------+
+; Slow 1200mV 85C Model Hold Summary          ;
++---------------------+-------+---------------+
+; Clock               ; Slack ; End Point TNS ;
++---------------------+-------+---------------+
+; Generator:U2|clkout ; 0.435 ; 0.000         ;
+; clk                 ; 0.654 ; 0.000         ;
++---------------------+-------+---------------+
+
+
+------------------------------------------
+; Slow 1200mV 85C Model Recovery Summary ;
+------------------------------------------
+No paths to report.
+
+
+-----------------------------------------
+; Slow 1200mV 85C Model Removal Summary ;
+-----------------------------------------
+No paths to report.
+
+
++---------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width Summary ;
++---------------------+--------+--------------------+
+; Clock               ; Slack  ; End Point TNS      ;
++---------------------+--------+--------------------+
+; clk                 ; -3.000 ; -20.990            ;
+; Generator:U2|clkout ; -1.285 ; -14.135            ;
++---------------------+--------+--------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'clk'                                                                                                    ;
++--------+------------------------+------------------------+---------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node              ; To Node                ; Launch Clock        ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------+------------------------+---------------------+-------------+--------------+------------+------------+
+; -3.259 ; Generator:U2|count[12] ; Generator:U2|clkout    ; clk                 ; clk         ; 1.000        ; -0.080     ; 4.177      ;
+; -3.175 ; Generator:U2|count[9]  ; Generator:U2|clkout    ; clk                 ; clk         ; 1.000        ; -0.080     ; 4.093      ;
+; -3.163 ; Generator:U2|count[3]  ; Generator:U2|clkout    ; clk                 ; clk         ; 1.000        ; -0.080     ; 4.081      ;
+; -3.152 ; Generator:U2|count[11] ; Generator:U2|clkout    ; clk                 ; clk         ; 1.000        ; -0.080     ; 4.070      ;
+; -3.113 ; Generator:U2|count[7]  ; Generator:U2|clkout    ; clk                 ; clk         ; 1.000        ; -0.080     ; 4.031      ;
+; -3.016 ; Generator:U2|count[10] ; Generator:U2|clkout    ; clk                 ; clk         ; 1.000        ; -0.081     ; 3.933      ;
+; -2.909 ; Generator:U2|count[1]  ; Generator:U2|clkout    ; clk                 ; clk         ; 1.000        ; -0.080     ; 3.827      ;
+; -2.907 ; Generator:U2|count[5]  ; Generator:U2|clkout    ; clk                 ; clk         ; 1.000        ; -0.080     ; 3.825      ;
+; -2.881 ; Generator:U2|count[6]  ; Generator:U2|clkout    ; clk                 ; clk         ; 1.000        ; -0.080     ; 3.799      ;
+; -2.802 ; Generator:U2|count[0]  ; Generator:U2|clkout    ; clk                 ; clk         ; 1.000        ; -0.080     ; 3.720      ;
+; -2.710 ; Generator:U2|count[8]  ; Generator:U2|clkout    ; clk                 ; clk         ; 1.000        ; -0.080     ; 3.628      ;
+; -2.645 ; Generator:U2|count[2]  ; Generator:U2|clkout    ; clk                 ; clk         ; 1.000        ; -0.080     ; 3.563      ;
+; -2.579 ; Generator:U2|count[4]  ; Generator:U2|clkout    ; clk                 ; clk         ; 1.000        ; -0.081     ; 3.496      ;
+; -2.235 ; Generator:U2|count[12] ; Generator:U2|count[0]  ; clk                 ; clk         ; 1.000        ; -0.081     ; 3.152      ;
+; -2.106 ; Generator:U2|count[11] ; Generator:U2|count[0]  ; clk                 ; clk         ; 1.000        ; -0.081     ; 3.023      ;
+; -2.035 ; Generator:U2|count[3]  ; Generator:U2|count[0]  ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.952      ;
+; -1.985 ; Generator:U2|count[7]  ; Generator:U2|count[0]  ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.902      ;
+; -1.909 ; Generator:U2|count[1]  ; Generator:U2|count[10] ; clk                 ; clk         ; 1.000        ; -0.080     ; 2.827      ;
+; -1.857 ; Generator:U2|count[1]  ; Generator:U2|count[12] ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.774      ;
+; -1.835 ; Generator:U2|count[5]  ; Generator:U2|count[0]  ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.752      ;
+; -1.828 ; Generator:U2|count[0]  ; Generator:U2|count[10] ; clk                 ; clk         ; 1.000        ; -0.080     ; 2.746      ;
+; -1.807 ; Generator:U2|count[12] ; Generator:U2|count[3]  ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.724      ;
+; -1.806 ; Generator:U2|count[12] ; Generator:U2|count[12] ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.723      ;
+; -1.806 ; Generator:U2|count[6]  ; Generator:U2|count[0]  ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.723      ;
+; -1.803 ; Generator:U2|count[12] ; Generator:U2|count[6]  ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.720      ;
+; -1.800 ; Generator:U2|count[10] ; Generator:U2|count[0]  ; clk                 ; clk         ; 1.000        ; -0.082     ; 2.716      ;
+; -1.795 ; Generator:U2|count[12] ; Generator:U2|count[4]  ; clk                 ; clk         ; 1.000        ; -0.080     ; 2.713      ;
+; -1.795 ; Generator:U2|count[12] ; Generator:U2|count[10] ; clk                 ; clk         ; 1.000        ; -0.080     ; 2.713      ;
+; -1.781 ; Generator:U2|count[1]  ; Generator:U2|count[0]  ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.698      ;
+; -1.780 ; Generator:U2|count[3]  ; Generator:U2|count[10] ; clk                 ; clk         ; 1.000        ; -0.080     ; 2.698      ;
+; -1.776 ; Generator:U2|count[0]  ; Generator:U2|count[12] ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.693      ;
+; -1.757 ; Generator:U2|count[9]  ; Generator:U2|count[0]  ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.674      ;
+; -1.740 ; Generator:U2|count[4]  ; Generator:U2|count[10] ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.657      ;
+; -1.728 ; Generator:U2|count[3]  ; Generator:U2|count[12] ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.645      ;
+; -1.709 ; Generator:U2|count[1]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 1.000        ; -0.080     ; 2.627      ;
+; -1.700 ; Generator:U2|count[11] ; Generator:U2|count[3]  ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.617      ;
+; -1.699 ; Generator:U2|count[11] ; Generator:U2|count[12] ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.616      ;
+; -1.696 ; Generator:U2|count[11] ; Generator:U2|count[6]  ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.613      ;
+; -1.691 ; Generator:U2|count[2]  ; Generator:U2|count[10] ; clk                 ; clk         ; 1.000        ; -0.080     ; 2.609      ;
+; -1.688 ; Generator:U2|count[4]  ; Generator:U2|count[12] ; clk                 ; clk         ; 1.000        ; -0.082     ; 2.604      ;
+; -1.688 ; Generator:U2|count[11] ; Generator:U2|count[4]  ; clk                 ; clk         ; 1.000        ; -0.080     ; 2.606      ;
+; -1.688 ; Generator:U2|count[11] ; Generator:U2|count[10] ; clk                 ; clk         ; 1.000        ; -0.080     ; 2.606      ;
+; -1.674 ; Generator:U2|count[0]  ; Generator:U2|count[0]  ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.591      ;
+; -1.650 ; Generator:U2|count[5]  ; Generator:U2|count[10] ; clk                 ; clk         ; 1.000        ; -0.080     ; 2.568      ;
+; -1.639 ; Generator:U2|count[2]  ; Generator:U2|count[12] ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.556      ;
+; -1.628 ; Generator:U2|count[0]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 1.000        ; -0.080     ; 2.546      ;
+; -1.599 ; Generator:U2|count[3]  ; Generator:U2|count[3]  ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.516      ;
+; -1.598 ; Generator:U2|count[5]  ; Generator:U2|count[12] ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.515      ;
+; -1.595 ; Generator:U2|count[3]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.512      ;
+; -1.580 ; Generator:U2|count[3]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 1.000        ; -0.080     ; 2.498      ;
+; -1.578 ; Generator:U2|count[7]  ; Generator:U2|count[3]  ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.495      ;
+; -1.577 ; Generator:U2|count[7]  ; Generator:U2|count[12] ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.494      ;
+; -1.574 ; Generator:U2|count[7]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.491      ;
+; -1.566 ; Generator:U2|count[7]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 1.000        ; -0.080     ; 2.484      ;
+; -1.566 ; Generator:U2|count[7]  ; Generator:U2|count[10] ; clk                 ; clk         ; 1.000        ; -0.080     ; 2.484      ;
+; -1.550 ; Generator:U2|count[4]  ; Generator:U2|count[0]  ; clk                 ; clk         ; 1.000        ; -0.082     ; 2.466      ;
+; -1.515 ; Generator:U2|count[2]  ; Generator:U2|count[0]  ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.432      ;
+; -1.491 ; Generator:U2|count[2]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 1.000        ; -0.080     ; 2.409      ;
+; -1.464 ; Generator:U2|count[8]  ; Generator:U2|count[0]  ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.381      ;
+; -1.459 ; Generator:U2|count[1]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.376      ;
+; -1.437 ; Generator:U2|count[5]  ; Generator:U2|count[3]  ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.354      ;
+; -1.433 ; Generator:U2|count[5]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.350      ;
+; -1.432 ; Generator:U2|count[6]  ; Generator:U2|count[10] ; clk                 ; clk         ; 1.000        ; -0.080     ; 2.350      ;
+; -1.425 ; Generator:U2|count[5]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 1.000        ; -0.080     ; 2.343      ;
+; -1.383 ; Generator:U2|count[9]  ; Generator:U2|count[10] ; clk                 ; clk         ; 1.000        ; -0.080     ; 2.301      ;
+; -1.380 ; Generator:U2|count[6]  ; Generator:U2|count[12] ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.297      ;
+; -1.378 ; Generator:U2|count[0]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.295      ;
+; -1.373 ; Generator:U2|count[0]  ; Generator:U2|count[11] ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.290      ;
+; -1.370 ; Generator:U2|count[6]  ; Generator:U2|count[3]  ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.287      ;
+; -1.366 ; Generator:U2|count[6]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.283      ;
+; -1.364 ; Generator:U2|count[10] ; Generator:U2|count[3]  ; clk                 ; clk         ; 1.000        ; -0.082     ; 2.280      ;
+; -1.364 ; Generator:U2|count[10] ; Generator:U2|count[12] ; clk                 ; clk         ; 1.000        ; -0.082     ; 2.280      ;
+; -1.361 ; Generator:U2|count[1]  ; Generator:U2|count[3]  ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.278      ;
+; -1.360 ; Generator:U2|count[10] ; Generator:U2|count[6]  ; clk                 ; clk         ; 1.000        ; -0.082     ; 2.276      ;
+; -1.359 ; Generator:U2|count[9]  ; Generator:U2|count[3]  ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.276      ;
+; -1.358 ; Generator:U2|count[9]  ; Generator:U2|count[12] ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.275      ;
+; -1.355 ; Generator:U2|count[9]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.272      ;
+; -1.347 ; Generator:U2|count[9]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 1.000        ; -0.080     ; 2.265      ;
+; -1.346 ; Generator:U2|count[6]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 1.000        ; -0.080     ; 2.264      ;
+; -1.343 ; Generator:U2|count[1]  ; Generator:U2|count[11] ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.260      ;
+; -1.339 ; Generator:U2|count[10] ; Generator:U2|count[4]  ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.256      ;
+; -1.339 ; Generator:U2|count[10] ; Generator:U2|count[10] ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.256      ;
+; -1.330 ; Generator:U2|count[4]  ; Generator:U2|count[11] ; clk                 ; clk         ; 1.000        ; -0.082     ; 2.246      ;
+; -1.296 ; Generator:U2|count[8]  ; Generator:U2|count[10] ; clk                 ; clk         ; 1.000        ; -0.080     ; 2.214      ;
+; -1.290 ; Generator:U2|count[4]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 1.000        ; -0.082     ; 2.206      ;
+; -1.270 ; Generator:U2|count[0]  ; Generator:U2|count[3]  ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.187      ;
+; -1.245 ; Generator:U2|count[2]  ; Generator:U2|count[11] ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.162      ;
+; -1.244 ; Generator:U2|count[8]  ; Generator:U2|count[12] ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.161      ;
+; -1.241 ; Generator:U2|count[0]  ; Generator:U2|count[9]  ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.158      ;
+; -1.241 ; Generator:U2|count[2]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.158      ;
+; -1.230 ; Generator:U2|count[1]  ; Generator:U2|count[8]  ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.147      ;
+; -1.214 ; Generator:U2|count[3]  ; Generator:U2|count[11] ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.131      ;
+; -1.211 ; Generator:U2|count[1]  ; Generator:U2|count[9]  ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.128      ;
+; -1.198 ; Generator:U2|count[4]  ; Generator:U2|count[9]  ; clk                 ; clk         ; 1.000        ; -0.082     ; 2.114      ;
+; -1.149 ; Generator:U2|count[0]  ; Generator:U2|count[8]  ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.066      ;
+; -1.129 ; Generator:U2|clkout    ; Generator:U2|clkout    ; Generator:U2|clkout ; clk         ; 0.500        ; 2.961      ; 4.810      ;
+; -1.117 ; Generator:U2|count[2]  ; Generator:U2|count[3]  ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.034      ;
+; -1.114 ; Generator:U2|count[4]  ; Generator:U2|count[3]  ; clk                 ; clk         ; 1.000        ; -0.082     ; 2.030      ;
+; -1.113 ; Generator:U2|count[2]  ; Generator:U2|count[9]  ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.030      ;
+; -1.112 ; Generator:U2|count[4]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 1.000        ; -0.081     ; 2.029      ;
++--------+------------------------+------------------------+---------------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'Generator:U2|clkout'                                                                           ;
++--------+----------------+---------------+---------------------+---------------------+--------------+------------+------------+
+; Slack  ; From Node      ; To Node       ; Launch Clock        ; Latch Clock         ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------+---------------+---------------------+---------------------+--------------+------------+------------+
+; -0.047 ; PISO:U1|sq[1]  ; PISO:U1|sq[0] ; Generator:U2|clkout ; Generator:U2|clkout ; 1.000        ; -0.080     ; 0.965      ;
+; 0.104  ; PISO:U1|sq[7]  ; PISO:U1|sq[6] ; Generator:U2|clkout ; Generator:U2|clkout ; 1.000        ; -0.080     ; 0.814      ;
+; 0.105  ; PISO:U1|sq[8]  ; PISO:U1|sq[7] ; Generator:U2|clkout ; Generator:U2|clkout ; 1.000        ; -0.080     ; 0.813      ;
+; 0.105  ; PISO:U1|sq[9]  ; PISO:U1|sq[8] ; Generator:U2|clkout ; Generator:U2|clkout ; 1.000        ; -0.080     ; 0.813      ;
+; 0.105  ; PISO:U1|sq[10] ; PISO:U1|sq[9] ; Generator:U2|clkout ; Generator:U2|clkout ; 1.000        ; -0.080     ; 0.813      ;
+; 0.107  ; PISO:U1|sq[5]  ; PISO:U1|sq[4] ; Generator:U2|clkout ; Generator:U2|clkout ; 1.000        ; -0.080     ; 0.811      ;
+; 0.114  ; PISO:U1|sq[4]  ; PISO:U1|sq[3] ; Generator:U2|clkout ; Generator:U2|clkout ; 1.000        ; -0.080     ; 0.804      ;
+; 0.116  ; PISO:U1|sq[3]  ; PISO:U1|sq[2] ; Generator:U2|clkout ; Generator:U2|clkout ; 1.000        ; -0.080     ; 0.802      ;
+; 0.119  ; PISO:U1|sq[2]  ; PISO:U1|sq[1] ; Generator:U2|clkout ; Generator:U2|clkout ; 1.000        ; -0.080     ; 0.799      ;
+; 0.121  ; PISO:U1|sq[6]  ; PISO:U1|sq[5] ; Generator:U2|clkout ; Generator:U2|clkout ; 1.000        ; -0.080     ; 0.797      ;
++--------+----------------+---------------+---------------------+---------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'Generator:U2|clkout'                                                                           ;
++-------+----------------+---------------+---------------------+---------------------+--------------+------------+------------+
+; Slack ; From Node      ; To Node       ; Launch Clock        ; Latch Clock         ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------+---------------+---------------------+---------------------+--------------+------------+------------+
+; 0.435 ; PISO:U1|sq[6]  ; PISO:U1|sq[5] ; Generator:U2|clkout ; Generator:U2|clkout ; 0.000        ; 0.080      ; 0.701      ;
+; 0.437 ; PISO:U1|sq[2]  ; PISO:U1|sq[1] ; Generator:U2|clkout ; Generator:U2|clkout ; 0.000        ; 0.080      ; 0.703      ;
+; 0.437 ; PISO:U1|sq[3]  ; PISO:U1|sq[2] ; Generator:U2|clkout ; Generator:U2|clkout ; 0.000        ; 0.080      ; 0.703      ;
+; 0.439 ; PISO:U1|sq[4]  ; PISO:U1|sq[3] ; Generator:U2|clkout ; Generator:U2|clkout ; 0.000        ; 0.080      ; 0.705      ;
+; 0.451 ; PISO:U1|sq[5]  ; PISO:U1|sq[4] ; Generator:U2|clkout ; Generator:U2|clkout ; 0.000        ; 0.080      ; 0.717      ;
+; 0.452 ; PISO:U1|sq[8]  ; PISO:U1|sq[7] ; Generator:U2|clkout ; Generator:U2|clkout ; 0.000        ; 0.080      ; 0.718      ;
+; 0.452 ; PISO:U1|sq[9]  ; PISO:U1|sq[8] ; Generator:U2|clkout ; Generator:U2|clkout ; 0.000        ; 0.080      ; 0.718      ;
+; 0.452 ; PISO:U1|sq[10] ; PISO:U1|sq[9] ; Generator:U2|clkout ; Generator:U2|clkout ; 0.000        ; 0.080      ; 0.718      ;
+; 0.453 ; PISO:U1|sq[7]  ; PISO:U1|sq[6] ; Generator:U2|clkout ; Generator:U2|clkout ; 0.000        ; 0.080      ; 0.719      ;
+; 0.561 ; PISO:U1|sq[1]  ; PISO:U1|sq[0] ; Generator:U2|clkout ; Generator:U2|clkout ; 0.000        ; 0.080      ; 0.827      ;
++-------+----------------+---------------+---------------------+---------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'clk'                                                                                                    ;
++-------+------------------------+------------------------+---------------------+-------------+--------------+------------+------------+
+; Slack ; From Node              ; To Node                ; Launch Clock        ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------+------------------------+---------------------+-------------+--------------+------------+------------+
+; 0.654 ; Generator:U2|count[1]  ; Generator:U2|count[1]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 0.921      ;
+; 0.655 ; Generator:U2|count[9]  ; Generator:U2|count[9]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 0.922      ;
+; 0.655 ; Generator:U2|count[11] ; Generator:U2|count[11] ; clk                 ; clk         ; 0.000        ; 0.081      ; 0.922      ;
+; 0.658 ; Generator:U2|count[7]  ; Generator:U2|count[7]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 0.925      ;
+; 0.658 ; Generator:U2|count[5]  ; Generator:U2|count[5]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 0.925      ;
+; 0.660 ; Generator:U2|count[2]  ; Generator:U2|count[2]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 0.927      ;
+; 0.661 ; Generator:U2|count[8]  ; Generator:U2|count[8]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 0.928      ;
+; 0.809 ; Generator:U2|count[12] ; Generator:U2|count[12] ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.076      ;
+; 0.972 ; Generator:U2|count[1]  ; Generator:U2|count[2]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.239      ;
+; 0.975 ; Generator:U2|count[7]  ; Generator:U2|count[8]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.242      ;
+; 0.984 ; Generator:U2|count[0]  ; Generator:U2|count[1]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.251      ;
+; 0.984 ; Generator:U2|count[6]  ; Generator:U2|count[7]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.251      ;
+; 0.988 ; Generator:U2|count[8]  ; Generator:U2|count[9]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.255      ;
+; 0.989 ; Generator:U2|count[0]  ; Generator:U2|count[2]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.256      ;
+; 0.989 ; Generator:U2|count[6]  ; Generator:U2|count[8]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.256      ;
+; 1.003 ; Generator:U2|count[3]  ; Generator:U2|count[3]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.270      ;
+; 1.003 ; Generator:U2|count[6]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.270      ;
+; 1.094 ; Generator:U2|count[9]  ; Generator:U2|count[11] ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.361      ;
+; 1.095 ; Generator:U2|count[3]  ; Generator:U2|count[5]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.362      ;
+; 1.096 ; Generator:U2|count[5]  ; Generator:U2|count[7]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.363      ;
+; 1.096 ; Generator:U2|count[7]  ; Generator:U2|count[9]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.363      ;
+; 1.101 ; Generator:U2|count[5]  ; Generator:U2|count[8]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.368      ;
+; 1.108 ; Generator:U2|clkout    ; Generator:U2|clkout    ; Generator:U2|clkout ; clk         ; 0.000        ; 3.074      ; 4.630      ;
+; 1.110 ; Generator:U2|count[6]  ; Generator:U2|count[9]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.377      ;
+; 1.113 ; Generator:U2|count[2]  ; Generator:U2|count[5]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.380      ;
+; 1.114 ; Generator:U2|count[8]  ; Generator:U2|count[11] ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.381      ;
+; 1.193 ; Generator:U2|count[10] ; Generator:U2|count[11] ; clk                 ; clk         ; 0.000        ; 0.080      ; 1.459      ;
+; 1.193 ; Generator:U2|count[4]  ; Generator:U2|count[5]  ; clk                 ; clk         ; 0.000        ; 0.080      ; 1.459      ;
+; 1.219 ; Generator:U2|count[1]  ; Generator:U2|count[5]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.486      ;
+; 1.221 ; Generator:U2|count[3]  ; Generator:U2|count[7]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.488      ;
+; 1.222 ; Generator:U2|count[5]  ; Generator:U2|count[9]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.489      ;
+; 1.222 ; Generator:U2|count[7]  ; Generator:U2|count[11] ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.489      ;
+; 1.226 ; Generator:U2|count[3]  ; Generator:U2|count[8]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.493      ;
+; 1.236 ; Generator:U2|count[0]  ; Generator:U2|count[5]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.503      ;
+; 1.236 ; Generator:U2|count[6]  ; Generator:U2|count[11] ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.503      ;
+; 1.239 ; Generator:U2|count[2]  ; Generator:U2|count[7]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.506      ;
+; 1.244 ; Generator:U2|count[2]  ; Generator:U2|count[8]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.511      ;
+; 1.319 ; Generator:U2|count[4]  ; Generator:U2|count[7]  ; clk                 ; clk         ; 0.000        ; 0.080      ; 1.585      ;
+; 1.321 ; Generator:U2|count[11] ; Generator:U2|count[12] ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.588      ;
+; 1.321 ; Generator:U2|count[5]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.588      ;
+; 1.326 ; Generator:U2|count[2]  ; Generator:U2|count[3]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.593      ;
+; 1.326 ; Generator:U2|count[4]  ; Generator:U2|count[8]  ; clk                 ; clk         ; 0.000        ; 0.080      ; 1.592      ;
+; 1.345 ; Generator:U2|count[1]  ; Generator:U2|count[7]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.612      ;
+; 1.347 ; Generator:U2|count[3]  ; Generator:U2|count[9]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.614      ;
+; 1.348 ; Generator:U2|count[5]  ; Generator:U2|count[11] ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.615      ;
+; 1.350 ; Generator:U2|count[1]  ; Generator:U2|count[8]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.617      ;
+; 1.362 ; Generator:U2|count[0]  ; Generator:U2|count[7]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.629      ;
+; 1.365 ; Generator:U2|count[2]  ; Generator:U2|count[9]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.632      ;
+; 1.367 ; Generator:U2|count[0]  ; Generator:U2|count[8]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.634      ;
+; 1.391 ; Generator:U2|count[10] ; Generator:U2|count[10] ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.658      ;
+; 1.432 ; Generator:U2|count[1]  ; Generator:U2|count[3]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.699      ;
+; 1.445 ; Generator:U2|count[4]  ; Generator:U2|count[9]  ; clk                 ; clk         ; 0.000        ; 0.080      ; 1.711      ;
+; 1.446 ; Generator:U2|count[3]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.713      ;
+; 1.447 ; Generator:U2|count[9]  ; Generator:U2|count[12] ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.714      ;
+; 1.449 ; Generator:U2|count[0]  ; Generator:U2|count[3]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.716      ;
+; 1.464 ; Generator:U2|count[2]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.731      ;
+; 1.467 ; Generator:U2|count[8]  ; Generator:U2|count[12] ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.734      ;
+; 1.471 ; Generator:U2|count[1]  ; Generator:U2|count[9]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.738      ;
+; 1.473 ; Generator:U2|count[3]  ; Generator:U2|count[11] ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.740      ;
+; 1.488 ; Generator:U2|count[0]  ; Generator:U2|count[9]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.755      ;
+; 1.491 ; Generator:U2|count[2]  ; Generator:U2|count[11] ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.758      ;
+; 1.498 ; Generator:U2|count[9]  ; Generator:U2|count[10] ; clk                 ; clk         ; 0.000        ; 0.082      ; 1.766      ;
+; 1.518 ; Generator:U2|count[8]  ; Generator:U2|count[10] ; clk                 ; clk         ; 0.000        ; 0.082      ; 1.786      ;
+; 1.546 ; Generator:U2|count[4]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 0.000        ; 0.080      ; 1.812      ;
+; 1.548 ; Generator:U2|count[10] ; Generator:U2|count[12] ; clk                 ; clk         ; 0.000        ; 0.080      ; 1.814      ;
+; 1.558 ; Generator:U2|count[8]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 0.000        ; 0.082      ; 1.826      ;
+; 1.562 ; Generator:U2|count[4]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.829      ;
+; 1.562 ; Generator:U2|clkout    ; Generator:U2|clkout    ; Generator:U2|clkout ; clk         ; -0.500       ; 3.074      ; 4.584      ;
+; 1.570 ; Generator:U2|count[1]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.837      ;
+; 1.571 ; Generator:U2|count[4]  ; Generator:U2|count[11] ; clk                 ; clk         ; 0.000        ; 0.080      ; 1.837      ;
+; 1.575 ; Generator:U2|count[7]  ; Generator:U2|count[12] ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.842      ;
+; 1.578 ; Generator:U2|count[8]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.845      ;
+; 1.582 ; Generator:U2|count[8]  ; Generator:U2|count[3]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.849      ;
+; 1.587 ; Generator:U2|count[0]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.854      ;
+; 1.588 ; Generator:U2|count[2]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 0.000        ; 0.082      ; 1.856      ;
+; 1.588 ; Generator:U2|count[2]  ; Generator:U2|count[10] ; clk                 ; clk         ; 0.000        ; 0.082      ; 1.856      ;
+; 1.589 ; Generator:U2|count[6]  ; Generator:U2|count[12] ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.856      ;
+; 1.595 ; Generator:U2|count[4]  ; Generator:U2|count[10] ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.862      ;
+; 1.597 ; Generator:U2|count[1]  ; Generator:U2|count[11] ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.864      ;
+; 1.606 ; Generator:U2|count[4]  ; Generator:U2|count[12] ; clk                 ; clk         ; 0.000        ; 0.080      ; 1.872      ;
+; 1.607 ; Generator:U2|count[4]  ; Generator:U2|count[3]  ; clk                 ; clk         ; 0.000        ; 0.080      ; 1.873      ;
+; 1.612 ; Generator:U2|count[2]  ; Generator:U2|count[12] ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.879      ;
+; 1.614 ; Generator:U2|count[0]  ; Generator:U2|count[11] ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.881      ;
+; 1.626 ; Generator:U2|count[7]  ; Generator:U2|count[10] ; clk                 ; clk         ; 0.000        ; 0.082      ; 1.894      ;
+; 1.640 ; Generator:U2|count[6]  ; Generator:U2|count[10] ; clk                 ; clk         ; 0.000        ; 0.082      ; 1.908      ;
+; 1.670 ; Generator:U2|count[3]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 0.000        ; 0.082      ; 1.938      ;
+; 1.701 ; Generator:U2|count[5]  ; Generator:U2|count[12] ; clk                 ; clk         ; 0.000        ; 0.081      ; 1.968      ;
+; 1.752 ; Generator:U2|count[5]  ; Generator:U2|count[10] ; clk                 ; clk         ; 0.000        ; 0.082      ; 2.020      ;
+; 1.773 ; Generator:U2|count[0]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 0.000        ; 0.082      ; 2.041      ;
+; 1.773 ; Generator:U2|count[0]  ; Generator:U2|count[10] ; clk                 ; clk         ; 0.000        ; 0.082      ; 2.041      ;
+; 1.794 ; Generator:U2|count[1]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 0.000        ; 0.082      ; 2.062      ;
+; 1.797 ; Generator:U2|count[0]  ; Generator:U2|count[12] ; clk                 ; clk         ; 0.000        ; 0.081      ; 2.064      ;
+; 1.820 ; Generator:U2|count[10] ; Generator:U2|count[4]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 2.087      ;
+; 1.826 ; Generator:U2|count[3]  ; Generator:U2|count[12] ; clk                 ; clk         ; 0.000        ; 0.081      ; 2.093      ;
+; 1.828 ; Generator:U2|count[10] ; Generator:U2|count[6]  ; clk                 ; clk         ; 0.000        ; 0.080      ; 2.094      ;
+; 1.832 ; Generator:U2|count[10] ; Generator:U2|count[3]  ; clk                 ; clk         ; 0.000        ; 0.080      ; 2.098      ;
+; 1.833 ; Generator:U2|count[9]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 0.000        ; 0.082      ; 2.101      ;
+; 1.853 ; Generator:U2|count[9]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 2.120      ;
+; 1.857 ; Generator:U2|count[9]  ; Generator:U2|count[3]  ; clk                 ; clk         ; 0.000        ; 0.081      ; 2.124      ;
+; 1.877 ; Generator:U2|count[3]  ; Generator:U2|count[10] ; clk                 ; clk         ; 0.000        ; 0.082      ; 2.145      ;
++-------+------------------------+------------------------+---------------------+-------------+--------------+------------+------------+
+
+
+-----------------------------------------------
+; Slow 1200mV 85C Model Metastability Summary ;
+-----------------------------------------------
+No synchronizer chains to report.
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                                                                                   ;
++-------------+-----------------+---------------------+---------------------------------------------------------------+
+; Fmax        ; Restricted Fmax ; Clock Name          ; Note                                                          ;
++-------------+-----------------+---------------------+---------------------------------------------------------------+
+; 251.7 MHz   ; 250.0 MHz       ; clk                 ; limit due to minimum period restriction (max I/O toggle rate) ;
+; 1059.32 MHz ; 437.64 MHz      ; Generator:U2|clkout ; limit due to minimum period restriction (tmin)                ;
++-------------+-----------------+---------------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++----------------------------------------------+
+; Slow 1200mV 0C Model Setup Summary           ;
++---------------------+--------+---------------+
+; Clock               ; Slack  ; End Point TNS ;
++---------------------+--------+---------------+
+; clk                 ; -2.973 ; -18.873       ;
+; Generator:U2|clkout ; 0.056  ; 0.000         ;
++---------------------+--------+---------------+
+
+
++---------------------------------------------+
+; Slow 1200mV 0C Model Hold Summary           ;
++---------------------+-------+---------------+
+; Clock               ; Slack ; End Point TNS ;
++---------------------+-------+---------------+
+; Generator:U2|clkout ; 0.399 ; 0.000         ;
+; clk                 ; 0.600 ; 0.000         ;
++---------------------+-------+---------------+
+
+
+-----------------------------------------
+; Slow 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Slow 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width Summary ;
++---------------------+--------+-------------------+
+; Clock               ; Slack  ; End Point TNS     ;
++---------------------+--------+-------------------+
+; clk                 ; -3.000 ; -20.990           ;
+; Generator:U2|clkout ; -1.285 ; -14.135           ;
++---------------------+--------+-------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'clk'                                                                                                     ;
++--------+------------------------+------------------------+---------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node              ; To Node                ; Launch Clock        ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------+------------------------+---------------------+-------------+--------------+------------+------------+
+; -2.973 ; Generator:U2|count[12] ; Generator:U2|clkout    ; clk                 ; clk         ; 1.000        ; -0.071     ; 3.901      ;
+; -2.839 ; Generator:U2|count[9]  ; Generator:U2|clkout    ; clk                 ; clk         ; 1.000        ; -0.071     ; 3.767      ;
+; -2.836 ; Generator:U2|count[11] ; Generator:U2|clkout    ; clk                 ; clk         ; 1.000        ; -0.071     ; 3.764      ;
+; -2.829 ; Generator:U2|count[3]  ; Generator:U2|clkout    ; clk                 ; clk         ; 1.000        ; -0.071     ; 3.757      ;
+; -2.812 ; Generator:U2|count[7]  ; Generator:U2|clkout    ; clk                 ; clk         ; 1.000        ; -0.071     ; 3.740      ;
+; -2.711 ; Generator:U2|count[10] ; Generator:U2|clkout    ; clk                 ; clk         ; 1.000        ; -0.072     ; 3.638      ;
+; -2.629 ; Generator:U2|count[1]  ; Generator:U2|clkout    ; clk                 ; clk         ; 1.000        ; -0.071     ; 3.557      ;
+; -2.599 ; Generator:U2|count[6]  ; Generator:U2|clkout    ; clk                 ; clk         ; 1.000        ; -0.071     ; 3.527      ;
+; -2.597 ; Generator:U2|count[5]  ; Generator:U2|clkout    ; clk                 ; clk         ; 1.000        ; -0.071     ; 3.525      ;
+; -2.530 ; Generator:U2|count[0]  ; Generator:U2|clkout    ; clk                 ; clk         ; 1.000        ; -0.071     ; 3.458      ;
+; -2.461 ; Generator:U2|count[8]  ; Generator:U2|clkout    ; clk                 ; clk         ; 1.000        ; -0.071     ; 3.389      ;
+; -2.365 ; Generator:U2|count[2]  ; Generator:U2|clkout    ; clk                 ; clk         ; 1.000        ; -0.071     ; 3.293      ;
+; -2.315 ; Generator:U2|count[4]  ; Generator:U2|clkout    ; clk                 ; clk         ; 1.000        ; -0.072     ; 3.242      ;
+; -1.940 ; Generator:U2|count[12] ; Generator:U2|count[0]  ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.868      ;
+; -1.848 ; Generator:U2|count[11] ; Generator:U2|count[0]  ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.776      ;
+; -1.756 ; Generator:U2|count[3]  ; Generator:U2|count[0]  ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.684      ;
+; -1.739 ; Generator:U2|count[7]  ; Generator:U2|count[0]  ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.667      ;
+; -1.621 ; Generator:U2|count[1]  ; Generator:U2|count[10] ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.549      ;
+; -1.592 ; Generator:U2|count[12] ; Generator:U2|count[3]  ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.520      ;
+; -1.591 ; Generator:U2|count[12] ; Generator:U2|count[12] ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.519      ;
+; -1.590 ; Generator:U2|count[5]  ; Generator:U2|count[0]  ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.518      ;
+; -1.588 ; Generator:U2|count[12] ; Generator:U2|count[6]  ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.516      ;
+; -1.582 ; Generator:U2|count[12] ; Generator:U2|count[4]  ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.510      ;
+; -1.582 ; Generator:U2|count[12] ; Generator:U2|count[10] ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.510      ;
+; -1.558 ; Generator:U2|count[1]  ; Generator:U2|count[12] ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.486      ;
+; -1.556 ; Generator:U2|count[1]  ; Generator:U2|count[0]  ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.484      ;
+; -1.552 ; Generator:U2|count[0]  ; Generator:U2|count[10] ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.480      ;
+; -1.551 ; Generator:U2|count[6]  ; Generator:U2|count[0]  ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.479      ;
+; -1.548 ; Generator:U2|count[10] ; Generator:U2|count[0]  ; clk                 ; clk         ; 1.000        ; -0.072     ; 2.475      ;
+; -1.509 ; Generator:U2|count[3]  ; Generator:U2|count[10] ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.437      ;
+; -1.507 ; Generator:U2|count[9]  ; Generator:U2|count[0]  ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.435      ;
+; -1.489 ; Generator:U2|count[0]  ; Generator:U2|count[12] ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.417      ;
+; -1.470 ; Generator:U2|count[4]  ; Generator:U2|count[10] ; clk                 ; clk         ; 1.000        ; -0.072     ; 2.397      ;
+; -1.462 ; Generator:U2|count[1]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.390      ;
+; -1.457 ; Generator:U2|count[0]  ; Generator:U2|count[0]  ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.385      ;
+; -1.455 ; Generator:U2|count[11] ; Generator:U2|count[3]  ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.383      ;
+; -1.454 ; Generator:U2|count[11] ; Generator:U2|count[12] ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.382      ;
+; -1.451 ; Generator:U2|count[11] ; Generator:U2|count[6]  ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.379      ;
+; -1.446 ; Generator:U2|count[3]  ; Generator:U2|count[12] ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.374      ;
+; -1.445 ; Generator:U2|count[11] ; Generator:U2|count[4]  ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.373      ;
+; -1.445 ; Generator:U2|count[11] ; Generator:U2|count[10] ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.373      ;
+; -1.430 ; Generator:U2|count[2]  ; Generator:U2|count[10] ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.358      ;
+; -1.407 ; Generator:U2|count[4]  ; Generator:U2|count[12] ; clk                 ; clk         ; 1.000        ; -0.072     ; 2.334      ;
+; -1.394 ; Generator:U2|count[5]  ; Generator:U2|count[10] ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.322      ;
+; -1.393 ; Generator:U2|count[0]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.321      ;
+; -1.367 ; Generator:U2|count[2]  ; Generator:U2|count[12] ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.295      ;
+; -1.350 ; Generator:U2|count[3]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.278      ;
+; -1.343 ; Generator:U2|count[3]  ; Generator:U2|count[3]  ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.271      ;
+; -1.340 ; Generator:U2|count[7]  ; Generator:U2|count[3]  ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.268      ;
+; -1.339 ; Generator:U2|count[3]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.267      ;
+; -1.339 ; Generator:U2|count[7]  ; Generator:U2|count[12] ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.267      ;
+; -1.336 ; Generator:U2|count[7]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.264      ;
+; -1.331 ; Generator:U2|count[5]  ; Generator:U2|count[12] ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.259      ;
+; -1.330 ; Generator:U2|count[7]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.258      ;
+; -1.330 ; Generator:U2|count[7]  ; Generator:U2|count[10] ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.258      ;
+; -1.326 ; Generator:U2|count[4]  ; Generator:U2|count[0]  ; clk                 ; clk         ; 1.000        ; -0.072     ; 2.253      ;
+; -1.282 ; Generator:U2|count[2]  ; Generator:U2|count[0]  ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.210      ;
+; -1.271 ; Generator:U2|count[2]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.199      ;
+; -1.259 ; Generator:U2|count[8]  ; Generator:U2|count[0]  ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.187      ;
+; -1.215 ; Generator:U2|count[5]  ; Generator:U2|count[3]  ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.143      ;
+; -1.211 ; Generator:U2|count[5]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.139      ;
+; -1.208 ; Generator:U2|count[1]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.136      ;
+; -1.205 ; Generator:U2|count[5]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.133      ;
+; -1.204 ; Generator:U2|count[6]  ; Generator:U2|count[10] ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.132      ;
+; -1.175 ; Generator:U2|count[6]  ; Generator:U2|count[3]  ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.103      ;
+; -1.174 ; Generator:U2|count[6]  ; Generator:U2|count[12] ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.102      ;
+; -1.171 ; Generator:U2|count[6]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.099      ;
+; -1.165 ; Generator:U2|count[6]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.093      ;
+; -1.158 ; Generator:U2|count[9]  ; Generator:U2|count[10] ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.086      ;
+; -1.155 ; Generator:U2|count[1]  ; Generator:U2|count[3]  ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.083      ;
+; -1.150 ; Generator:U2|count[9]  ; Generator:U2|count[3]  ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.078      ;
+; -1.149 ; Generator:U2|count[9]  ; Generator:U2|count[12] ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.077      ;
+; -1.146 ; Generator:U2|count[9]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.074      ;
+; -1.140 ; Generator:U2|count[9]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.068      ;
+; -1.139 ; Generator:U2|count[0]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.067      ;
+; -1.126 ; Generator:U2|count[0]  ; Generator:U2|count[11] ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.054      ;
+; -1.126 ; Generator:U2|count[10] ; Generator:U2|count[3]  ; clk                 ; clk         ; 1.000        ; -0.072     ; 2.053      ;
+; -1.126 ; Generator:U2|count[10] ; Generator:U2|count[12] ; clk                 ; clk         ; 1.000        ; -0.072     ; 2.053      ;
+; -1.122 ; Generator:U2|count[10] ; Generator:U2|count[6]  ; clk                 ; clk         ; 1.000        ; -0.072     ; 2.049      ;
+; -1.110 ; Generator:U2|count[4]  ; Generator:U2|count[11] ; clk                 ; clk         ; 1.000        ; -0.072     ; 2.037      ;
+; -1.106 ; Generator:U2|count[10] ; Generator:U2|count[4]  ; clk                 ; clk         ; 1.000        ; -0.072     ; 2.033      ;
+; -1.106 ; Generator:U2|count[10] ; Generator:U2|count[10] ; clk                 ; clk         ; 1.000        ; -0.072     ; 2.033      ;
+; -1.083 ; Generator:U2|count[8]  ; Generator:U2|count[10] ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.011      ;
+; -1.077 ; Generator:U2|count[1]  ; Generator:U2|count[11] ; clk                 ; clk         ; 1.000        ; -0.071     ; 2.005      ;
+; -1.066 ; Generator:U2|count[0]  ; Generator:U2|count[3]  ; clk                 ; clk         ; 1.000        ; -0.071     ; 1.994      ;
+; -1.057 ; Generator:U2|count[4]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 1.000        ; -0.072     ; 1.984      ;
+; -1.020 ; Generator:U2|count[8]  ; Generator:U2|count[12] ; clk                 ; clk         ; 1.000        ; -0.071     ; 1.948      ;
+; -1.017 ; Generator:U2|count[2]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 1.000        ; -0.071     ; 1.945      ;
+; -1.013 ; Generator:U2|count[2]  ; Generator:U2|count[11] ; clk                 ; clk         ; 1.000        ; -0.071     ; 1.941      ;
+; -1.010 ; Generator:U2|count[0]  ; Generator:U2|count[9]  ; clk                 ; clk         ; 1.000        ; -0.071     ; 1.938      ;
+; -0.994 ; Generator:U2|count[4]  ; Generator:U2|count[9]  ; clk                 ; clk         ; 1.000        ; -0.072     ; 1.921      ;
+; -0.990 ; Generator:U2|count[1]  ; Generator:U2|count[8]  ; clk                 ; clk         ; 1.000        ; -0.071     ; 1.918      ;
+; -0.965 ; Generator:U2|count[3]  ; Generator:U2|count[11] ; clk                 ; clk         ; 1.000        ; -0.071     ; 1.893      ;
+; -0.961 ; Generator:U2|count[1]  ; Generator:U2|count[9]  ; clk                 ; clk         ; 1.000        ; -0.071     ; 1.889      ;
+; -0.946 ; Generator:U2|count[4]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 1.000        ; -0.072     ; 1.873      ;
+; -0.929 ; Generator:U2|count[2]  ; Generator:U2|count[3]  ; clk                 ; clk         ; 1.000        ; -0.071     ; 1.857      ;
+; -0.921 ; Generator:U2|count[0]  ; Generator:U2|count[8]  ; clk                 ; clk         ; 1.000        ; -0.071     ; 1.849      ;
+; -0.904 ; Generator:U2|count[4]  ; Generator:U2|count[3]  ; clk                 ; clk         ; 1.000        ; -0.072     ; 1.831      ;
+; -0.900 ; Generator:U2|clkout    ; Generator:U2|clkout    ; Generator:U2|clkout ; clk         ; 0.500        ; 2.689      ; 4.291      ;
+; -0.897 ; Generator:U2|count[2]  ; Generator:U2|count[9]  ; clk                 ; clk         ; 1.000        ; -0.071     ; 1.825      ;
++--------+------------------------+------------------------+---------------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'Generator:U2|clkout'                                                                           ;
++-------+----------------+---------------+---------------------+---------------------+--------------+------------+------------+
+; Slack ; From Node      ; To Node       ; Launch Clock        ; Latch Clock         ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------+---------------+---------------------+---------------------+--------------+------------+------------+
+; 0.056 ; PISO:U1|sq[1]  ; PISO:U1|sq[0] ; Generator:U2|clkout ; Generator:U2|clkout ; 1.000        ; -0.073     ; 0.870      ;
+; 0.193 ; PISO:U1|sq[7]  ; PISO:U1|sq[6] ; Generator:U2|clkout ; Generator:U2|clkout ; 1.000        ; -0.073     ; 0.733      ;
+; 0.194 ; PISO:U1|sq[10] ; PISO:U1|sq[9] ; Generator:U2|clkout ; Generator:U2|clkout ; 1.000        ; -0.073     ; 0.732      ;
+; 0.195 ; PISO:U1|sq[8]  ; PISO:U1|sq[7] ; Generator:U2|clkout ; Generator:U2|clkout ; 1.000        ; -0.073     ; 0.731      ;
+; 0.195 ; PISO:U1|sq[9]  ; PISO:U1|sq[8] ; Generator:U2|clkout ; Generator:U2|clkout ; 1.000        ; -0.073     ; 0.731      ;
+; 0.196 ; PISO:U1|sq[5]  ; PISO:U1|sq[4] ; Generator:U2|clkout ; Generator:U2|clkout ; 1.000        ; -0.073     ; 0.730      ;
+; 0.201 ; PISO:U1|sq[4]  ; PISO:U1|sq[3] ; Generator:U2|clkout ; Generator:U2|clkout ; 1.000        ; -0.073     ; 0.725      ;
+; 0.205 ; PISO:U1|sq[3]  ; PISO:U1|sq[2] ; Generator:U2|clkout ; Generator:U2|clkout ; 1.000        ; -0.073     ; 0.721      ;
+; 0.207 ; PISO:U1|sq[2]  ; PISO:U1|sq[1] ; Generator:U2|clkout ; Generator:U2|clkout ; 1.000        ; -0.073     ; 0.719      ;
+; 0.210 ; PISO:U1|sq[6]  ; PISO:U1|sq[5] ; Generator:U2|clkout ; Generator:U2|clkout ; 1.000        ; -0.073     ; 0.716      ;
++-------+----------------+---------------+---------------------+---------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'Generator:U2|clkout'                                                                            ;
++-------+----------------+---------------+---------------------+---------------------+--------------+------------+------------+
+; Slack ; From Node      ; To Node       ; Launch Clock        ; Latch Clock         ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------+---------------+---------------------+---------------------+--------------+------------+------------+
+; 0.399 ; PISO:U1|sq[6]  ; PISO:U1|sq[5] ; Generator:U2|clkout ; Generator:U2|clkout ; 0.000        ; 0.073      ; 0.643      ;
+; 0.402 ; PISO:U1|sq[2]  ; PISO:U1|sq[1] ; Generator:U2|clkout ; Generator:U2|clkout ; 0.000        ; 0.073      ; 0.646      ;
+; 0.402 ; PISO:U1|sq[3]  ; PISO:U1|sq[2] ; Generator:U2|clkout ; Generator:U2|clkout ; 0.000        ; 0.073      ; 0.646      ;
+; 0.405 ; PISO:U1|sq[4]  ; PISO:U1|sq[3] ; Generator:U2|clkout ; Generator:U2|clkout ; 0.000        ; 0.073      ; 0.649      ;
+; 0.414 ; PISO:U1|sq[5]  ; PISO:U1|sq[4] ; Generator:U2|clkout ; Generator:U2|clkout ; 0.000        ; 0.073      ; 0.658      ;
+; 0.415 ; PISO:U1|sq[8]  ; PISO:U1|sq[7] ; Generator:U2|clkout ; Generator:U2|clkout ; 0.000        ; 0.073      ; 0.659      ;
+; 0.415 ; PISO:U1|sq[9]  ; PISO:U1|sq[8] ; Generator:U2|clkout ; Generator:U2|clkout ; 0.000        ; 0.073      ; 0.659      ;
+; 0.416 ; PISO:U1|sq[10] ; PISO:U1|sq[9] ; Generator:U2|clkout ; Generator:U2|clkout ; 0.000        ; 0.073      ; 0.660      ;
+; 0.417 ; PISO:U1|sq[7]  ; PISO:U1|sq[6] ; Generator:U2|clkout ; Generator:U2|clkout ; 0.000        ; 0.073      ; 0.661      ;
+; 0.513 ; PISO:U1|sq[1]  ; PISO:U1|sq[0] ; Generator:U2|clkout ; Generator:U2|clkout ; 0.000        ; 0.073      ; 0.757      ;
++-------+----------------+---------------+---------------------+---------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'clk'                                                                                                     ;
++-------+------------------------+------------------------+---------------------+-------------+--------------+------------+------------+
+; Slack ; From Node              ; To Node                ; Launch Clock        ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------+------------------------+---------------------+-------------+--------------+------------+------------+
+; 0.600 ; Generator:U2|count[9]  ; Generator:U2|count[9]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 0.842      ;
+; 0.600 ; Generator:U2|count[11] ; Generator:U2|count[11] ; clk                 ; clk         ; 0.000        ; 0.071      ; 0.842      ;
+; 0.600 ; Generator:U2|count[1]  ; Generator:U2|count[1]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 0.842      ;
+; 0.604 ; Generator:U2|count[7]  ; Generator:U2|count[7]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 0.846      ;
+; 0.604 ; Generator:U2|count[5]  ; Generator:U2|count[5]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 0.846      ;
+; 0.605 ; Generator:U2|count[2]  ; Generator:U2|count[2]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 0.847      ;
+; 0.606 ; Generator:U2|count[8]  ; Generator:U2|count[8]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 0.848      ;
+; 0.730 ; Generator:U2|count[12] ; Generator:U2|count[12] ; clk                 ; clk         ; 0.000        ; 0.071      ; 0.972      ;
+; 0.886 ; Generator:U2|count[1]  ; Generator:U2|count[2]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.128      ;
+; 0.889 ; Generator:U2|count[0]  ; Generator:U2|count[1]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.131      ;
+; 0.889 ; Generator:U2|count[6]  ; Generator:U2|count[7]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.131      ;
+; 0.891 ; Generator:U2|count[7]  ; Generator:U2|count[8]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.133      ;
+; 0.894 ; Generator:U2|count[8]  ; Generator:U2|count[9]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.136      ;
+; 0.900 ; Generator:U2|count[0]  ; Generator:U2|count[2]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.142      ;
+; 0.900 ; Generator:U2|count[6]  ; Generator:U2|count[8]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.142      ;
+; 0.922 ; Generator:U2|count[6]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.164      ;
+; 0.923 ; Generator:U2|count[3]  ; Generator:U2|count[3]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.165      ;
+; 0.985 ; Generator:U2|count[9]  ; Generator:U2|count[11] ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.227      ;
+; 0.989 ; Generator:U2|count[3]  ; Generator:U2|count[5]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.231      ;
+; 0.990 ; Generator:U2|count[5]  ; Generator:U2|count[7]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.232      ;
+; 0.990 ; Generator:U2|count[7]  ; Generator:U2|count[9]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.232      ;
+; 0.999 ; Generator:U2|count[6]  ; Generator:U2|count[9]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.241      ;
+; 1.001 ; Generator:U2|count[5]  ; Generator:U2|count[8]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.243      ;
+; 1.003 ; Generator:U2|count[2]  ; Generator:U2|count[5]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.245      ;
+; 1.004 ; Generator:U2|count[8]  ; Generator:U2|count[11] ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.246      ;
+; 1.063 ; Generator:U2|count[10] ; Generator:U2|count[11] ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.305      ;
+; 1.064 ; Generator:U2|count[4]  ; Generator:U2|count[5]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.306      ;
+; 1.095 ; Generator:U2|count[1]  ; Generator:U2|count[5]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.337      ;
+; 1.099 ; Generator:U2|count[3]  ; Generator:U2|count[7]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.341      ;
+; 1.100 ; Generator:U2|count[5]  ; Generator:U2|count[9]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.342      ;
+; 1.100 ; Generator:U2|count[7]  ; Generator:U2|count[11] ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.342      ;
+; 1.109 ; Generator:U2|count[0]  ; Generator:U2|count[5]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.351      ;
+; 1.109 ; Generator:U2|count[6]  ; Generator:U2|count[11] ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.351      ;
+; 1.110 ; Generator:U2|count[3]  ; Generator:U2|count[8]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.352      ;
+; 1.113 ; Generator:U2|count[2]  ; Generator:U2|count[7]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.355      ;
+; 1.124 ; Generator:U2|count[2]  ; Generator:U2|count[8]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.366      ;
+; 1.150 ; Generator:U2|clkout    ; Generator:U2|clkout    ; Generator:U2|clkout ; clk         ; 0.000        ; 2.789      ; 4.353      ;
+; 1.174 ; Generator:U2|count[4]  ; Generator:U2|count[7]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.416      ;
+; 1.198 ; Generator:U2|count[2]  ; Generator:U2|count[3]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.440      ;
+; 1.205 ; Generator:U2|count[1]  ; Generator:U2|count[7]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.447      ;
+; 1.209 ; Generator:U2|count[11] ; Generator:U2|count[12] ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.451      ;
+; 1.209 ; Generator:U2|count[3]  ; Generator:U2|count[9]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.451      ;
+; 1.210 ; Generator:U2|count[5]  ; Generator:U2|count[11] ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.452      ;
+; 1.212 ; Generator:U2|count[5]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.454      ;
+; 1.216 ; Generator:U2|count[1]  ; Generator:U2|count[8]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.458      ;
+; 1.217 ; Generator:U2|count[4]  ; Generator:U2|count[8]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.459      ;
+; 1.219 ; Generator:U2|count[0]  ; Generator:U2|count[7]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.461      ;
+; 1.223 ; Generator:U2|count[2]  ; Generator:U2|count[9]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.465      ;
+; 1.230 ; Generator:U2|count[0]  ; Generator:U2|count[8]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.472      ;
+; 1.242 ; Generator:U2|count[10] ; Generator:U2|count[10] ; clk                 ; clk         ; 0.000        ; 0.072      ; 1.485      ;
+; 1.284 ; Generator:U2|count[4]  ; Generator:U2|count[9]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.526      ;
+; 1.290 ; Generator:U2|count[1]  ; Generator:U2|count[3]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.532      ;
+; 1.304 ; Generator:U2|count[0]  ; Generator:U2|count[3]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.546      ;
+; 1.315 ; Generator:U2|count[1]  ; Generator:U2|count[9]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.557      ;
+; 1.319 ; Generator:U2|count[9]  ; Generator:U2|count[12] ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.561      ;
+; 1.319 ; Generator:U2|count[3]  ; Generator:U2|count[11] ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.561      ;
+; 1.321 ; Generator:U2|count[3]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.563      ;
+; 1.329 ; Generator:U2|count[0]  ; Generator:U2|count[9]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.571      ;
+; 1.333 ; Generator:U2|count[2]  ; Generator:U2|count[11] ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.575      ;
+; 1.335 ; Generator:U2|count[2]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.577      ;
+; 1.338 ; Generator:U2|count[8]  ; Generator:U2|count[12] ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.580      ;
+; 1.346 ; Generator:U2|count[9]  ; Generator:U2|count[10] ; clk                 ; clk         ; 0.000        ; 0.072      ; 1.589      ;
+; 1.365 ; Generator:U2|count[8]  ; Generator:U2|count[10] ; clk                 ; clk         ; 0.000        ; 0.072      ; 1.608      ;
+; 1.387 ; Generator:U2|clkout    ; Generator:U2|clkout    ; Generator:U2|clkout ; clk         ; -0.500       ; 2.789      ; 4.090      ;
+; 1.394 ; Generator:U2|count[4]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 0.000        ; 0.072      ; 1.637      ;
+; 1.394 ; Generator:U2|count[4]  ; Generator:U2|count[11] ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.636      ;
+; 1.425 ; Generator:U2|count[1]  ; Generator:U2|count[11] ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.667      ;
+; 1.426 ; Generator:U2|count[8]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 0.000        ; 0.072      ; 1.669      ;
+; 1.427 ; Generator:U2|count[1]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.669      ;
+; 1.428 ; Generator:U2|count[4]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.670      ;
+; 1.430 ; Generator:U2|count[10] ; Generator:U2|count[12] ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.672      ;
+; 1.434 ; Generator:U2|count[7]  ; Generator:U2|count[12] ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.676      ;
+; 1.439 ; Generator:U2|count[0]  ; Generator:U2|count[11] ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.681      ;
+; 1.441 ; Generator:U2|count[0]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.683      ;
+; 1.443 ; Generator:U2|count[8]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.685      ;
+; 1.443 ; Generator:U2|count[6]  ; Generator:U2|count[12] ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.685      ;
+; 1.447 ; Generator:U2|count[8]  ; Generator:U2|count[3]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.689      ;
+; 1.447 ; Generator:U2|count[2]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 0.000        ; 0.072      ; 1.690      ;
+; 1.448 ; Generator:U2|count[2]  ; Generator:U2|count[10] ; clk                 ; clk         ; 0.000        ; 0.072      ; 1.691      ;
+; 1.461 ; Generator:U2|count[7]  ; Generator:U2|count[10] ; clk                 ; clk         ; 0.000        ; 0.072      ; 1.704      ;
+; 1.468 ; Generator:U2|count[2]  ; Generator:U2|count[12] ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.710      ;
+; 1.470 ; Generator:U2|count[4]  ; Generator:U2|count[10] ; clk                 ; clk         ; 0.000        ; 0.072      ; 1.713      ;
+; 1.470 ; Generator:U2|count[6]  ; Generator:U2|count[10] ; clk                 ; clk         ; 0.000        ; 0.072      ; 1.713      ;
+; 1.480 ; Generator:U2|count[4]  ; Generator:U2|count[12] ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.722      ;
+; 1.481 ; Generator:U2|count[4]  ; Generator:U2|count[3]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.723      ;
+; 1.501 ; Generator:U2|count[3]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 0.000        ; 0.072      ; 1.744      ;
+; 1.544 ; Generator:U2|count[5]  ; Generator:U2|count[12] ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.786      ;
+; 1.571 ; Generator:U2|count[5]  ; Generator:U2|count[10] ; clk                 ; clk         ; 0.000        ; 0.072      ; 1.814      ;
+; 1.607 ; Generator:U2|count[1]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 0.000        ; 0.072      ; 1.850      ;
+; 1.616 ; Generator:U2|count[0]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 0.000        ; 0.072      ; 1.859      ;
+; 1.617 ; Generator:U2|count[0]  ; Generator:U2|count[10] ; clk                 ; clk         ; 0.000        ; 0.072      ; 1.860      ;
+; 1.637 ; Generator:U2|count[0]  ; Generator:U2|count[12] ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.879      ;
+; 1.653 ; Generator:U2|count[3]  ; Generator:U2|count[12] ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.895      ;
+; 1.663 ; Generator:U2|count[9]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 0.000        ; 0.072      ; 1.906      ;
+; 1.676 ; Generator:U2|count[10] ; Generator:U2|count[4]  ; clk                 ; clk         ; 0.000        ; 0.072      ; 1.919      ;
+; 1.680 ; Generator:U2|count[9]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.922      ;
+; 1.680 ; Generator:U2|count[3]  ; Generator:U2|count[10] ; clk                 ; clk         ; 0.000        ; 0.072      ; 1.923      ;
+; 1.683 ; Generator:U2|count[10] ; Generator:U2|count[6]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.925      ;
+; 1.684 ; Generator:U2|count[9]  ; Generator:U2|count[3]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.926      ;
+; 1.687 ; Generator:U2|count[10] ; Generator:U2|count[3]  ; clk                 ; clk         ; 0.000        ; 0.071      ; 1.929      ;
++-------+------------------------+------------------------+---------------------+-------------+--------------+------------+------------+
+
+
+----------------------------------------------
+; Slow 1200mV 0C Model Metastability Summary ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++----------------------------------------------+
+; Fast 1200mV 0C Model Setup Summary           ;
++---------------------+--------+---------------+
+; Clock               ; Slack  ; End Point TNS ;
++---------------------+--------+---------------+
+; clk                 ; -1.140 ; -3.989        ;
+; Generator:U2|clkout ; 0.492  ; 0.000         ;
++---------------------+--------+---------------+
+
+
++---------------------------------------------+
+; Fast 1200mV 0C Model Hold Summary           ;
++---------------------+-------+---------------+
+; Clock               ; Slack ; End Point TNS ;
++---------------------+-------+---------------+
+; Generator:U2|clkout ; 0.190 ; 0.000         ;
+; clk                 ; 0.300 ; 0.000         ;
++---------------------+-------+---------------+
+
+
+-----------------------------------------
+; Fast 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Fast 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width Summary ;
++---------------------+--------+-------------------+
+; Clock               ; Slack  ; End Point TNS     ;
++---------------------+--------+-------------------+
+; clk                 ; -3.000 ; -17.865           ;
+; Generator:U2|clkout ; -1.000 ; -11.000           ;
++---------------------+--------+-------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'clk'                                                                                                     ;
++--------+------------------------+------------------------+---------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node              ; To Node                ; Launch Clock        ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------+------------------------+---------------------+-------------+--------------+------------+------------+
+; -1.140 ; Generator:U2|count[12] ; Generator:U2|clkout    ; clk                 ; clk         ; 1.000        ; -0.040     ; 2.087      ;
+; -1.040 ; Generator:U2|count[7]  ; Generator:U2|clkout    ; clk                 ; clk         ; 1.000        ; -0.040     ; 1.987      ;
+; -1.038 ; Generator:U2|count[11] ; Generator:U2|clkout    ; clk                 ; clk         ; 1.000        ; -0.040     ; 1.985      ;
+; -1.028 ; Generator:U2|count[3]  ; Generator:U2|clkout    ; clk                 ; clk         ; 1.000        ; -0.040     ; 1.975      ;
+; -1.013 ; Generator:U2|count[10] ; Generator:U2|clkout    ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.959      ;
+; -1.008 ; Generator:U2|count[9]  ; Generator:U2|clkout    ; clk                 ; clk         ; 1.000        ; -0.040     ; 1.955      ;
+; -0.949 ; Generator:U2|count[6]  ; Generator:U2|clkout    ; clk                 ; clk         ; 1.000        ; -0.040     ; 1.896      ;
+; -0.918 ; Generator:U2|count[1]  ; Generator:U2|clkout    ; clk                 ; clk         ; 1.000        ; -0.040     ; 1.865      ;
+; -0.899 ; Generator:U2|count[5]  ; Generator:U2|clkout    ; clk                 ; clk         ; 1.000        ; -0.040     ; 1.846      ;
+; -0.880 ; Generator:U2|count[0]  ; Generator:U2|clkout    ; clk                 ; clk         ; 1.000        ; -0.040     ; 1.827      ;
+; -0.866 ; Generator:U2|count[8]  ; Generator:U2|clkout    ; clk                 ; clk         ; 1.000        ; -0.040     ; 1.813      ;
+; -0.791 ; Generator:U2|count[4]  ; Generator:U2|clkout    ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.737      ;
+; -0.758 ; Generator:U2|count[2]  ; Generator:U2|clkout    ; clk                 ; clk         ; 1.000        ; -0.040     ; 1.705      ;
+; -0.545 ; Generator:U2|count[12] ; Generator:U2|count[0]  ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.491      ;
+; -0.486 ; Generator:U2|count[11] ; Generator:U2|count[0]  ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.432      ;
+; -0.433 ; Generator:U2|count[3]  ; Generator:U2|count[0]  ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.379      ;
+; -0.427 ; Generator:U2|count[7]  ; Generator:U2|count[0]  ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.373      ;
+; -0.417 ; Generator:U2|count[1]  ; Generator:U2|count[10] ; clk                 ; clk         ; 1.000        ; -0.040     ; 1.364      ;
+; -0.401 ; Generator:U2|count[1]  ; Generator:U2|count[12] ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.347      ;
+; -0.393 ; Generator:U2|clkout    ; Generator:U2|clkout    ; Generator:U2|clkout ; clk         ; 0.500        ; 1.577      ; 2.552      ;
+; -0.378 ; Generator:U2|count[12] ; Generator:U2|count[3]  ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.324      ;
+; -0.378 ; Generator:U2|count[12] ; Generator:U2|count[12] ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.324      ;
+; -0.374 ; Generator:U2|count[12] ; Generator:U2|count[6]  ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.320      ;
+; -0.372 ; Generator:U2|count[0]  ; Generator:U2|count[10] ; clk                 ; clk         ; 1.000        ; -0.040     ; 1.319      ;
+; -0.362 ; Generator:U2|count[12] ; Generator:U2|count[4]  ; clk                 ; clk         ; 1.000        ; -0.040     ; 1.309      ;
+; -0.362 ; Generator:U2|count[12] ; Generator:U2|count[10] ; clk                 ; clk         ; 1.000        ; -0.040     ; 1.309      ;
+; -0.358 ; Generator:U2|count[5]  ; Generator:U2|count[0]  ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.304      ;
+; -0.356 ; Generator:U2|count[0]  ; Generator:U2|count[12] ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.302      ;
+; -0.354 ; Generator:U2|count[3]  ; Generator:U2|count[10] ; clk                 ; clk         ; 1.000        ; -0.040     ; 1.301      ;
+; -0.338 ; Generator:U2|count[3]  ; Generator:U2|count[12] ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.284      ;
+; -0.333 ; Generator:U2|count[4]  ; Generator:U2|count[10] ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.279      ;
+; -0.332 ; Generator:U2|count[6]  ; Generator:U2|count[0]  ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.278      ;
+; -0.317 ; Generator:U2|count[10] ; Generator:U2|count[0]  ; clk                 ; clk         ; 1.000        ; -0.042     ; 1.262      ;
+; -0.317 ; Generator:U2|count[4]  ; Generator:U2|count[12] ; clk                 ; clk         ; 1.000        ; -0.042     ; 1.262      ;
+; -0.309 ; Generator:U2|count[9]  ; Generator:U2|count[0]  ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.255      ;
+; -0.308 ; Generator:U2|count[1]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 1.000        ; -0.040     ; 1.255      ;
+; -0.305 ; Generator:U2|count[1]  ; Generator:U2|count[0]  ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.251      ;
+; -0.304 ; Generator:U2|count[2]  ; Generator:U2|count[10] ; clk                 ; clk         ; 1.000        ; -0.040     ; 1.251      ;
+; -0.293 ; Generator:U2|count[11] ; Generator:U2|count[3]  ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.239      ;
+; -0.293 ; Generator:U2|count[11] ; Generator:U2|count[12] ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.239      ;
+; -0.289 ; Generator:U2|count[11] ; Generator:U2|count[6]  ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.235      ;
+; -0.288 ; Generator:U2|count[2]  ; Generator:U2|count[12] ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.234      ;
+; -0.285 ; Generator:U2|count[5]  ; Generator:U2|count[10] ; clk                 ; clk         ; 1.000        ; -0.040     ; 1.232      ;
+; -0.284 ; Generator:U2|count[11] ; Generator:U2|count[10] ; clk                 ; clk         ; 1.000        ; -0.040     ; 1.231      ;
+; -0.284 ; Generator:U2|count[11] ; Generator:U2|count[4]  ; clk                 ; clk         ; 1.000        ; -0.040     ; 1.231      ;
+; -0.269 ; Generator:U2|count[5]  ; Generator:U2|count[12] ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.215      ;
+; -0.267 ; Generator:U2|count[0]  ; Generator:U2|count[0]  ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.213      ;
+; -0.266 ; Generator:U2|count[3]  ; Generator:U2|count[3]  ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.212      ;
+; -0.263 ; Generator:U2|count[0]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 1.000        ; -0.040     ; 1.210      ;
+; -0.262 ; Generator:U2|count[3]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.208      ;
+; -0.250 ; Generator:U2|count[3]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 1.000        ; -0.040     ; 1.197      ;
+; -0.234 ; Generator:U2|count[7]  ; Generator:U2|count[3]  ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.180      ;
+; -0.234 ; Generator:U2|count[7]  ; Generator:U2|count[12] ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.180      ;
+; -0.230 ; Generator:U2|count[7]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.176      ;
+; -0.225 ; Generator:U2|count[7]  ; Generator:U2|count[10] ; clk                 ; clk         ; 1.000        ; -0.040     ; 1.172      ;
+; -0.225 ; Generator:U2|count[7]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 1.000        ; -0.040     ; 1.172      ;
+; -0.196 ; Generator:U2|count[4]  ; Generator:U2|count[0]  ; clk                 ; clk         ; 1.000        ; -0.042     ; 1.141      ;
+; -0.195 ; Generator:U2|count[2]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 1.000        ; -0.040     ; 1.142      ;
+; -0.194 ; Generator:U2|count[1]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.140      ;
+; -0.193 ; Generator:U2|count[2]  ; Generator:U2|count[0]  ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.139      ;
+; -0.192 ; Generator:U2|count[8]  ; Generator:U2|count[0]  ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.138      ;
+; -0.170 ; Generator:U2|count[6]  ; Generator:U2|count[10] ; clk                 ; clk         ; 1.000        ; -0.040     ; 1.117      ;
+; -0.165 ; Generator:U2|count[6]  ; Generator:U2|count[3]  ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.111      ;
+; -0.165 ; Generator:U2|count[6]  ; Generator:U2|count[12] ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.111      ;
+; -0.165 ; Generator:U2|count[5]  ; Generator:U2|count[3]  ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.111      ;
+; -0.162 ; Generator:U2|count[1]  ; Generator:U2|count[11] ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.108      ;
+; -0.161 ; Generator:U2|count[6]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.107      ;
+; -0.161 ; Generator:U2|count[5]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.107      ;
+; -0.156 ; Generator:U2|count[5]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 1.000        ; -0.040     ; 1.103      ;
+; -0.152 ; Generator:U2|count[0]  ; Generator:U2|count[11] ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.098      ;
+; -0.150 ; Generator:U2|count[10] ; Generator:U2|count[3]  ; clk                 ; clk         ; 1.000        ; -0.042     ; 1.095      ;
+; -0.150 ; Generator:U2|count[10] ; Generator:U2|count[12] ; clk                 ; clk         ; 1.000        ; -0.042     ; 1.095      ;
+; -0.149 ; Generator:U2|count[6]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 1.000        ; -0.040     ; 1.096      ;
+; -0.149 ; Generator:U2|count[0]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.095      ;
+; -0.146 ; Generator:U2|count[10] ; Generator:U2|count[6]  ; clk                 ; clk         ; 1.000        ; -0.042     ; 1.091      ;
+; -0.145 ; Generator:U2|count[9]  ; Generator:U2|count[10] ; clk                 ; clk         ; 1.000        ; -0.040     ; 1.092      ;
+; -0.134 ; Generator:U2|count[10] ; Generator:U2|count[4]  ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.080      ;
+; -0.134 ; Generator:U2|count[10] ; Generator:U2|count[10] ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.080      ;
+; -0.129 ; Generator:U2|count[9]  ; Generator:U2|count[12] ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.075      ;
+; -0.116 ; Generator:U2|count[9]  ; Generator:U2|count[3]  ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.062      ;
+; -0.116 ; Generator:U2|count[1]  ; Generator:U2|count[3]  ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.062      ;
+; -0.112 ; Generator:U2|count[9]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.058      ;
+; -0.110 ; Generator:U2|count[4]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 1.000        ; -0.042     ; 1.055      ;
+; -0.107 ; Generator:U2|count[9]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 1.000        ; -0.040     ; 1.054      ;
+; -0.104 ; Generator:U2|count[4]  ; Generator:U2|count[11] ; clk                 ; clk         ; 1.000        ; -0.042     ; 1.049      ;
+; -0.101 ; Generator:U2|count[8]  ; Generator:U2|count[10] ; clk                 ; clk         ; 1.000        ; -0.040     ; 1.048      ;
+; -0.099 ; Generator:U2|count[3]  ; Generator:U2|count[11] ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.045      ;
+; -0.094 ; Generator:U2|count[1]  ; Generator:U2|count[9]  ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.040      ;
+; -0.090 ; Generator:U2|count[1]  ; Generator:U2|count[8]  ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.036      ;
+; -0.085 ; Generator:U2|count[8]  ; Generator:U2|count[12] ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.031      ;
+; -0.084 ; Generator:U2|count[2]  ; Generator:U2|count[11] ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.030      ;
+; -0.084 ; Generator:U2|count[0]  ; Generator:U2|count[9]  ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.030      ;
+; -0.081 ; Generator:U2|count[2]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.027      ;
+; -0.074 ; Generator:U2|count[0]  ; Generator:U2|count[3]  ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.020      ;
+; -0.056 ; Generator:U2|count[4]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 1.000        ; -0.041     ; 1.002      ;
+; -0.045 ; Generator:U2|count[0]  ; Generator:U2|count[8]  ; clk                 ; clk         ; 1.000        ; -0.041     ; 0.991      ;
+; -0.036 ; Generator:U2|count[4]  ; Generator:U2|count[9]  ; clk                 ; clk         ; 1.000        ; -0.042     ; 0.981      ;
+; -0.031 ; Generator:U2|count[3]  ; Generator:U2|count[9]  ; clk                 ; clk         ; 1.000        ; -0.041     ; 0.977      ;
+; -0.030 ; Generator:U2|count[5]  ; Generator:U2|count[11] ; clk                 ; clk         ; 1.000        ; -0.041     ; 0.976      ;
+; -0.029 ; Generator:U2|count[4]  ; Generator:U2|count[3]  ; clk                 ; clk         ; 1.000        ; -0.042     ; 0.974      ;
++--------+------------------------+------------------------+---------------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'Generator:U2|clkout'                                                                           ;
++-------+----------------+---------------+---------------------+---------------------+--------------+------------+------------+
+; Slack ; From Node      ; To Node       ; Launch Clock        ; Latch Clock         ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------+---------------+---------------------+---------------------+--------------+------------+------------+
+; 0.492 ; PISO:U1|sq[1]  ; PISO:U1|sq[0] ; Generator:U2|clkout ; Generator:U2|clkout ; 1.000        ; -0.042     ; 0.453      ;
+; 0.558 ; PISO:U1|sq[7]  ; PISO:U1|sq[6] ; Generator:U2|clkout ; Generator:U2|clkout ; 1.000        ; -0.042     ; 0.387      ;
+; 0.560 ; PISO:U1|sq[10] ; PISO:U1|sq[9] ; Generator:U2|clkout ; Generator:U2|clkout ; 1.000        ; -0.042     ; 0.385      ;
+; 0.561 ; PISO:U1|sq[5]  ; PISO:U1|sq[4] ; Generator:U2|clkout ; Generator:U2|clkout ; 1.000        ; -0.042     ; 0.384      ;
+; 0.561 ; PISO:U1|sq[8]  ; PISO:U1|sq[7] ; Generator:U2|clkout ; Generator:U2|clkout ; 1.000        ; -0.042     ; 0.384      ;
+; 0.561 ; PISO:U1|sq[9]  ; PISO:U1|sq[8] ; Generator:U2|clkout ; Generator:U2|clkout ; 1.000        ; -0.042     ; 0.384      ;
+; 0.562 ; PISO:U1|sq[4]  ; PISO:U1|sq[3] ; Generator:U2|clkout ; Generator:U2|clkout ; 1.000        ; -0.042     ; 0.383      ;
+; 0.564 ; PISO:U1|sq[3]  ; PISO:U1|sq[2] ; Generator:U2|clkout ; Generator:U2|clkout ; 1.000        ; -0.042     ; 0.381      ;
+; 0.567 ; PISO:U1|sq[2]  ; PISO:U1|sq[1] ; Generator:U2|clkout ; Generator:U2|clkout ; 1.000        ; -0.042     ; 0.378      ;
+; 0.569 ; PISO:U1|sq[6]  ; PISO:U1|sq[5] ; Generator:U2|clkout ; Generator:U2|clkout ; 1.000        ; -0.042     ; 0.376      ;
++-------+----------------+---------------+---------------------+---------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'Generator:U2|clkout'                                                                            ;
++-------+----------------+---------------+---------------------+---------------------+--------------+------------+------------+
+; Slack ; From Node      ; To Node       ; Launch Clock        ; Latch Clock         ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------+---------------+---------------------+---------------------+--------------+------------+------------+
+; 0.190 ; PISO:U1|sq[6]  ; PISO:U1|sq[5] ; Generator:U2|clkout ; Generator:U2|clkout ; 0.000        ; 0.042      ; 0.316      ;
+; 0.191 ; PISO:U1|sq[2]  ; PISO:U1|sq[1] ; Generator:U2|clkout ; Generator:U2|clkout ; 0.000        ; 0.042      ; 0.317      ;
+; 0.193 ; PISO:U1|sq[3]  ; PISO:U1|sq[2] ; Generator:U2|clkout ; Generator:U2|clkout ; 0.000        ; 0.042      ; 0.319      ;
+; 0.195 ; PISO:U1|sq[4]  ; PISO:U1|sq[3] ; Generator:U2|clkout ; Generator:U2|clkout ; 0.000        ; 0.042      ; 0.321      ;
+; 0.199 ; PISO:U1|sq[5]  ; PISO:U1|sq[4] ; Generator:U2|clkout ; Generator:U2|clkout ; 0.000        ; 0.042      ; 0.325      ;
+; 0.199 ; PISO:U1|sq[8]  ; PISO:U1|sq[7] ; Generator:U2|clkout ; Generator:U2|clkout ; 0.000        ; 0.042      ; 0.325      ;
+; 0.199 ; PISO:U1|sq[9]  ; PISO:U1|sq[8] ; Generator:U2|clkout ; Generator:U2|clkout ; 0.000        ; 0.042      ; 0.325      ;
+; 0.200 ; PISO:U1|sq[10] ; PISO:U1|sq[9] ; Generator:U2|clkout ; Generator:U2|clkout ; 0.000        ; 0.042      ; 0.326      ;
+; 0.201 ; PISO:U1|sq[7]  ; PISO:U1|sq[6] ; Generator:U2|clkout ; Generator:U2|clkout ; 0.000        ; 0.042      ; 0.327      ;
+; 0.252 ; PISO:U1|sq[1]  ; PISO:U1|sq[0] ; Generator:U2|clkout ; Generator:U2|clkout ; 0.000        ; 0.042      ; 0.378      ;
++-------+----------------+---------------+---------------------+---------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'clk'                                                                                                     ;
++-------+------------------------+------------------------+---------------------+-------------+--------------+------------+------------+
+; Slack ; From Node              ; To Node                ; Launch Clock        ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------+------------------------+---------------------+-------------+--------------+------------+------------+
+; 0.300 ; Generator:U2|count[9]  ; Generator:U2|count[9]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.425      ;
+; 0.300 ; Generator:U2|count[11] ; Generator:U2|count[11] ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.425      ;
+; 0.300 ; Generator:U2|count[1]  ; Generator:U2|count[1]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.425      ;
+; 0.301 ; Generator:U2|count[7]  ; Generator:U2|count[7]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.426      ;
+; 0.301 ; Generator:U2|count[5]  ; Generator:U2|count[5]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.426      ;
+; 0.302 ; Generator:U2|count[2]  ; Generator:U2|count[2]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.427      ;
+; 0.302 ; Generator:U2|count[8]  ; Generator:U2|count[8]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.427      ;
+; 0.315 ; Generator:U2|clkout    ; Generator:U2|clkout    ; Generator:U2|clkout ; clk         ; 0.000        ; 1.638      ; 2.172      ;
+; 0.370 ; Generator:U2|count[12] ; Generator:U2|count[12] ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.495      ;
+; 0.449 ; Generator:U2|count[1]  ; Generator:U2|count[2]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.574      ;
+; 0.450 ; Generator:U2|count[7]  ; Generator:U2|count[8]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.575      ;
+; 0.453 ; Generator:U2|count[3]  ; Generator:U2|count[3]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.578      ;
+; 0.455 ; Generator:U2|count[6]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.580      ;
+; 0.459 ; Generator:U2|count[0]  ; Generator:U2|count[1]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.584      ;
+; 0.460 ; Generator:U2|count[8]  ; Generator:U2|count[9]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.585      ;
+; 0.460 ; Generator:U2|count[6]  ; Generator:U2|count[7]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.585      ;
+; 0.462 ; Generator:U2|count[0]  ; Generator:U2|count[2]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.587      ;
+; 0.463 ; Generator:U2|count[6]  ; Generator:U2|count[8]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.588      ;
+; 0.512 ; Generator:U2|count[9]  ; Generator:U2|count[11] ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.637      ;
+; 0.513 ; Generator:U2|count[3]  ; Generator:U2|count[5]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.638      ;
+; 0.513 ; Generator:U2|count[7]  ; Generator:U2|count[9]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.638      ;
+; 0.513 ; Generator:U2|count[5]  ; Generator:U2|count[7]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.638      ;
+; 0.516 ; Generator:U2|count[5]  ; Generator:U2|count[8]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.641      ;
+; 0.526 ; Generator:U2|count[8]  ; Generator:U2|count[11] ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.651      ;
+; 0.526 ; Generator:U2|count[2]  ; Generator:U2|count[5]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.651      ;
+; 0.526 ; Generator:U2|count[6]  ; Generator:U2|count[9]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.651      ;
+; 0.544 ; Generator:U2|count[10] ; Generator:U2|count[11] ; clk                 ; clk         ; 0.000        ; 0.040      ; 0.668      ;
+; 0.545 ; Generator:U2|count[4]  ; Generator:U2|count[5]  ; clk                 ; clk         ; 0.000        ; 0.040      ; 0.669      ;
+; 0.578 ; Generator:U2|count[1]  ; Generator:U2|count[5]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.703      ;
+; 0.579 ; Generator:U2|count[3]  ; Generator:U2|count[7]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.704      ;
+; 0.579 ; Generator:U2|count[7]  ; Generator:U2|count[11] ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.704      ;
+; 0.579 ; Generator:U2|count[5]  ; Generator:U2|count[9]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.704      ;
+; 0.582 ; Generator:U2|count[3]  ; Generator:U2|count[8]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.707      ;
+; 0.591 ; Generator:U2|count[0]  ; Generator:U2|count[5]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.716      ;
+; 0.592 ; Generator:U2|count[2]  ; Generator:U2|count[7]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.717      ;
+; 0.592 ; Generator:U2|count[6]  ; Generator:U2|count[11] ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.717      ;
+; 0.595 ; Generator:U2|count[2]  ; Generator:U2|count[8]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.720      ;
+; 0.603 ; Generator:U2|count[5]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.728      ;
+; 0.604 ; Generator:U2|count[11] ; Generator:U2|count[12] ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.729      ;
+; 0.611 ; Generator:U2|count[10] ; Generator:U2|count[10] ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.736      ;
+; 0.611 ; Generator:U2|count[4]  ; Generator:U2|count[7]  ; clk                 ; clk         ; 0.000        ; 0.040      ; 0.735      ;
+; 0.612 ; Generator:U2|count[2]  ; Generator:U2|count[3]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.737      ;
+; 0.614 ; Generator:U2|count[4]  ; Generator:U2|count[8]  ; clk                 ; clk         ; 0.000        ; 0.040      ; 0.738      ;
+; 0.644 ; Generator:U2|count[1]  ; Generator:U2|count[7]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.769      ;
+; 0.645 ; Generator:U2|count[3]  ; Generator:U2|count[9]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.770      ;
+; 0.645 ; Generator:U2|count[5]  ; Generator:U2|count[11] ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.770      ;
+; 0.647 ; Generator:U2|count[1]  ; Generator:U2|count[8]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.772      ;
+; 0.657 ; Generator:U2|count[0]  ; Generator:U2|count[7]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.782      ;
+; 0.658 ; Generator:U2|count[2]  ; Generator:U2|count[9]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.783      ;
+; 0.660 ; Generator:U2|count[0]  ; Generator:U2|count[8]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.785      ;
+; 0.664 ; Generator:U2|count[1]  ; Generator:U2|count[3]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.789      ;
+; 0.669 ; Generator:U2|count[3]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.794      ;
+; 0.670 ; Generator:U2|count[9]  ; Generator:U2|count[12] ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.795      ;
+; 0.674 ; Generator:U2|count[9]  ; Generator:U2|count[10] ; clk                 ; clk         ; 0.000        ; 0.042      ; 0.800      ;
+; 0.677 ; Generator:U2|count[4]  ; Generator:U2|count[9]  ; clk                 ; clk         ; 0.000        ; 0.040      ; 0.801      ;
+; 0.677 ; Generator:U2|count[0]  ; Generator:U2|count[3]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.802      ;
+; 0.682 ; Generator:U2|count[2]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.807      ;
+; 0.684 ; Generator:U2|count[8]  ; Generator:U2|count[12] ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.809      ;
+; 0.688 ; Generator:U2|count[8]  ; Generator:U2|count[10] ; clk                 ; clk         ; 0.000        ; 0.042      ; 0.814      ;
+; 0.699 ; Generator:U2|count[4]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.824      ;
+; 0.701 ; Generator:U2|count[4]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 0.000        ; 0.040      ; 0.825      ;
+; 0.702 ; Generator:U2|count[10] ; Generator:U2|count[12] ; clk                 ; clk         ; 0.000        ; 0.040      ; 0.826      ;
+; 0.710 ; Generator:U2|count[1]  ; Generator:U2|count[9]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.835      ;
+; 0.711 ; Generator:U2|count[3]  ; Generator:U2|count[11] ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.836      ;
+; 0.721 ; Generator:U2|count[4]  ; Generator:U2|count[10] ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.846      ;
+; 0.721 ; Generator:U2|count[8]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 0.000        ; 0.042      ; 0.847      ;
+; 0.723 ; Generator:U2|count[0]  ; Generator:U2|count[9]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.848      ;
+; 0.724 ; Generator:U2|count[2]  ; Generator:U2|count[11] ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.849      ;
+; 0.729 ; Generator:U2|count[4]  ; Generator:U2|count[12] ; clk                 ; clk         ; 0.000        ; 0.040      ; 0.853      ;
+; 0.729 ; Generator:U2|count[4]  ; Generator:U2|count[3]  ; clk                 ; clk         ; 0.000        ; 0.040      ; 0.853      ;
+; 0.733 ; Generator:U2|count[8]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.858      ;
+; 0.734 ; Generator:U2|count[1]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.859      ;
+; 0.737 ; Generator:U2|count[8]  ; Generator:U2|count[3]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.862      ;
+; 0.737 ; Generator:U2|count[7]  ; Generator:U2|count[12] ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.862      ;
+; 0.741 ; Generator:U2|count[7]  ; Generator:U2|count[10] ; clk                 ; clk         ; 0.000        ; 0.042      ; 0.867      ;
+; 0.743 ; Generator:U2|count[4]  ; Generator:U2|count[11] ; clk                 ; clk         ; 0.000        ; 0.040      ; 0.867      ;
+; 0.747 ; Generator:U2|count[0]  ; Generator:U2|count[6]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.872      ;
+; 0.750 ; Generator:U2|count[2]  ; Generator:U2|count[10] ; clk                 ; clk         ; 0.000        ; 0.042      ; 0.876      ;
+; 0.750 ; Generator:U2|count[2]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 0.000        ; 0.042      ; 0.876      ;
+; 0.750 ; Generator:U2|count[6]  ; Generator:U2|count[12] ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.875      ;
+; 0.754 ; Generator:U2|count[6]  ; Generator:U2|count[10] ; clk                 ; clk         ; 0.000        ; 0.042      ; 0.880      ;
+; 0.762 ; Generator:U2|count[3]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 0.000        ; 0.042      ; 0.888      ;
+; 0.766 ; Generator:U2|count[2]  ; Generator:U2|count[12] ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.891      ;
+; 0.776 ; Generator:U2|count[1]  ; Generator:U2|count[11] ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.901      ;
+; 0.789 ; Generator:U2|count[0]  ; Generator:U2|count[11] ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.914      ;
+; 0.803 ; Generator:U2|count[5]  ; Generator:U2|count[12] ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.928      ;
+; 0.807 ; Generator:U2|count[5]  ; Generator:U2|count[10] ; clk                 ; clk         ; 0.000        ; 0.042      ; 0.933      ;
+; 0.826 ; Generator:U2|count[10] ; Generator:U2|count[4]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.951      ;
+; 0.827 ; Generator:U2|count[1]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 0.000        ; 0.042      ; 0.953      ;
+; 0.832 ; Generator:U2|count[0]  ; Generator:U2|count[10] ; clk                 ; clk         ; 0.000        ; 0.042      ; 0.958      ;
+; 0.832 ; Generator:U2|count[0]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 0.000        ; 0.042      ; 0.958      ;
+; 0.832 ; Generator:U2|count[10] ; Generator:U2|count[6]  ; clk                 ; clk         ; 0.000        ; 0.040      ; 0.956      ;
+; 0.835 ; Generator:U2|count[10] ; Generator:U2|count[3]  ; clk                 ; clk         ; 0.000        ; 0.040      ; 0.959      ;
+; 0.846 ; Generator:U2|count[0]  ; Generator:U2|count[12] ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.971      ;
+; 0.853 ; Generator:U2|count[6]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 0.000        ; 0.042      ; 0.979      ;
+; 0.862 ; Generator:U2|count[6]  ; Generator:U2|count[3]  ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.987      ;
+; 0.869 ; Generator:U2|count[9]  ; Generator:U2|count[4]  ; clk                 ; clk         ; 0.000        ; 0.042      ; 0.995      ;
+; 0.869 ; Generator:U2|count[3]  ; Generator:U2|count[12] ; clk                 ; clk         ; 0.000        ; 0.041      ; 0.994      ;
+; 0.873 ; Generator:U2|count[3]  ; Generator:U2|count[10] ; clk                 ; clk         ; 0.000        ; 0.042      ; 0.999      ;
+; 0.874 ; Generator:U2|count[1]  ; Generator:U2|count[10] ; clk                 ; clk         ; 0.000        ; 0.042      ; 1.000      ;
++-------+------------------------+------------------------+---------------------+-------------+--------------+------------+------------+
+
+
+----------------------------------------------
+; Fast 1200mV 0C Model Metastability Summary ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++-----------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                               ;
++----------------------+---------+-------+----------+---------+---------------------+
+; Clock                ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++----------------------+---------+-------+----------+---------+---------------------+
+; Worst-case Slack     ; -3.259  ; 0.190 ; N/A      ; N/A     ; -3.000              ;
+;  Generator:U2|clkout ; -0.047  ; 0.190 ; N/A      ; N/A     ; -1.285              ;
+;  clk                 ; -3.259  ; 0.300 ; N/A      ; N/A     ; -3.000              ;
+; Design-wide TNS      ; -22.189 ; 0.0   ; 0.0      ; 0.0     ; -35.125             ;
+;  Generator:U2|clkout ; -0.047  ; 0.000 ; N/A      ; N/A     ; -14.135             ;
+;  clk                 ; -22.142 ; 0.000 ; N/A      ; N/A     ; -20.990             ;
++----------------------+---------+-------+----------+---------+---------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                    ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin           ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; txd           ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; txrdy         ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; txe           ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+
+
++----------------------------------------------------------------------------+
+; Input Transition Times                                                     ;
++-------------------------+--------------+-----------------+-----------------+
+; Pin                     ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
++-------------------------+--------------+-----------------+-----------------+
+; go                      ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; parity_type             ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; data[0]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; data[1]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; data[2]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; data[3]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; data[4]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; data[5]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; data[6]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; data[7]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; clk                     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ASDO_DATA1~     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_FLASH_nCE_nCSO~ ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_DATA0~          ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
++-------------------------+--------------+-----------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; txd           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; txrdy         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-09 V                   ; 2.37 V              ; -0.00994 V          ; 0.186 V                              ; 0.028 V                              ; 4.98e-10 s                  ; 4.96e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.07e-09 V                  ; 2.37 V             ; -0.00994 V         ; 0.186 V                             ; 0.028 V                             ; 4.98e-10 s                 ; 4.96e-10 s                 ; Yes                       ; Yes                       ;
+; txe           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.67e-09 V                   ; 2.38 V              ; -0.0485 V           ; 0.167 V                              ; 0.096 V                              ; 2.95e-10 s                  ; 2.73e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.67e-09 V                  ; 2.38 V             ; -0.0485 V          ; 0.167 V                             ; 0.096 V                             ; 2.95e-10 s                 ; 2.73e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.18e-09 V                   ; 2.38 V              ; -0.00483 V          ; 0.152 V                              ; 0.012 V                              ; 4.81e-10 s                  ; 6.29e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.18e-09 V                  ; 2.38 V             ; -0.00483 V         ; 0.152 V                             ; 0.012 V                             ; 4.81e-10 s                 ; 6.29e-10 s                 ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 85c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; txd           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; txrdy         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.67e-07 V                   ; 2.35 V              ; -0.00942 V          ; 0.116 V                              ; 0.033 V                              ; 6.66e-10 s                  ; 6.27e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.67e-07 V                  ; 2.35 V             ; -0.00942 V         ; 0.116 V                             ; 0.033 V                             ; 6.66e-10 s                 ; 6.27e-10 s                 ; Yes                       ; Yes                       ;
+; txe           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.75e-07 V                   ; 2.35 V              ; -0.0109 V           ; 0.084 V                              ; 0.027 V                              ; 4.31e-10 s                  ; 3.61e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.75e-07 V                  ; 2.35 V             ; -0.0109 V          ; 0.084 V                             ; 0.027 V                             ; 4.31e-10 s                 ; 3.61e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.15e-07 V                   ; 2.35 V              ; -0.00712 V          ; 0.093 V                              ; 0.02 V                               ; 6.21e-10 s                  ; 7.9e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 6.15e-07 V                  ; 2.35 V             ; -0.00712 V         ; 0.093 V                             ; 0.02 V                              ; 6.21e-10 s                 ; 7.9e-10 s                  ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; txd           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; txrdy         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.71 V              ; -0.0317 V           ; 0.148 V                              ; 0.064 V                              ; 4.51e-10 s                  ; 4.15e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.71 V             ; -0.0317 V          ; 0.148 V                             ; 0.064 V                             ; 4.51e-10 s                 ; 4.15e-10 s                 ; No                        ; Yes                       ;
+; txe           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.22e-08 V                   ; 2.74 V              ; -0.06 V             ; 0.158 V                              ; 0.08 V                               ; 2.68e-10 s                  ; 2.19e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 2.22e-08 V                  ; 2.74 V             ; -0.06 V            ; 0.158 V                             ; 0.08 V                              ; 2.68e-10 s                 ; 2.19e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.54e-08 V                   ; 2.7 V               ; -0.00943 V          ; 0.276 V                              ; 0.035 V                              ; 3.19e-10 s                  ; 4.99e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 3.54e-08 V                  ; 2.7 V              ; -0.00943 V         ; 0.276 V                             ; 0.035 V                             ; 3.19e-10 s                 ; 4.99e-10 s                 ; No                        ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++---------------------------------------------------------------------------------------+
+; Setup Transfers                                                                       ;
++---------------------+---------------------+----------+----------+----------+----------+
+; From Clock          ; To Clock            ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++---------------------+---------------------+----------+----------+----------+----------+
+; clk                 ; clk                 ; 195      ; 0        ; 0        ; 0        ;
+; Generator:U2|clkout ; clk                 ; 1        ; 1        ; 0        ; 0        ;
+; Generator:U2|clkout ; Generator:U2|clkout ; 10       ; 0        ; 0        ; 0        ;
++---------------------+---------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------------------------+
+; Hold Transfers                                                                        ;
++---------------------+---------------------+----------+----------+----------+----------+
+; From Clock          ; To Clock            ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++---------------------+---------------------+----------+----------+----------+----------+
+; clk                 ; clk                 ; 195      ; 0        ; 0        ; 0        ;
+; Generator:U2|clkout ; clk                 ; 1        ; 1        ; 0        ; 0        ;
+; Generator:U2|clkout ; Generator:U2|clkout ; 10       ; 0        ; 0        ; 0        ;
++---------------------+---------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 10    ; 10   ;
+; Unconstrained Input Port Paths  ; 28    ; 28   ;
+; Unconstrained Output Ports      ; 2     ; 2    ;
+; Unconstrained Output Port Paths ; 12    ; 12   ;
++---------------------------------+-------+------+
+
+
++----------------------------------------------------------------+
+; Clock Status Summary                                           ;
++---------------------+---------------------+------+-------------+
+; Target              ; Clock               ; Type ; Status      ;
++---------------------+---------------------+------+-------------+
+; Generator:U2|clkout ; Generator:U2|clkout ; Base ; Constrained ;
+; clk                 ; clk                 ; Base ; Constrained ;
++---------------------+---------------------+------+-------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                          ;
++-------------+--------------------------------------------------------------------------------------+
+; Input Port  ; Comment                                                                              ;
++-------------+--------------------------------------------------------------------------------------+
+; data[0]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data[1]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data[2]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data[3]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data[4]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data[5]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data[6]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data[7]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; go          ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; parity_type ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; txd         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; txe         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                          ;
++-------------+--------------------------------------------------------------------------------------+
+; Input Port  ; Comment                                                                              ;
++-------------+--------------------------------------------------------------------------------------+
+; data[0]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data[1]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data[2]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data[3]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data[4]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data[5]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data[6]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data[7]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; go          ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; parity_type ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; txd         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; txe         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Mon Aug 15 23:36:27 2022
+Info: Command: quartus_sta UART -c UART
+Info: qsta_default_script.tcl version: #1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'UART.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+    Info (332105): create_clock -period 1.000 -name Generator:U2|clkout Generator:U2|clkout
+Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow 1200mV 85C Model
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
+Info (332146): Worst-case setup slack is -3.259
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.259             -22.142 clk 
+    Info (332119):    -0.047              -0.047 Generator:U2|clkout 
+Info (332146): Worst-case hold slack is 0.435
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.435               0.000 Generator:U2|clkout 
+    Info (332119):     0.654               0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -20.990 clk 
+    Info (332119):    -1.285             -14.135 Generator:U2|clkout 
+Info: Analyzing Slow 1200mV 0C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
+Info (332146): Worst-case setup slack is -2.973
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.973             -18.873 clk 
+    Info (332119):     0.056               0.000 Generator:U2|clkout 
+Info (332146): Worst-case hold slack is 0.399
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.399               0.000 Generator:U2|clkout 
+    Info (332119):     0.600               0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -20.990 clk 
+    Info (332119):    -1.285             -14.135 Generator:U2|clkout 
+Info: Analyzing Fast 1200mV 0C Model
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
+Info (332146): Worst-case setup slack is -1.140
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -1.140              -3.989 clk 
+    Info (332119):     0.492               0.000 Generator:U2|clkout 
+Info (332146): Worst-case hold slack is 0.190
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.190               0.000 Generator:U2|clkout 
+    Info (332119):     0.300               0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -17.865 clk 
+    Info (332119):    -1.000             -11.000 Generator:U2|clkout 
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4837 megabytes
+    Info: Processing ended: Mon Aug 15 23:36:28 2022
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

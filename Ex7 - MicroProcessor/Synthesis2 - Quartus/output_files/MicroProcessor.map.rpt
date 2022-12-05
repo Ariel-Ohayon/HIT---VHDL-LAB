@@ -1,0 +1,677 @@
+Analysis & Synthesis report for MicroProcessor
+Tue Aug 30 17:51:54 2022
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. User-Specified and Inferred Latches
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Source assignments for Memory:U2|LPM_RAM_DQ:u1|altram:sram|altsyncram:ram_block|altsyncram_f0a1:auto_generated
+ 13. Parameter Settings for User Entity Instance: counter:U1
+ 14. Parameter Settings for User Entity Instance: Memory:U2|LPM_RAM_DQ:u1
+ 15. Parameter Settings for User Entity Instance: MPU:U3|regn:Reg0
+ 16. Parameter Settings for User Entity Instance: MPU:U3|regn:Reg1
+ 17. Parameter Settings for User Entity Instance: MPU:U3|regn:Reg2
+ 18. Parameter Settings for User Entity Instance: MPU:U3|regn:Reg3
+ 19. Parameter Settings for User Entity Instance: MPU:U3|regn:Reg4
+ 20. Parameter Settings for User Entity Instance: MPU:U3|regn:Reg5
+ 21. Parameter Settings for User Entity Instance: MPU:U3|regn:Reg6
+ 22. Parameter Settings for User Entity Instance: MPU:U3|regn:Reg7
+ 23. Parameter Settings for User Entity Instance: MPU:U3|regn:G
+ 24. Parameter Settings for User Entity Instance: MPU:U3|regn:A
+ 25. Parameter Settings for User Entity Instance: MPU:U3|regn:IR
+ 26. Port Connectivity Checks: "Memory:U2"
+ 27. Post-Synthesis Netlist Statistics for Top Partition
+ 28. Elapsed Time Per Partition
+ 29. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Aug 30 17:51:54 2022       ;
+; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                      ; MicroProcessor                              ;
+; Top-level Entity Name              ; system1                                     ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 327                                         ;
+;     Total combinational functions  ; 190                                         ;
+;     Dedicated logic registers      ; 179                                         ;
+; Total registers                    ; 179                                         ;
+; Total pins                         ; 21                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 4,096                                       ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                            ; system1            ; MicroProcessor     ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                       ;
++----------------------------------+-----------------+----------------------------------+------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                        ; File Name with Absolute Path                                                                               ; Library ;
++----------------------------------+-----------------+----------------------------------+------------------------------------------------------------------------------------------------------------+---------+
+; upcount.vhd                      ; yes             ; User VHDL File                   ; C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/upcount.vhd            ;         ;
+; dec3to8.vhd                      ; yes             ; User VHDL File                   ; C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/dec3to8.vhd            ;         ;
+; regn.vhd                         ; yes             ; User VHDL File                   ; C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/regn.vhd               ;         ;
+; alu.vhd                          ; yes             ; User VHDL File                   ; C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/alu.vhd                ;         ;
+; mux.vhd                          ; yes             ; User VHDL File                   ; C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/mux.vhd                ;         ;
+; MPU.vhd                          ; yes             ; User VHDL File                   ; C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/MPU.vhd                ;         ;
+; ControlUnit.vhd                  ; yes             ; User VHDL File                   ; C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/ControlUnit.vhd        ;         ;
+; counter.vhd                      ; yes             ; User VHDL File                   ; C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/counter.vhd            ;         ;
+; Memory.vhd                       ; yes             ; User VHDL File                   ; C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/Memory.vhd             ;         ;
+; system1.vhd                      ; yes             ; User VHDL File                   ; C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/system1.vhd            ;         ;
+; Program.mif                      ; yes             ; User Memory Initialization File  ; C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/Program.mif            ;         ;
+; lpm_ram_dq.tdf                   ; yes             ; Megafunction                     ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_ram_dq.tdf                                      ;         ;
+; altram.inc                       ; yes             ; Megafunction                     ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altram.inc                                          ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                     ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mux.inc                                         ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                     ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_decode.inc                                      ;         ;
+; aglobal181.inc                   ; yes             ; Megafunction                     ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc                                      ;         ;
+; altram.tdf                       ; yes             ; Megafunction                     ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altram.tdf                                          ;         ;
+; memmodes.inc                     ; yes             ; Megafunction                     ; c:/intelfpga_lite/18.1/quartus/libraries/others/maxplus2/memmodes.inc                                      ;         ;
+; altsyncram.inc                   ; yes             ; Megafunction                     ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.inc                                      ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                     ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf                                      ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                     ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc                               ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                     ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_rdenreg.inc                                       ;         ;
+; altrom.inc                       ; yes             ; Megafunction                     ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altrom.inc                                          ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                     ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altdpram.inc                                        ;         ;
+; db/altsyncram_f0a1.tdf           ; yes             ; Auto-Generated Megafunction      ; C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/db/altsyncram_f0a1.tdf ;         ;
++----------------------------------+-----------------+----------------------------------+------------------------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 327       ;
+;                                             ;           ;
+; Total combinational functions               ; 190       ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 120       ;
+;     -- 3 input functions                    ; 37        ;
+;     -- <=2 input functions                  ; 33        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 168       ;
+;     -- arithmetic mode                      ; 22        ;
+;                                             ;           ;
+; Total registers                             ; 179       ;
+;     -- Dedicated logic registers            ; 179       ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 21        ;
+; Total memory bits                           ; 4096      ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; rst~input ;
+; Maximum fan-out                             ; 184       ;
+; Total fan-out                               ; 1557      ;
+; Average fan-out                             ; 3.65      ;
++---------------------------------------------+-----------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                            ;
++-------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node                      ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                              ; Entity Name     ; Library Name ;
++-------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------+-----------------+--------------+
+; |system1                                        ; 190 (1)             ; 179 (0)                   ; 4096        ; 0            ; 0       ; 0         ; 21   ; 0            ; |system1                                                                                         ; system1         ; work         ;
+;    |MPU:U3|                                     ; 181 (0)             ; 171 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system1|MPU:U3                                                                                  ; MPU             ; work         ;
+;       |ALU:ArithLogicUnit|                      ; 16 (16)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system1|MPU:U3|ALU:ArithLogicUnit                                                               ; ALU             ; work         ;
+;       |ControlUnit:U0|                          ; 43 (35)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system1|MPU:U3|ControlUnit:U0                                                                   ; ControlUnit     ; work         ;
+;          |dec3to8:DecEnIn|                      ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system1|MPU:U3|ControlUnit:U0|dec3to8:DecEnIn                                                   ; dec3to8         ; work         ;
+;       |mux:MultiPlexer|                         ; 103 (103)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system1|MPU:U3|mux:MultiPlexer                                                                  ; mux             ; work         ;
+;       |regn:A|                                  ; 0 (0)               ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system1|MPU:U3|regn:A                                                                           ; regn            ; work         ;
+;       |regn:G|                                  ; 17 (17)             ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system1|MPU:U3|regn:G                                                                           ; regn            ; work         ;
+;       |regn:IR|                                 ; 0 (0)               ; 9 (9)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system1|MPU:U3|regn:IR                                                                          ; regn            ; work         ;
+;       |regn:Reg0|                               ; 0 (0)               ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system1|MPU:U3|regn:Reg0                                                                        ; regn            ; work         ;
+;       |regn:Reg1|                               ; 0 (0)               ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system1|MPU:U3|regn:Reg1                                                                        ; regn            ; work         ;
+;       |regn:Reg2|                               ; 0 (0)               ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system1|MPU:U3|regn:Reg2                                                                        ; regn            ; work         ;
+;       |regn:Reg3|                               ; 0 (0)               ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system1|MPU:U3|regn:Reg3                                                                        ; regn            ; work         ;
+;       |regn:Reg4|                               ; 0 (0)               ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system1|MPU:U3|regn:Reg4                                                                        ; regn            ; work         ;
+;       |regn:Reg5|                               ; 0 (0)               ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system1|MPU:U3|regn:Reg5                                                                        ; regn            ; work         ;
+;       |regn:Reg6|                               ; 0 (0)               ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system1|MPU:U3|regn:Reg6                                                                        ; regn            ; work         ;
+;       |regn:Reg7|                               ; 0 (0)               ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system1|MPU:U3|regn:Reg7                                                                        ; regn            ; work         ;
+;       |upcount:U1|                              ; 2 (2)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system1|MPU:U3|upcount:U1                                                                       ; upcount         ; work         ;
+;    |Memory:U2|                                  ; 0 (0)               ; 0 (0)                     ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |system1|Memory:U2                                                                               ; Memory          ; work         ;
+;       |lpm_ram_dq:u1|                           ; 0 (0)               ; 0 (0)                     ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |system1|Memory:U2|lpm_ram_dq:u1                                                                 ; lpm_ram_dq      ; work         ;
+;          |altram:sram|                          ; 0 (0)               ; 0 (0)                     ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |system1|Memory:U2|lpm_ram_dq:u1|altram:sram                                                     ; altram          ; work         ;
+;             |altsyncram:ram_block|              ; 0 (0)               ; 0 (0)                     ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |system1|Memory:U2|lpm_ram_dq:u1|altram:sram|altsyncram:ram_block                                ; altsyncram      ; work         ;
+;                |altsyncram_f0a1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |system1|Memory:U2|lpm_ram_dq:u1|altram:sram|altsyncram:ram_block|altsyncram_f0a1:auto_generated ; altsyncram_f0a1 ; work         ;
+;    |counter:U1|                                 ; 8 (8)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system1|counter:U1                                                                              ; counter         ; work         ;
++-------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------+-----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                         ;
++----------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+-------------+
+; Name                                                                                               ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF         ;
++----------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+-------------+
+; Memory:U2|lpm_ram_dq:u1|altram:sram|altsyncram:ram_block|altsyncram_f0a1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 256          ; 16           ; --           ; --           ; 4096 ; Program.mif ;
++----------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                ;
++-----------------------------------------------------+-------------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal                 ; Free of Timing Hazards ;
++-----------------------------------------------------+-------------------------------------+------------------------+
+; MPU:U3|ControlUnit:U0|Gout                          ; MPU:U3|ControlUnit:U0|Dinout        ; yes                    ;
+; MPU:U3|ControlUnit:U0|Dinout                        ; MPU:U3|ControlUnit:U0|Dinout        ; yes                    ;
+; MPU:U3|ControlUnit:U0|EnDecout                      ; MPU:U3|ControlUnit:U0|Dinout        ; yes                    ;
+; MPU:U3|ControlUnit:U0|AddrRegOut[0]                 ; MPU:U3|ControlUnit:U0|AddrRegOut[0] ; yes                    ;
+; MPU:U3|ControlUnit:U0|AddrRegOut[1]                 ; MPU:U3|ControlUnit:U0|AddrRegOut[0] ; yes                    ;
+; MPU:U3|ControlUnit:U0|AddrRegOut[2]                 ; MPU:U3|ControlUnit:U0|AddrRegOut[0] ; yes                    ;
+; MPU:U3|ControlUnit:U0|Done                          ; MPU:U3|ControlUnit:U0|Enrun         ; yes                    ;
+; MPU:U3|ControlUnit:U0|Enrun                         ; GND                                 ; yes                    ;
+; MPU:U3|ControlUnit:U0|AddrRegIn[0]                  ; MPU:U3|ControlUnit:U0|AddrRegIn[0]  ; yes                    ;
+; MPU:U3|ControlUnit:U0|AddrRegIn[1]                  ; MPU:U3|ControlUnit:U0|AddrRegIn[0]  ; yes                    ;
+; MPU:U3|ControlUnit:U0|AddrRegIn[2]                  ; MPU:U3|ControlUnit:U0|AddrRegIn[0]  ; yes                    ;
+; MPU:U3|ControlUnit:U0|EnDecin                       ; MPU:U3|ControlUnit:U0|Dinout        ; yes                    ;
+; MPU:U3|ControlUnit:U0|AddSub                        ; MPU:U3|ControlUnit:U0|Dinout        ; yes                    ;
+; MPU:U3|ControlUnit:U0|Gin                           ; MPU:U3|ControlUnit:U0|Dinout        ; yes                    ;
+; MPU:U3|ControlUnit:U0|IRin                          ; MPU:U3|ControlUnit:U0|IRin          ; yes                    ;
+; MPU:U3|ControlUnit:U0|Ain                           ; MPU:U3|ControlUnit:U0|Dinout        ; yes                    ;
+; Number of user-specified and inferred latches = 16  ;                                     ;                        ;
++-----------------------------------------------------+-------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 179   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 179   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 169   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |system1|MPU:U3|ControlUnit:U0|Mux10    ;
+; 258:1              ; 16 bits   ; 2752 LEs      ; 96 LEs               ; 2656 LEs               ; No         ; |system1|MPU:U3|mux:MultiPlexer|busa[0] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Source assignments for Memory:U2|LPM_RAM_DQ:u1|altram:sram|altsyncram:ram_block|altsyncram_f0a1:auto_generated ;
++---------------------------------+--------------------+------+--------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                               ;
++---------------------------------+--------------------+------+--------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                ;
++---------------------------------+--------------------+------+--------------------------------------------------+
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: counter:U1 ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; n              ; 8     ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Memory:U2|LPM_RAM_DQ:u1 ;
++------------------------+--------------+------------------------------+
+; Parameter Name         ; Value        ; Type                         ;
++------------------------+--------------+------------------------------+
+; LPM_WIDTH              ; 16           ; Signed Integer               ;
+; LPM_WIDTHAD            ; 8            ; Signed Integer               ;
+; LPM_NUMWORDS           ; 0            ; Signed Integer               ;
+; LPM_INDATA             ; REGISTERED   ; Untyped                      ;
+; LPM_ADDRESS_CONTROL    ; REGISTERED   ; Untyped                      ;
+; LPM_OUTDATA            ; UNREGISTERED ; Untyped                      ;
+; LPM_FILE               ; Program.mif  ; Untyped                      ;
+; USE_EAB                ; ON           ; Untyped                      ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                      ;
+; CBXI_PARAMETER         ; NOTHING      ; Untyped                      ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                 ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE               ;
++------------------------+--------------+------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MPU:U3|regn:Reg0 ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; n              ; 16    ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MPU:U3|regn:Reg1 ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; n              ; 16    ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MPU:U3|regn:Reg2 ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; n              ; 16    ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MPU:U3|regn:Reg3 ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; n              ; 16    ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MPU:U3|regn:Reg4 ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; n              ; 16    ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MPU:U3|regn:Reg5 ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; n              ; 16    ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MPU:U3|regn:Reg6 ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; n              ; 16    ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MPU:U3|regn:Reg7 ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; n              ; 16    ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MPU:U3|regn:G ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; n              ; 16    ; Signed Integer                    ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MPU:U3|regn:A ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; n              ; 16    ; Signed Integer                    ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MPU:U3|regn:IR ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; n              ; 9     ; Signed Integer                     ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------+
+; Port Connectivity Checks: "Memory:U2"  ;
++------+-------+----------+--------------+
+; Port ; Type  ; Severity ; Details      ;
++------+-------+----------+--------------+
+; we   ; Input ; Info     ; Stuck at GND ;
+; din  ; Input ; Info     ; Stuck at GND ;
++------+-------+----------+--------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 21                          ;
+; cycloneiii_ff         ; 179                         ;
+;     CLR               ; 10                          ;
+;     ENA CLR           ; 169                         ;
+; cycloneiii_lcell_comb ; 190                         ;
+;     arith             ; 22                          ;
+;         2 data inputs ; 6                           ;
+;         3 data inputs ; 16                          ;
+;     normal            ; 168                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 24                          ;
+;         3 data inputs ; 21                          ;
+;         4 data inputs ; 120                         ;
+; cycloneiii_ram_block  ; 16                          ;
+;                       ;                             ;
+; Max LUT depth         ; 10.50                       ;
+; Average LUT depth     ; 6.43                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Tue Aug 30 17:51:44 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MicroProcessor -c MicroProcessor
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file upcount.vhd
+    Info (12022): Found design unit 1: upcount-Behavior File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/upcount.vhd Line: 11
+    Info (12023): Found entity 1: upcount File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/upcount.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file dec3to8.vhd
+    Info (12022): Found design unit 1: dec3to8-Behavior File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/dec3to8.vhd Line: 10
+    Info (12023): Found entity 1: dec3to8 File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/dec3to8.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file regn.vhd
+    Info (12022): Found design unit 1: regn-Behavior File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/regn.vhd Line: 12
+    Info (12023): Found entity 1: regn File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/regn.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file alu.vhd
+    Info (12022): Found design unit 1: ALU-one File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/alu.vhd Line: 12
+    Info (12023): Found entity 1: ALU File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/alu.vhd Line: 5
+Warning (12090): Entity "mux" obtained from "mux.vhd" instead of from Quartus Prime megafunction library File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/mux.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file mux.vhd
+    Info (12022): Found design unit 1: mux-bhv File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/mux.vhd Line: 12
+    Info (12023): Found entity 1: mux File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/mux.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file mpu.vhd
+    Info (12022): Found design unit 1: MPU-one File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/MPU.vhd Line: 12
+    Info (12023): Found entity 1: MPU File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/MPU.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file controlunit.vhd
+    Info (12022): Found design unit 1: ControlUnit-one File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/ControlUnit.vhd Line: 18
+    Info (12023): Found entity 1: ControlUnit File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/ControlUnit.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file unit1.vhd
+    Info (12022): Found design unit 1: Unit1-one File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/Unit1.vhd Line: 17
+    Info (12023): Found entity 1: Unit1 File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/Unit1.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file counter.vhd
+    Info (12022): Found design unit 1: counter-one File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/counter.vhd Line: 12
+    Info (12023): Found entity 1: counter File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/counter.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file memory.vhd
+    Info (12022): Found design unit 1: Memory-arc File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/Memory.vhd Line: 15
+    Info (12023): Found entity 1: Memory File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/Memory.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file system1.vhd
+    Info (12022): Found design unit 1: system1-one File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/system1.vhd Line: 11
+    Info (12023): Found entity 1: system1 File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/system1.vhd Line: 4
+Info (12127): Elaborating entity "system1" for the top level hierarchy
+Info (12128): Elaborating entity "counter" for hierarchy "counter:U1" File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/system1.vhd Line: 48
+Info (12128): Elaborating entity "Memory" for hierarchy "Memory:U2" File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/system1.vhd Line: 49
+Info (12128): Elaborating entity "LPM_RAM_DQ" for hierarchy "Memory:U2|LPM_RAM_DQ:u1" File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/Memory.vhd Line: 22
+Info (12130): Elaborated megafunction instantiation "Memory:U2|LPM_RAM_DQ:u1" File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/Memory.vhd Line: 22
+Info (12133): Instantiated megafunction "Memory:U2|LPM_RAM_DQ:u1" with the following parameter: File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/Memory.vhd Line: 22
+    Info (12134): Parameter "LPM_WIDTH" = "16"
+    Info (12134): Parameter "LPM_WIDTHAD" = "8"
+    Info (12134): Parameter "LPM_NUMWORDS" = "0"
+    Info (12134): Parameter "LPM_INDATA" = "REGISTERED"
+    Info (12134): Parameter "LPM_ADDRESS_CONTROL" = "REGISTERED"
+    Info (12134): Parameter "LPM_OUTDATA" = "UNREGISTERED"
+    Info (12134): Parameter "LPM_FILE" = "Program.mif"
+    Info (12134): Parameter "LPM_TYPE" = "LPM_RAM_DQ"
+    Info (12134): Parameter "USE_EAB" = "ON"
+    Info (12134): Parameter "INTENDED_DEVICE_FAMILY" = "UNUSED"
+    Info (12134): Parameter "LPM_HINT" = "UNUSED"
+Info (12128): Elaborating entity "altram" for hierarchy "Memory:U2|LPM_RAM_DQ:u1|altram:sram" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_ram_dq.tdf Line: 105
+Warning (287001): Assertion warning: altram does not support Cyclone IV E device family -- attempting best-case memory conversions, but power-up states and read during write behavior will be different for Cyclone IV E devices File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altram.tdf Line: 211
+Info (12131): Elaborated megafunction instantiation "Memory:U2|LPM_RAM_DQ:u1|altram:sram", which is child of megafunction instantiation "Memory:U2|LPM_RAM_DQ:u1" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_ram_dq.tdf Line: 105
+Info (12128): Elaborating entity "altsyncram" for hierarchy "Memory:U2|LPM_RAM_DQ:u1|altram:sram|altsyncram:ram_block" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altram.tdf Line: 102
+Info (12131): Elaborated megafunction instantiation "Memory:U2|LPM_RAM_DQ:u1|altram:sram|altsyncram:ram_block", which is child of megafunction instantiation "Memory:U2|LPM_RAM_DQ:u1" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altram.tdf Line: 102
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_f0a1.tdf
+    Info (12023): Found entity 1: altsyncram_f0a1 File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/db/altsyncram_f0a1.tdf Line: 27
+Info (12128): Elaborating entity "altsyncram_f0a1" for hierarchy "Memory:U2|LPM_RAM_DQ:u1|altram:sram|altsyncram:ram_block|altsyncram_f0a1:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
+Info (12128): Elaborating entity "MPU" for hierarchy "MPU:U3" File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/system1.vhd Line: 50
+Info (12128): Elaborating entity "regn" for hierarchy "MPU:U3|regn:Reg0" File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/MPU.vhd Line: 77
+Info (12128): Elaborating entity "regn" for hierarchy "MPU:U3|regn:IR" File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/MPU.vhd Line: 87
+Info (12128): Elaborating entity "ControlUnit" for hierarchy "MPU:U3|ControlUnit:U0" File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/MPU.vhd Line: 89
+Warning (10492): VHDL Process Statement warning at ControlUnit.vhd(43): signal "Enrun" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/ControlUnit.vhd Line: 43
+Warning (10631): VHDL Process Statement warning at ControlUnit.vhd(39): inferring latch(es) for signal or variable "Enrun", which holds its previous value in one or more paths through the process File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/ControlUnit.vhd Line: 39
+Warning (10492): VHDL Process Statement warning at ControlUnit.vhd(74): signal "Instruction" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/ControlUnit.vhd Line: 74
+Warning (10492): VHDL Process Statement warning at ControlUnit.vhd(79): signal "Instruction" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/ControlUnit.vhd Line: 79
+Warning (10492): VHDL Process Statement warning at ControlUnit.vhd(83): signal "Instruction" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/ControlUnit.vhd Line: 83
+Warning (10492): VHDL Process Statement warning at ControlUnit.vhd(87): signal "Instruction" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/ControlUnit.vhd Line: 87
+Warning (10492): VHDL Process Statement warning at ControlUnit.vhd(91): signal "Instruction" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/ControlUnit.vhd Line: 91
+Warning (10492): VHDL Process Statement warning at ControlUnit.vhd(97): signal "Instruction" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/ControlUnit.vhd Line: 97
+Warning (10492): VHDL Process Statement warning at ControlUnit.vhd(101): signal "Instruction" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/ControlUnit.vhd Line: 101
+Warning (10492): VHDL Process Statement warning at ControlUnit.vhd(105): signal "Instruction" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/ControlUnit.vhd Line: 105
+Warning (10492): VHDL Process Statement warning at ControlUnit.vhd(111): signal "Instruction" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/ControlUnit.vhd Line: 111
+Warning (10492): VHDL Process Statement warning at ControlUnit.vhd(115): signal "Instruction" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/ControlUnit.vhd Line: 115
+Warning (10492): VHDL Process Statement warning at ControlUnit.vhd(119): signal "Instruction" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/ControlUnit.vhd Line: 119
+Warning (10631): VHDL Process Statement warning at ControlUnit.vhd(58): inferring latch(es) for signal or variable "Done", which holds its previous value in one or more paths through the process File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/ControlUnit.vhd Line: 58
+Warning (10631): VHDL Process Statement warning at ControlUnit.vhd(58): inferring latch(es) for signal or variable "IRin", which holds its previous value in one or more paths through the process File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/ControlUnit.vhd Line: 58
+Warning (10631): VHDL Process Statement warning at ControlUnit.vhd(58): inferring latch(es) for signal or variable "EnDecin", which holds its previous value in one or more paths through the process File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/ControlUnit.vhd Line: 58
+Warning (10631): VHDL Process Statement warning at ControlUnit.vhd(58): inferring latch(es) for signal or variable "EnDecout", which holds its previous value in one or more paths through the process File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/ControlUnit.vhd Line: 58
+Warning (10631): VHDL Process Statement warning at ControlUnit.vhd(58): inferring latch(es) for signal or variable "Dinout", which holds its previous value in one or more paths through the process File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/ControlUnit.vhd Line: 58
+Warning (10631): VHDL Process Statement warning at ControlUnit.vhd(58): inferring latch(es) for signal or variable "Gout", which holds its previous value in one or more paths through the process File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/ControlUnit.vhd Line: 58
+Warning (10631): VHDL Process Statement warning at ControlUnit.vhd(58): inferring latch(es) for signal or variable "AddSub", which holds its previous value in one or more paths through the process File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/ControlUnit.vhd Line: 58
+Warning (10631): VHDL Process Statement warning at ControlUnit.vhd(58): inferring latch(es) for signal or variable "Ain", which holds its previous value in one or more paths through the process File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/ControlUnit.vhd Line: 58
+Warning (10631): VHDL Process Statement warning at ControlUnit.vhd(58): inferring latch(es) for signal or variable "Gin", which holds its previous value in one or more paths through the process File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/ControlUnit.vhd Line: 58
+Warning (10631): VHDL Process Statement warning at ControlUnit.vhd(58): inferring latch(es) for signal or variable "AddrRegOut", which holds its previous value in one or more paths through the process File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/ControlUnit.vhd Line: 58
+Warning (10631): VHDL Process Statement warning at ControlUnit.vhd(58): inferring latch(es) for signal or variable "AddrRegIn", which holds its previous value in one or more paths through the process File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/ControlUnit.vhd Line: 58
+Info (10041): Inferred latch for "AddrRegIn[0]" at ControlUnit.vhd(58) File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/ControlUnit.vhd Line: 58
+Info (10041): Inferred latch for "AddrRegIn[1]" at ControlUnit.vhd(58) File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/ControlUnit.vhd Line: 58
+Info (10041): Inferred latch for "AddrRegIn[2]" at ControlUnit.vhd(58) File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/ControlUnit.vhd Line: 58
+Info (10041): Inferred latch for "AddrRegOut[0]" at ControlUnit.vhd(58) File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/ControlUnit.vhd Line: 58
+Info (10041): Inferred latch for "AddrRegOut[1]" at ControlUnit.vhd(58) File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/ControlUnit.vhd Line: 58
+Info (10041): Inferred latch for "AddrRegOut[2]" at ControlUnit.vhd(58) File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/ControlUnit.vhd Line: 58
+Info (10041): Inferred latch for "Gin" at ControlUnit.vhd(58) File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/ControlUnit.vhd Line: 58
+Info (10041): Inferred latch for "Ain" at ControlUnit.vhd(58) File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/ControlUnit.vhd Line: 58
+Info (10041): Inferred latch for "AddSub" at ControlUnit.vhd(58) File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/ControlUnit.vhd Line: 58
+Info (10041): Inferred latch for "Gout" at ControlUnit.vhd(58) File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/ControlUnit.vhd Line: 58
+Info (10041): Inferred latch for "Dinout" at ControlUnit.vhd(58) File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/ControlUnit.vhd Line: 58
+Info (10041): Inferred latch for "EnDecout" at ControlUnit.vhd(58) File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/ControlUnit.vhd Line: 58
+Info (10041): Inferred latch for "EnDecin" at ControlUnit.vhd(58) File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/ControlUnit.vhd Line: 58
+Info (10041): Inferred latch for "IRin" at ControlUnit.vhd(58) File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/ControlUnit.vhd Line: 58
+Info (10041): Inferred latch for "Done" at ControlUnit.vhd(58) File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/ControlUnit.vhd Line: 58
+Info (10041): Inferred latch for "Enrun" at ControlUnit.vhd(39) File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/ControlUnit.vhd Line: 39
+Info (12128): Elaborating entity "dec3to8" for hierarchy "MPU:U3|ControlUnit:U0|dec3to8:DecEnIn" File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/ControlUnit.vhd Line: 34
+Info (12128): Elaborating entity "upcount" for hierarchy "MPU:U3|upcount:U1" File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/MPU.vhd Line: 90
+Info (12128): Elaborating entity "mux" for hierarchy "MPU:U3|mux:MultiPlexer" File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/MPU.vhd Line: 92
+Info (12128): Elaborating entity "ALU" for hierarchy "MPU:U3|ALU:ArithLogicUnit" File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/MPU.vhd Line: 93
+Warning (13012): Latch MPU:U3|ControlUnit:U0|AddrRegOut[0] has unsafe behavior File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/ControlUnit.vhd Line: 58
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MPU:U3|regn:IR|Q[7] File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/regn.vhd Line: 16
+Warning (13012): Latch MPU:U3|ControlUnit:U0|AddrRegOut[1] has unsafe behavior File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/ControlUnit.vhd Line: 58
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MPU:U3|regn:IR|Q[7] File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/regn.vhd Line: 16
+Warning (13012): Latch MPU:U3|ControlUnit:U0|AddrRegOut[2] has unsafe behavior File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/ControlUnit.vhd Line: 58
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MPU:U3|regn:IR|Q[7] File: C:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex7 - MicroProcessor/Synthesis2 - Quartus/regn.vhd Line: 16
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 380 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 17 output pins
+    Info (21061): Implemented 343 logic cells
+    Info (21064): Implemented 16 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 33 warnings
+    Info: Peak virtual memory: 4816 megabytes
+    Info: Processing ended: Tue Aug 30 17:51:54 2022
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:20
+
+

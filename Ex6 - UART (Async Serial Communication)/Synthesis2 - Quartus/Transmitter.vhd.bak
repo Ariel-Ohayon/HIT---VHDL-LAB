@@ -1,0 +1,30 @@
+library ieee;
+use ieee.std_logic_1164.all;
+entity transmiter is
+port(data: in std_logic_vector (7 downto 0);
+clk,parity_type,go: in std_logic;
+txd, txrdy, txe: out std_logic);
+end;
+architecture one of transmiter is
+component generator
+generic(N:  integer:= 50000000;
+		  DC: integer:= 25000000);
+port(
+clkin: in std_logic;
+clkout: buffer std_logic:='1');
+end component;
+component piso
+generic (n:integer:=4);
+port(data: std_logic_vector (n-1 downto 0);
+clk,sel: in std_logic;
+Q,txe:out std_logic);
+end component;
+component parity_gen
+generic (N: integer:=4);
+port(
+inpt: std_logic_vector(N-1 downto 0);
+outpt: out std_logic);
+end component;
+begin
+
+end;

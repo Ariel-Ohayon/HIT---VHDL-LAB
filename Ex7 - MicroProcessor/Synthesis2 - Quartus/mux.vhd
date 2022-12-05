@@ -1,0 +1,33 @@
+library ieee;
+use ieee.std_logic_1164.all;
+ 
+entity mux is
+port( 
+r0,r1,r2,r3,r4,r5,r6,r7,din,g : in std_logic_vector (15 downto 0);
+gout,dout: in std_logic;
+rout: in std_logic_vector (7 downto 0);
+busa: out std_logic_vector (15 downto 0));
+end;
+ 
+architecture bhv of mux is
+begin
+process (r0,r1,r2,r3,r4,r5,r6,r7,din,g,gout,dout,rout) is
+begin
+	if (gout = '1') then
+		busa <= g;
+	elsif (dout = '1') then
+		busa<=din;
+	else
+		case (rout) is
+		when "10000000" => busa <= r7;
+		when "01000000" => busa <= r6;
+		when "00100000" => busa <= r5;
+		when "00010000" => busa <= r4;
+		when "00001000" => busa <= r3;
+		when "00000100" => busa <= r2;
+		when "00000010" => busa <= r1;
+		when others 	 => busa <= r0;
+		end case;
+		end if;
+end process;
+end;

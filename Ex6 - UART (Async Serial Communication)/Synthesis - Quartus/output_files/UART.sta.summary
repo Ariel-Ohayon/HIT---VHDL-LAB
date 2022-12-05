@@ -1,0 +1,197 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'clk'
+Slack : -3.740
+TNS   : -57.866
+
+Type  : Slow 1200mV 85C Model Setup 'Reciever:U2|sync_Reciever:U1|SyncRecieveClk:U1|clkout'
+Slack : -1.796
+TNS   : -20.355
+
+Type  : Slow 1200mV 85C Model Setup 'Transmitter:U1|Generator:U1|clkout'
+Slack : -0.074
+TNS   : -0.345
+
+Type  : Slow 1200mV 85C Model Hold 'Reciever:U2|sync_Reciever:U1|SyncRecieveClk:U1|clkout'
+Slack : 0.402
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Transmitter:U1|Generator:U1|clkout'
+Slack : 0.404
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clk'
+Slack : 0.655
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'rx'
+Slack : -1.699
+TNS   : -1.699
+
+Type  : Slow 1200mV 85C Model Recovery 'clk'
+Slack : -1.353
+TNS   : -1.353
+
+Type  : Slow 1200mV 85C Model Recovery 'Reciever:U2|sync_Reciever:U1|SyncRecieveClk:U1|clkout'
+Slack : -1.143
+TNS   : -4.572
+
+Type  : Slow 1200mV 85C Model Removal 'Reciever:U2|sync_Reciever:U1|SyncRecieveClk:U1|clkout'
+Slack : 1.370
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'clk'
+Slack : 1.755
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'rx'
+Slack : 1.801
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -38.980
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'rx'
+Slack : -3.000
+TNS   : -4.285
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Reciever:U2|sync_Reciever:U1|SyncRecieveClk:U1|clkout'
+Slack : -1.285
+TNS   : -17.990
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Transmitter:U1|Generator:U1|clkout'
+Slack : -1.285
+TNS   : -15.420
+
+Type  : Slow 1200mV 0C Model Setup 'clk'
+Slack : -3.354
+TNS   : -50.767
+
+Type  : Slow 1200mV 0C Model Setup 'Reciever:U2|sync_Reciever:U1|SyncRecieveClk:U1|clkout'
+Slack : -1.574
+TNS   : -18.011
+
+Type  : Slow 1200mV 0C Model Setup 'Transmitter:U1|Generator:U1|clkout'
+Slack : 0.022
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Reciever:U2|sync_Reciever:U1|SyncRecieveClk:U1|clkout'
+Slack : 0.353
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Transmitter:U1|Generator:U1|clkout'
+Slack : 0.356
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clk'
+Slack : 0.599
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'rx'
+Slack : -1.459
+TNS   : -1.459
+
+Type  : Slow 1200mV 0C Model Recovery 'clk'
+Slack : -1.169
+TNS   : -1.169
+
+Type  : Slow 1200mV 0C Model Recovery 'Reciever:U2|sync_Reciever:U1|SyncRecieveClk:U1|clkout'
+Slack : -0.930
+TNS   : -3.720
+
+Type  : Slow 1200mV 0C Model Removal 'Reciever:U2|sync_Reciever:U1|SyncRecieveClk:U1|clkout'
+Slack : 1.246
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'clk'
+Slack : 1.641
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'rx'
+Slack : 1.669
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -38.980
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'rx'
+Slack : -3.000
+TNS   : -4.285
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Reciever:U2|sync_Reciever:U1|SyncRecieveClk:U1|clkout'
+Slack : -1.285
+TNS   : -17.990
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Transmitter:U1|Generator:U1|clkout'
+Slack : -1.285
+TNS   : -15.420
+
+Type  : Fast 1200mV 0C Model Setup 'clk'
+Slack : -1.389
+TNS   : -14.428
+
+Type  : Fast 1200mV 0C Model Setup 'Reciever:U2|sync_Reciever:U1|SyncRecieveClk:U1|clkout'
+Slack : -1.121
+TNS   : -11.438
+
+Type  : Fast 1200mV 0C Model Setup 'Transmitter:U1|Generator:U1|clkout'
+Slack : 0.494
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Reciever:U2|sync_Reciever:U1|SyncRecieveClk:U1|clkout'
+Slack : 0.181
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Transmitter:U1|Generator:U1|clkout'
+Slack : 0.183
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clk'
+Slack : 0.299
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'clk'
+Slack : -0.729
+TNS   : -0.729
+
+Type  : Fast 1200mV 0C Model Recovery 'rx'
+Slack : -0.289
+TNS   : -0.289
+
+Type  : Fast 1200mV 0C Model Recovery 'Reciever:U2|sync_Reciever:U1|SyncRecieveClk:U1|clkout'
+Slack : -0.064
+TNS   : -0.256
+
+Type  : Fast 1200mV 0C Model Removal 'Reciever:U2|sync_Reciever:U1|SyncRecieveClk:U1|clkout'
+Slack : 0.650
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'rx'
+Slack : 0.773
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'clk'
+Slack : 1.345
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -32.724
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'rx'
+Slack : -3.000
+TNS   : -4.206
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Reciever:U2|sync_Reciever:U1|SyncRecieveClk:U1|clkout'
+Slack : -1.000
+TNS   : -14.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Transmitter:U1|Generator:U1|clkout'
+Slack : -1.000
+TNS   : -12.000
+
+------------------------------------------------------------

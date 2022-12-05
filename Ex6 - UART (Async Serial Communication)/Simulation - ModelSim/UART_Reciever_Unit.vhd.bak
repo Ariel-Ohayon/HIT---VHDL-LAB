@@ -1,0 +1,174 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity sync_Reciever is
+port(
+clkin,Lrx: in     std_logic;
+En,clkout: buffer std_logic);
+end;
+
+architecture one of sync_Reciever is
+
+component syncRecieveClk
+port(
+clkin,En: in  std_Logic;
+clkout:   out std_logic);
+end component;
+
+component Recieve_Enable
+port(
+Lrx,clkin: in std_logic;
+flag: out std_logic);
+end component;
+
+begin
+U1: syncRecieveClk port map (clkin, En, clkout);
+U2: Recieve_Enable  port map (Lrx, clkout, En);
+end;
+
+
+-- /\ ---
+
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity SyncRecieveClk is
+port(
+clkin,En: in  std_Logic;
+clkout:   out std_logic);
+end;
+
+architecture one of SyncRecieveClk is
+
+signal clkdiv: integer range 0 to 5208 := 0;
+
+begin
+
+process(En,clkin)
+begin
+if (En = '1') then
+	if (clkin 'event and clkin = '1') then
+		if ((clkdiv < 2604) or (clkdiv = 2604)) then
+			clkdiv <= clkdiv+1;
+			clkout<='0';
+		elsif ((clkdiv < 5208) and (clkdiv > 2604)) then
+			clkdiv <= clkdiv + 1;
+			clkout <= '1';
+		else
+			clkdiv <= 0;
+			clkout <= '0';
+		end if;
+	end if;
+else
+	clkout <= '0';
+end if;
+end process;
+
+end;
+
+
+-- /\ --
+
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity Recieve_Enable is
+port(
+Lrx,clkin: in std_logic;
+flag: out std_logic);
+end;
+
+architecture one of Recieve_Enable is
+
+signal clkdiv: integer range 0 to 5208 := 0;
+signal count:  integer range 0 to 11   := 0;
+signal sflag: std_logic := '0';
+
+
+begin
+process(Lrx,clkin)
+begin
+
+if (Lrx 'event and Lrx = '0') then
+	if (sflag = '0') then
+		sflag <='1';
+	end if;
+end if;
+
+if ((clkin 'event and clkin = '1') and (sflag='1')) then count <= count + 1; end if;
+
+if (count = 11) then
+	count <= 0;
+	sflag <= '0';
+end if;
+
+end process;
+flag <= sflag;
+end;
+
+-- /\ --
+
+library ieee;
+use ieee.std_Logic_1164.all;
+
+entity Shift_Register is
+generic(Bits: integer := 8);
+port(
+EnOut, EnShift, rst, clk, d: in std_logic;
+Q: out std_logic_vector(Bits-1 downto 0));
+end;
+
+architecture one of Shift_Register is
+signal sEnOut, sQ: std_logic_vector (Bits-1 downto 0);
+begin
+process(rst,clk)
+begin
+if (rst = '1') then sQ <= (others => '0');
+elsif (clk 'event and clk = '1') then
+	if (EnShift = '1') then
+		sQ <= d & sQ(Bits-1 downto 1);
+	end if;
+end if;
+end process;
+sEnOut <= (others => EnOut);
+Q <= sQ and sEnOut;
+end;
+
+-- /\ --
+
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity Reciever is
+port(
+rxd,clk: in std_logic;
+data: out std_logic_vector(7 downto 0);
+rxrdy: buffer std_logic;
+pe,fe: out std_logic);
+end;
+
+architecture one of Reciever is
+
+component sync_Reciever
+port(
+clkin,Lrx: in     std_logic;
+En,clkout: buffer std_logic);
+end component;
+
+component Shift_Register
+generic(Bits: integer := 10);
+port(
+EnOut, EnShift, rst, clk, d: in std_logic;
+Q: out std_logic_vector(Bits-1 downto 0));
+end component;
+
+signal internclk: std_logic;
+signal Parallel:  std_Logic_vector(9 downto 0);
+signal Enflag: std_logic;
+
+begin
+U1: sync_Reciever  port map (clk,rxd,Enflag,internclk);
+U2: Shift_Register port map (rxrdy, Enflag, '0',internclk,rxd,Parallel);
+data <= Parallel(8 downto 1);
+rxrdy <= not Enflag;
+end;

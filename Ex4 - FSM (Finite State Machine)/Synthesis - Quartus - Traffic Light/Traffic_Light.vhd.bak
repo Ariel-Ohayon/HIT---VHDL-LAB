@@ -1,0 +1,18 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity Traffic_Light is
+port(
+
+);
+end;
+
+architecture one of Traffic_Light is
+begin
+
+process (clk,rst)
+begin
+
+end process;
+
+end;

@@ -1,0 +1,310 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/ariel/Desktop/works/HIT/VHDL Lab/Ex6 - UART (Async Serial Communication)/Simulation - ModelSim
+Egenerator
+Z1 w1660581884
+Z2 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z3 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z5 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z6 8UART_Transmitter_Unit.vhd
+Z7 FUART_Transmitter_Unit.vhd
+l0
+L99
+VY6Q>SX@RLA`N?bBF1nPSc3
+!s100 ?E<^Io4HOQ?Od`E52OARm3
+Z8 OV;C;10.5b;63
+32
+Z9 !s110 1660581902
+!i10b 1
+Z10 !s108 1660581902.000000
+Z11 !s90 -reportprogress|300|UART_Transmitter_Unit.vhd|
+Z12 !s107 UART_Transmitter_Unit.vhd|
+!i113 1
+Z13 tExplicit 1 CvgOpt 0
+Aone
+R2
+R3
+R4
+R5
+Z14 DEx4 work 9 generator 0 22 Y6Q>SX@RLA`N?bBF1nPSc3
+l109
+L107
+Z15 V50=?D`_7cCm8XOgA^`4CO2
+Z16 !s100 ?k[ZX^>hRE[ePF5bo?S3o2
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+Eparity_gen
+R1
+R4
+R5
+R0
+R6
+R7
+l0
+L71
+VkQ:>MBSZNKNknJf38OS^B3
+!s100 D2SGc7bU0h:mj974mFXg72
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+Aone
+R4
+R5
+Z17 DEx4 work 10 parity_gen 0 22 kQ:>MBSZNKNknJf38OS^B3
+l79
+L78
+Z18 VN[kJLn?FzRA^<l;=85zz;1
+Z19 !s100 Jg5]zZm_;77ReYOjY5e>70
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+Erecieve_enable
+Z20 w1660122551
+R4
+R5
+R0
+Z21 8UART_Reciever_Unit.vhd
+Z22 FUART_Reciever_Unit.vhd
+l0
+L75
+V_k2JZL2?0M^nhX3eDYMFV0
+!s100 93il@;G>m00zQb82XM4O61
+R8
+32
+Z23 !s110 1660122567
+!i10b 1
+Z24 !s108 1660122567.000000
+Z25 !s90 -reportprogress|300|UART_Reciever_Unit.vhd|
+Z26 !s107 UART_Reciever_Unit.vhd|
+!i113 1
+R13
+Aone
+R4
+R5
+DEx4 work 14 recieve_enable 0 22 _k2JZL2?0M^nhX3eDYMFV0
+l88
+L81
+VfiUj<9jMA2[<?;4M`UM<L2
+!s100 WWbm52UGfDn>=MY7_53EA3
+R8
+32
+R23
+!i10b 1
+R24
+R25
+R26
+!i113 1
+R13
+Ereciever
+R20
+R4
+R5
+R0
+R21
+R22
+l0
+L142
+VjQ9bkhRGgJ3lZI^zbG1gB3
+!s100 IA2ZFXonXELinFfTA]i=`0
+R8
+32
+R23
+!i10b 1
+R24
+R25
+R26
+!i113 1
+R13
+Aone
+R4
+R5
+DEx4 work 8 reciever 0 22 jQ9bkhRGgJ3lZI^zbG1gB3
+l169
+L150
+V57Y^cM=cJ`kTgaG<RSHiG1
+!s100 aIZjY?g7<E[049^37;<9R2
+R8
+32
+R23
+!i10b 1
+R24
+R25
+R26
+!i113 1
+R13
+Eshift_register
+R20
+R4
+R5
+R0
+R21
+R22
+l0
+L114
+V3e;5GN@d^cB;L19N=oi:Z0
+!s100 ABiOJ[Z6`e@1ig;EiCgN=3
+R8
+32
+R23
+!i10b 1
+R24
+R25
+R26
+!i113 1
+R13
+Aone
+R4
+R5
+DEx4 work 14 shift_register 0 22 3e;5GN@d^cB;L19N=oi:Z0
+l123
+L121
+V7IXEL4=g_?ne@RCg_QFCY3
+!s100 BoTFEK7GL95Ad6mnae8=N2
+R8
+32
+R23
+!i10b 1
+R24
+R25
+R26
+!i113 1
+R13
+Esync_reciever
+R20
+R4
+R5
+R0
+R21
+R22
+l0
+L4
+V1U2;iW<^B@ieT:`nEmNHF2
+!s100 i;i:C>jl2QoGU7E?:`kXb1
+R8
+32
+R23
+!i10b 1
+R24
+R25
+R26
+!i113 1
+R13
+Aone
+R4
+R5
+DEx4 work 13 sync_reciever 0 22 1U2;iW<^B@ieT:`nEmNHF2
+l24
+L10
+V;YbnUbE=1P]2O3e]=STkz3
+!s100 IEA?cD0@`n:YfVZ^bMGAB1
+R8
+32
+R23
+!i10b 1
+R24
+R25
+R26
+!i113 1
+R13
+Esyncrecieveclk
+R20
+R4
+R5
+R0
+R21
+R22
+l0
+L35
+VedQ=ioJ96Uhd>N=48E3?;1
+!s100 ?`28mRf^GZ@GJM@gkI<FH3
+R8
+32
+R23
+!i10b 1
+R24
+R25
+R26
+!i113 1
+R13
+Aone
+R4
+R5
+DEx4 work 14 syncrecieveclk 0 22 edQ=ioJ96Uhd>N=48E3?;1
+l45
+L41
+VU>IgO@hlcTS6jQ9]JDn3o2
+!s100 CWH9@3M?2AiOTJSZoRD163
+R8
+32
+R23
+!i10b 1
+R24
+R25
+R26
+!i113 1
+R13
+Etransmitter
+R1
+R4
+R5
+R0
+R6
+R7
+l0
+L4
+V5zV<AK_>`9`?U9hTZZDQ31
+!s100 HAKlz6hSiaRJ=N36RebYm1
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+Aone
+R4
+R5
+Z27 DEx4 work 11 transmitter 0 22 5zV<AK_>`9`?U9hTZZDQ31
+l35
+L11
+V;2NalE88gd@RleEBcH;ZK3
+!s100 AkWMHmRFX>PdAB3DGQST73
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13

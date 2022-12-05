@@ -1,0 +1,77 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'clk'
+Slack : -3.259
+TNS   : -22.142
+
+Type  : Slow 1200mV 85C Model Setup 'Generator:U2|clkout'
+Slack : -0.047
+TNS   : -0.047
+
+Type  : Slow 1200mV 85C Model Hold 'Generator:U2|clkout'
+Slack : 0.435
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clk'
+Slack : 0.654
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -20.990
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Generator:U2|clkout'
+Slack : -1.285
+TNS   : -14.135
+
+Type  : Slow 1200mV 0C Model Setup 'clk'
+Slack : -2.973
+TNS   : -18.873
+
+Type  : Slow 1200mV 0C Model Setup 'Generator:U2|clkout'
+Slack : 0.056
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Generator:U2|clkout'
+Slack : 0.399
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clk'
+Slack : 0.600
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -20.990
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Generator:U2|clkout'
+Slack : -1.285
+TNS   : -14.135
+
+Type  : Fast 1200mV 0C Model Setup 'clk'
+Slack : -1.140
+TNS   : -3.989
+
+Type  : Fast 1200mV 0C Model Setup 'Generator:U2|clkout'
+Slack : 0.492
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Generator:U2|clkout'
+Slack : 0.190
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clk'
+Slack : 0.300
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -17.865
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Generator:U2|clkout'
+Slack : -1.000
+TNS   : -11.000
+
+------------------------------------------------------------
